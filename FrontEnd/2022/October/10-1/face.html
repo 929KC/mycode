@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        canvas {
+            border: 2px solid skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="a" width="1000" height="500"></canvas>
+</body>
+<script>
+    var c = document.getElementById("a");
+    var x = c.getContext('2d');
+
+    x.arc(200, 200, 150, Math.PI / 180 * 0, Math.PI / 180 * 360, false);
+    x.fillStyle = 'palevioletred';
+    x.stroke();
+    x.fill();
+
+    x.beginPath();
+    x.arc(550, 200, 150, Math.PI / 180 * 0, Math.PI / 180 * 360, false);
+    x.fillStyle = 'palevioletred';
+    x.stroke();
+    x.fill();
+
+    x.beginPath();
+    x.arc(130, 150, 30, Math.PI / 180 * 0, Math.PI / 180 * 180, false);
+    x.lineWidth = 5;
+    x.strokeStyle = 'yellow';
+    x.closePath();
+    x.stroke();
+
+    x.beginPath();
+    x.arc(260, 150, 30, Math.PI / 180 * 0, Math.PI / 180 * 180, false);
+    x.lineWidth = 5;
+    x.strokeStyle = 'yellow';
+    x.closePath();
+    x.stroke();
+
+    x.beginPath();
+    x.arc(200, 250, 30, Math.PI / 180 * 0, Math.PI / 180 * 180, false);
+    x.lineWidth = 5;
+    x.strokeStyle = 'yellow';
+    x.stroke();
+
+    x.beginPath();
+    x.arc(480, 170, 40, Math.PI / 180 * 0, Math.PI / 180 * 180, true);
+    x.lineWidth = 5;
+    x.strokeStyle = 'yellow';
+    x.stroke();
+
+    x.beginPath();
+    x.arc(550, 280, 20, Math.PI / 180 * 0, Math.PI / 180 * 360, false);
+    x.lineWidth = 5;
+    x.strokeStyle = 'yellow';
+    x.stroke();
+
+    x.beginPath();
+    x.moveTo(630, 140);
+    x.lineTo(580, 180);
+    x.lineTo(630, 200);
+    x.stroke();
+</script>
+
+</html>

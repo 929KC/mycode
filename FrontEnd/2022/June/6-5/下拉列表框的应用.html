@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        科目：
+        <select name="sltSubjects">
+            <option value="-1">请选择</option>
+        </select>
+        <br />
+        <input type="button" id="btnRemoveOne" value="移除选中的项" />
+        <input type="button" id="btnRemoveAll" value="移除所有科目" />
+        <input type="button" id="btnGetOne" value="访问被选中的项" />
+    </form>
+    <script>
+        window.onload = function() {
+                //调用init()，初始化
+                init();
+                //将#btnRemoveOne的单击事件与removeOne进行绑定
+                document.getElementById("btnRemoveOne").onclick = function() {
+                    removeOne();
+                }
+
+                //将#btnRemoveAll的单击事件与removeAll进行绑定
+                document.getElementById("btnRemoveAll").onclick = function() {
+                    removeAll();
+                }
+
+                //将#btnGetOne的单击事件与getOne进行绑定
+                document.getElementById("btnGetOne").onclick = function() {
+                    getOne();
+                }
+
+            }
+            //初始化下拉列表框
+        function init() {
+            //获取下拉列表框										
+            var sel = document.querySelector("select");
+            //创建第1个option元素节点
+            var op1 = document.createElement("option");
+            op1.innerHTML = "java面向对象编程";
+            op1.value = "java";
+            //向下拉列表中添加第1个option选项					
+            sel.appendChild(op1);
+            //创建第2个option元素节点
+            var op2 = document.createElement("option");
+            op2.innerHTML = "javaScript网页编程";
+            op2.value = "javaScript";
+            //向下拉列表中添加第2个option选项
+            sel.appendChild(op2);
+            //创建第3个option元素节点
+            var op3 = document.createElement("option");
+            op3.innerHTML = "Mysql数据库编程";
+            op3.value = "Mysql";
+            //向下拉列表中添加第3个option选项
+            sel.appendChild(op3);
+            //设置某个option选项被选中
+            sel.value = "java";
+        }
+        //移除选中的项
+        function removeOne() {
+            //获取下拉列表框
+            var sel = document.querySelector("select");
+            //获取被选中项的索引
+            var value = sel.value;
+            if (value == '-1') {
+                alert("请选择某个科目：");
+                return;
+            }
+            //删除被选中项的索引
+            for (var i = 0; i < sel.length; i++) {
+                sel.removeChild(sel.children[i]);
+                break;
+            }
+
+        }
+        //移除所有选项
+        function removeAll() {
+            //获取下拉列表框
+            var sel = document.querySelector("select");
+            while (sel.children.length != 0) {
+                sel.removeChild(sel.children[1]);
+            }
+            //删除所有选项
+
+        }
+        //访问被选中的项
+        function getOne() {
+            //获取下拉列表框
+            var sel = document.querySelector('select');
+            //获取被选中项的索引
+            var x = sel.selectedIndex;
+            //获取被选中项
+            alert(x);
+            var t = sel.options[x];
+            //弹出警告框，显示选中项的文本和值
+            alert("你选择的是：" + t.innerHTML + ";\n值:" + t.value);
+        }
+    </script>
+</body>
+
+</html>

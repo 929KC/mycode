@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+    <style type="text/css">
+        form {
+            width: 800px;
+            margin: auto;
+        }
+        
+        table,
+        td {
+            border: none;
+        }
+        
+        .right {
+            text-align: right;
+        }
+        
+        span {
+            font-size: 12px;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        window.onload = function() {
+            //获得表单对象#frmTest
+            var frmObj = document.getElementById("frmTest");
+
+            //获得用户名文本框对象#txtUserName
+            var usernameObj = document.getElementById("txtUserName");
+
+            //获得qq文本框对象#txtQQ
+            var qqObj = document.getElementById("txtQQ");
+
+            //获得span对象#spnUserName、#spnUserQQ
+            var span1 = document.getElementById("spnUserName");
+
+            var span2 = document.getElementById("spnQQ");
+
+            //针对用户名文本框的onfocus事件进行相应的处理
+            usernameObj.onfocus = function() {
+                span1.style.color = 'black';
+                span1.innerHTML = '长度在6~16个字符，只能包含数字、字母、下划线，且首字符不能是数字。';
+            }
+
+            //针对用户名文本框onblur事件进行相应的处理
+            usernameObj.onblur = function() {
+                if (chkUserName(usernameObj.value)) {
+                    span1.innerHTML = '用户名的格式正确！'
+                    span1.style.color = 'blue';
+                } else {
+                    span1.innerHTML = '用户名的格式错误！'
+                    span1.style.color = 'red';
+                }
+            }
+
+            //针对QQ文本框的onfocus事件进行相应的处理
+            qqObj.onfocus = function() {
+                span2.style.color = 'black';
+                span2.innerHTML = '纯数字且长度为5~12。';
+            }
+
+            //针对QQ文本框onblur事件进行相应的处理
+            qqObj.onblur = function() {
+                    if (chkQQ(qqObj.value)) {
+                        span2.innerHTML = 'QQ的格式正确！'
+                        span2.style.color = 'blue';
+                    } else {
+                        span2.innerHTML = 'QQ的格式错误！'
+                        span2.style.color = 'red';
+                    }
+                }
+                //将表单的onsubmit事件与事件处理程序进行绑定
+                //当表单的onsubmit事件发生时，就执行函数体内的代码(检测用户名是否合法、检测QQ是否合法)
+            frmObj.onsubmit = function() {
+                //调用chkUserName函数、chkQQ函数分别检测用户名、QQ，根据检测结果确定是否允许提交表单
+                return chkQQ(qqObj.value) && chkUserName(usernameObj.value);
+            }
+        }
+
+
+        //专门检测用户名的函数，合法，返回true，不合法，返回false
+        function chkUserName(strUN) { //strUN——需要检测的用户名
+            var len = strUN.length;
+            if (len < 6 || len > 16) {
+                return false;
+            }
+            if (strUN[0] >= '0' && strUN[0] <= '9') {
+                return false;
+            }
+            for (var i = 0; i < len; i++) {
+                if (!(strUN[i] >= '0' && strUN[i] <= '9' || strUN[i] >= 'a' && strUN[i] < 'z' || strUN[i] >= 'A' && strUN[i] <= 'Z' || strUN[i] == '_')) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        //专门检测QQ的函数，合法，返回true，不合法，返回false
+        function chkQQ(strQQ) { //strUN——需要检测的QQ
+            var len = strQQ.length;
+            if (len < 5 || len > 12) {
+                return false;
+            }
+            for (var i = 0; i < len; i++) {
+                if (!(strQQ[i] >= '0' && strQQ[i] <= '9')) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+    <form action="ok.html" method="get" id="frmTest" name="frmTest">
+        <table border="" cellspacing="" cellpadding="">
+            <tr>
+                <td class="right">用户名：</td>
+                <td><input type="" name="" id="txtUserName" name="txtUserName" value="" /></td>
+                <td><span id="spnUserName"></span><br /></td>
+            </tr>
+            <tr>
+                <td class="right">QQ：</td>
+                <td><input type="text" id="txtQQ" name="txtQQ" value="" /></td>
+                <td><span id="spnQQ"></span><br /></td>
+            </tr>
+            <tr>
+                <td class="right"></td>
+                <td><input type="submit" value="注册" /></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

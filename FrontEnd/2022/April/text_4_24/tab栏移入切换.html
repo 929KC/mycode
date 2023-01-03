@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>07黄茂荣</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 400px;
+            height: 300px;
+            border: 3px solid black;
+        }
+        
+        li {
+            margin-right: 10px;
+            text-align: center;
+            width: 90px;
+            height: 40px;
+            line-height: 40px;
+            list-style: none;
+            float: left;
+            background: green;
+            color: white;
+        }
+        
+        span {
+            float: left;
+            display: block;
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var lis = document.querySelectorAll('li');
+            var spans = document.querySelectorAll('span');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].setAttribute('index', i);
+            }
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].onmouseover = function() {
+                    this.style.background = 'white';
+                    this.style.color = 'green';
+                    for (var i = 0; i < spans.length; i++) {
+                        spans[i].style.display = 'none';
+                    }
+                    var index = this.getAttribute('index');
+                    spans[index].style.display = 'block';
+                }
+            }
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].onmouseout = function() {
+                    this.style.background = 'green';
+                    this.style.color = 'white';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>标签一</li>
+            <li>标签二</li>
+            <li>标签三</li>
+            <li>标签四</li>
+        </ul>
+        <span style="display: block;">展示内容1</span>
+        <span>展示内容2</span>
+        <span>展示内容3</span>
+        <span>展示内容4</span>
+    </div>
+</body>
+
+</html>

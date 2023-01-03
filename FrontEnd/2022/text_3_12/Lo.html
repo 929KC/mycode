@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>07黄茂荣</title>
+		<style type="text/css">
+			#box {
+				width: 200px;
+				height: 200px;
+				border: 1px aqua solid;
+			}
+		</style>
+
+	</head>
+	<body>
+		<script type="text/javascript">
+			function pr() {
+				var arr = ["北京", "上海", "广州", "长沙", "株洲"];
+				var str=" ";
+				for (var n in arr) {
+					var str = "<li>" + arr[n] + "</li>";
+					document.getElementById("box").innerHTML = "<ul>" +str+"</ul>";
+				}
+			
+					
+				
+		</script>
+		<div id="box"> </div>
+		<input type="button" value="显示内容" onclick="pr()" />
+	</body>
+</html>

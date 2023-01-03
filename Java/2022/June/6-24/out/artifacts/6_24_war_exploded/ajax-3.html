@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="按钮">
+<div id="mydiv"></div>
+<script>
+  window.onload=function (){
+    var xhr = new XMLHttpRequest();
+    document.getElementById("btn").onclick=function(){
+      xhr.onreadystatechange=function(){
+        if(this.status==200){
+          document.getElementById("mydiv").innerHTML=xhr.responseText;
+        }else{
+          alert(this.status);
+        }
+      }
+      xhr.open("POST","/6_24/test3",true);
+      xhr.send();
+    }
+  }
+</script>
+</body>
+</html>

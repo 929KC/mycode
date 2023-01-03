@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calendar {
+            width: 450px;
+            height: 350px;
+            background-color: #fff;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+        }
+        
+        .body-list ul {
+            width: 100%;
+            font-family: "微软雅黑";
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .body-list ul li {
+            width: 14.28%;
+            height: 36px;
+            line-height: 36px;
+            list-style-type: none;
+            display: block;
+            box-sizing: border-box;
+            float: left;
+            text-align: center;
+        }
+        
+        .lightgrey {
+            color: #ababab;
+        }
+        
+        .darkgrey {
+            color: #565656;
+        }
+        
+        .green {
+            color: #6ac13c;
+        }
+        
+        .greenbox {
+            border: 1px solid #6ac13c;
+            background-color: #e9f8df;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calendar">
+        <div class="title">
+            <h1 class="green" id="calendar-title">Month</h1>
+            <h2 class="green small" id="calendar-year">Year</h2>
+            <a href="" id="prev"> '<' </a>
+            <a href="" id="next"> '>'</a>
+        </div>
+        <div class="body">
+            <div class="lightgrey body-list">
+                <ul>
+                    <li>MON</li>
+                    <li>TUE</li>
+                    <li>WED</li>
+                    <li>THU</li>
+                    <li>FRI</li>
+                    <li>SAT</li>
+                    <li>SUN</li>
+                </ul>
+            </div>
+            <div class="darkgrey body-list">
+                <ul id="days">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

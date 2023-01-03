@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="css/audio.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="music-player">
+				<img src="imgs/01guangliang.jpg" alt="" id="song-img" />
+				<div class="song-detail">
+					<p>
+						<span id="song-name">光亮</span>
+					</p>
+					<p>
+						<span id="artist">周深</span>
+					</p>
+				</div>
+				<div class="player-opthions">
+					<button id="shuffle" class="fa fa-random"></button>
+					<button id="prev" class="fa fa-step-backward"></button>
+					<button id="playPause" class="fa fa-play"></button>
+					<button id="next" class="fa fa-step-forward"></button>
+					<button id="repeat" class="fa fa-repeat"></button>
+				</div>
+				<audio id="myaudio" src="res/mp3_1.mp3"></audio>
+				<div id="process-bar">
+					<div id="cur-process"></div>
+				</div>
+				<div class="time-container">
+					<span id="current-time">00:00</span>
+					<span id="totle-time">00:00</span>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/audio.js"></script>
+	</body>
+</html>

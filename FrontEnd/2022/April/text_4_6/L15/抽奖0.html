@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>抽奖</title>
+    <style type="text/css">
+        #container {
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        #divShow {
+            margin: 10px auto;
+            width: 300px;
+            height: 100px;
+            border: 2px dashed black;
+            line-height: 100px;
+            font-size: 40px;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        var index = 0;
+        var time = 0;
+        var arr = ["一等奖", "二等奖", "二等奖", "三等奖", "三等奖", "三等奖", "谢谢参与", "谢谢参与", "谢谢参与", "谢谢参与", "谢谢参与", "谢谢参与"];
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+        //定义show函数，从jiang数组中随机选取一个奖项显示在divShow中
+        function show() {
+            //利用Math.random()随机生成jiang数组的某一个下标，范围是[0,jiang.length)
+            var r = parseInt((Math.random() * arr.length));
+            //将随机下标对应的数组元素值（奖项）显示在divShow中
+            $("divShow").innerHTML = arr[r];
+            index++;
+            if (index >= arr.length) {
+                index = 0;
+            }
+
+        }
+        window.onload = function() {
+            //将开始抽奖图片的单击事件与事件处理程序进行绑定
+            $("jiangBegin").onclick = function() {
+                    //设置定时器，每隔500毫秒，调用show函数
+                    time = setTimeout("show()", 500);
+                }
+                //将结束抽奖图片的单击事件与事件处理程序进行绑定
+            $("jiangEnd").onclick = function() {
+                //清除定时器
+                clearTimeout(time);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <img src="img\1.png" /></br>
+        <img src="img\3.png" id="jiangBegin" /></br>
+        <div id="divShow"></div>
+        <img src="img\2.png" id="jiangEnd" />
+    </div>
+
+</body>
+
+</html>

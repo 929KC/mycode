@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串对象</title>
+    <script>
+        // //字符串不可变性
+        // //值不变。地址变了
+        // var str = 'abc';
+        // for (var i = 0; i < 10000000000000; i++) {
+        //     str += i;
+        // }
+        // console.log(str);
+
+        //根据字符返回位置
+        // 字符串对象， 根据字符返回位置 str.indexof('要查找的字符', [起始的位置])
+        // var str = '醉着为奴而生，醒着奋战至死';
+        // console.log(str.indexOf('醒')); //7
+        // console.log(str.indexOf('着', 2)); //8
+
+        //返回字符位置
+        // var str = "oabcdefoxyozzopp";
+        // var index = str.indexOf('o');
+        // var num = 0;
+
+        // while (index !== -1) {
+        //     console.log(index);
+        //     num++;
+        //     index = str.indexOf('0', index + 1);
+
+        // }
+        // console.log("o出现的次数：" + num);
+        // var str = "aoabcdefoxyozzopp";
+        // var index = str.indexOf('o');
+        // var num = 0;
+        // while (index !== -1) {
+        //     console.log(index);
+        //     num++;
+        //     index = str.indexOf('o', index + 1);
+        // }
+        // console.log('o出现的次数：' + num);
+
+        //根据位置返回字符串
+        //charAt(index)
+        // var str = 'abcd';
+        // console.log(str.charAt(3));
+        // //遍历字符
+        // for (var i = 0; i < str.length; i++) {
+        //     console.log(str.charAt(i));
+        // }
+        // //charCodeAt(index) 返回相应索引号的ASCII值
+        // console.log(str.charCodeAt(0));
+        // //str[index] H5新增
+        // console.log(str[0]);
+
+        //统计出现最多的字符
+        var arr = "aoabcdefoxyozzopp";
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (o[chars]) {
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        console.log(o);
+        var max = 0;
+        var ch = '';
+        for (var k in o) {
+            //k得到的是属性名
+            //o[k]得到的是属性值
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log(max);
+        console.log('最多的字符是：' + ch);
+    </script>
+
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

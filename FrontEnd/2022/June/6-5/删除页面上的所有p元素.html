@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>什么是JavaScript</p>
+    <p>JavaScript是一门功能强大的编程语言</p>
+    <h1>一起来学习JavaScript程序设计</h1>
+    <hr />
+    <p>JavaScript的发展历史</p>
+    <input type="button" id="btnDelete" value="删除所有p元素" />
+    <script>
+        window.onload = function() {
+                //将#btnDelete按钮的单击事件与delp函数进行绑定
+                document.getElementById("btnDelete").addEventListener('click', delp);
+            }
+            //定义函数delp，删除页面上的所有p元素
+        function delp() {
+            // 第一种方式
+            //获取所有 <p> 元素的集合ps 
+            // var ps = document.getElementsByTagName("p");
+            // //遍历ps，依次删除p元素
+            // for (var i = 0; i < ps.length != 0;) {
+            //     // 依次获取p元素节点
+            //     var bo = ps[i].parentNode;
+            //     // 使用p元素的父元素的删除方法进行删除
+            //     bo.removeChild(ps[i]);
+
+            // }
+
+            // 第二种方式
+            //获取所有 <p> 元素ps
+            var ps = document.getElementsByTagName("p");
+            //判断ps的长度大于0，则获取ps中的第1个元素进行删除
+            // while () {
+            //     //获取ps中的第1个元素并删除
+            var i = 0;
+            while (ps.length != 0) {
+                var bo = ps[i].parentNode;
+                // 使用p元素的父元素的删除方法进行删除
+                bo.removeChild(ps[i]);
+                i++;
+            }
+
+            // }
+        }
+    </script>
+</body>
+
+</html>

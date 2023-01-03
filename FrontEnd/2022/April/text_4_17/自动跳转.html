@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p {
+        text-align: center;
+    }
+    
+    span {
+        color: red;
+    }
+</style>
+
+<body>
+
+    <p>
+        <span id="box">5</span>秒之后自动跳转
+    </p>
+    <script>
+        var count = 5;
+
+        function showTime() {
+            count--;
+            if (count <= 0) {
+                location.href = "https://www.baidu.com";
+            }
+            document.getElementById("box").innerHTML = count + "";
+        }
+        setInterval(showTime, 1000);
+    </script>
+</body>
+
+</html>

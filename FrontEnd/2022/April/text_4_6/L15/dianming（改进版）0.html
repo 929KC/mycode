@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>随机点名</title>
+    <style type="text/css">
+        #box {
+            margin: auto;
+            width: 660px;
+            height: 94px;
+            margin-top: 50px;
+            text-align: center;
+            color: #138eee;
+            font-size: 66px;
+        }
+        
+        #bt {
+            margin: auto;
+            margin-top: 75px;
+            width: 200px;
+            text-align: center;
+            color: #000;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body id="bodybj">
+    <div id="box">亲，准备好点名了吗？</div>
+    <div id="bt">开始点名</div>
+</body>
+<script type="text/javascript">
+    var nameList = ["张三", "李四", "王五", "贺六", "孙九", "赵十", "刘一"];
+    var flag = true;
+    var index = 0;
+    var time;
+
+    function $(id) {
+        return document.getElementById(id);
+    }
+    //定义函数show，随机选取数组中的一个姓名显示在"box"中
+    function show() {
+        //随机生成数组的下标，随机下标的范围：[0,n)   n为数组的长度
+        var r = parseInt(Math.random() * nameList.length);
+        //根据随机下标选取某个姓名显示在"box"中
+        $("box").innerHTML = nameList[r];
+        index++;
+        if (index >= nameList.length) {
+            index = 0;
+        }
+    }
+
+    window.onload = function() {
+        //将bt按钮的单击事件与事件处理程序进行绑定
+        $("bt").onclick = function() {
+            //判断单击bt按钮时的状态
+            if (flag) { //
+                //设置bt上显示的文字为"结束点名"
+                $("bt").innerHTML = "结束点名";
+                flag = !flag;
+                //设置定时器，间隔500毫秒则调用函数show（随机选取数组中的一个姓名显示在"box"中）
+                time = window.setInterval("show();", 500);
+            } else { //time
+                //设置bt上显示的文字为"结束点名"
+                $("bt").innerHTML = "开始点名";
+                window.clearInterval(time);
+                //清除定时器
+                flag = !flag;
+            }
+        }
+    }
+</script>
+
+</html>
+<!--
+	var nameList=["张三","李四","王五","贺六","孙九","赵十","刘一"];
+ -->

@@ -1,0 +1,96 @@
+<!DOCTYPE >
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8" />
+    <title>07黄茂荣</title>
+    <style>
+        table {
+            width: 600px;
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        
+        th,
+        td {
+            border: 1px solid black;
+        }
+        
+        .odd {}
+        
+        .even {}
+    </style>
+    <script>
+        window.onload = function() {
+            //获取所有行
+            var trs = document.querySelectorAll('tr');
+            //分别给奇数行、偶数行上色  奇数行：#abcdef   偶数行：#5645de
+            for (var i = 1; i < trs.length; i++) {
+                if (i % 2) trs[i].style.background = '#abcdef';
+                else trs[i].style.background = '#5645de';
+            }
+
+            //将所有行的鼠标移入事件与事件处理程序绑定
+            for (var i = 1; i < trs.length; i++) {
+                trs[i].onmouseover = function() {
+                    this.style.background = 'yellow';
+                }
+            }
+            //将所有行的鼠标移出事件与事件处理程序绑定
+            for (var i = 1; i < trs.length; i++) {
+                trs[i].onmouseout = function() {
+                    for (var i = 1; i < trs.length; i++) {
+                        if (i % 2) trs[i].style.background = '#abcdef';
+                        else trs[i].style.background = '#5645de';
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>地址</th>
+        </tr>
+        <tr class="odd">
+            <td>s001</td>
+            <td>张三</td>
+            <td>18</td>
+            <td>重庆市</td>
+        </tr>
+        <tr class="even">
+            <td>s002</td>
+            <td>李四</td>
+            <td>19</td>
+            <td>长沙市</td>
+        </tr>
+        <tr class="odd">
+            <td>s003</td>
+            <td>王五</td>
+            <td>20</td>
+            <td>北京市</td>
+        </tr>
+        <tr class="even">
+            <td>s004</td>
+            <td>赵六</td>
+            <td>19</td>
+            <td>上海市</td>
+        </tr>
+        <tr class="odd">
+            <td>s005</td>
+            <td>钱七</td>
+            <td>21</td>
+            <td>广州市</td>
+        </tr>
+    </table>
+</body>
+
+</html>
+<!--奇数行：#abcdef
+偶数行：#5645de-->

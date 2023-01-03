@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .kemu {
+            font-family: "微软雅黑";
+            font-size: 14px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    科目：
+    <table>
+        <tr>
+            <td>
+                <select id="sltOne" class="kemu" name="kemu" size="6">
+						<option value="java">Java面向对象程序设计</option>
+						<option value="js">JavaScript网页编程</option>
+						<option value="mysql">MySQL数据库程序设计</option>
+					</select>
+            </td>
+            <td>
+                <input id="btnRight" type="button" value=">>>>" /><br />
+                <input id="btnLeft" type="button" value="<<<<" /><br />
+                <input id="btnRightAll" type="button" value=">>ALL>>" /><br />
+                <input id="btnLeftAll" type="button" value="<<ALL<<" />
+            </td>
+            <td>
+                <select id="sltTwo" class="kemu" name="kemu" size="6">
+					</select>
+            </td>
+        </tr>
+        <script>
+            window.onload = function() {
+                //获得左边（第一个）下拉列表框
+                var left = document.getElementById("sltOne");
+                //获得右边（第二个）下拉列表框
+                var right = document.getElementById("sltTwo");
+
+                //将#btnRight右移按钮单击事件绑定事件处理程序
+                document.getElementById("btnRight").onclick = function() {
+                        //如果左边下拉列表中没有选中某个项，则弹出警告并退出处理
+                        if (left.selectedIndex == -1) {
+                            alert("请选择科目：");
+                        }
+
+                        //将选中的项从左边框中删除，添加到右边框中
+                        right.appendChild(left[left.selectedIndex]);
+                    }
+                    //将#btnLeft左移按钮单击事件绑定事件处理程序
+                document.getElementById("btnLeft").onclick = function() {
+                        //如果右边下拉列表中没有选中某个项，则弹出警告并退出处理
+                        if (right.selectedIndex == -1) {
+                            alert("请选择科目：");
+                        }
+                        //将选中的项从右边框中删除，添加到左边框中
+                        left.appendChild(right[right.selectedIndex]);
+                    }
+                    //将#btnRightAll全右移按钮单击事件绑定事件处理程序
+                document.getElementById("btnRightAll").onclick = function() {
+                        //将左边框中所有选项一个个删除，同时再一个个添加到右边框中	
+                        while (left.length != 0) {
+                            right.appendChild(left[0]);
+                        }
+                    }
+                    //将#btnLeftAll全左移按钮单击事件绑定事件处理程序
+                document.getElementById("btnLeftAll").onclick = function() {
+                    //将右边框中所有选项一个个删除，同时再一个个添加到左边框中	
+                    while (right.length != 0) {
+                        left.appendChild(right[0]);
+                    }
+                }
+            }
+        </script>
+    </table>
+</body>
+
+</html>

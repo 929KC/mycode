@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+<!--提取list集合类型属性注入-->
+    <util:list id="booklist">
+        <value>九阳神功</value>
+        <value>六脉神剑</value>
+    </util:list>
+    <bean id="book" class="com.bit.spring.bean.Book">
+        <property name="list" ref="booklist"></property>
+    </bean>
+</beans>

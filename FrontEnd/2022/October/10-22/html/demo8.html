@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<script src="../js/vue.js">
+</script>
+<style type="text/css">
+    #info {
+        width: 120xp;
+        font-size: 22px;
+        padding: 3px;
+        border: 1px solid #000000;
+        height: 26px;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <p>
+            请输入字符：<input type="text" v-model="text" />
+        </p>
+        <p id="info" v-bind:style="{width: Pwidth+'px',backgroundColor: bgcolor,fontFamily: Pfont}">
+            {{num}}个字符
+        </p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                colors: ['#7fb80e', '#1d953f', '#007d65', '#008792', '#009ad6', '#585caa', '#6950a1', '##c77eb5', '#d71345', '#aa2116'],
+                fonts: ['PMingLiU', 'DFKai-SB', 'SimSun'],
+                bgcolor: '#ffffff',
+                Pwidth: 100,
+                Pfont: 'PMingLiU',
+                num: 0,
+                text: ''
+
+
+            },
+            watch: {
+                text(val) {
+                    this.num = val.length
+
+                    this.Pwidth = 120 + this.num * 5
+
+                    let i = val.length % this.colors.length
+                    this.bgcolor = this.colors[i]
+
+                    i = val.length % this.fonts.length
+                    this.Pfont = this.fonts[i]
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

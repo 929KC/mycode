@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <p>
+            <label>画笔</label>
+            <input type="color" id="color" name="color" value="#7766dd" />
+        </p>
+        <p>
+            <label>画笔粗细：</label> 1
+            <input type="range" id="range" name="range" value="5" min="1" max="50" />50
+        </p>
+        <p>
+            <input type="button" name="clear" id="clear" value="清除画板" />
+        </p>
+    </form>
+    <canvas width="800" height="700" id="mycanvas"></canvas>
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var context = canvas.getContext('2d');
+        var color = document.getElementById('color');
+        var range = document.getElementById('range');
+        var clear = document.getElementById('clear');
+
+        context.strokeStyle = color.value;
+        context.lineWidth = range.value;
+        context.lineCap = "square";
+
+        color.onchange = function() {
+            context.strokeStyle = color.value;
+        }
+        range.onchange = function() {
+            context.lineWidth = range.value;
+        }
+        clear.onclick = function() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        var flag = false;
+
+        canvas.onmousedown = function(e) {
+            flag = true;
+            var top = canvas.getBoundingClientRect().top;
+            var left = canvas.getBoundingClientRect().left;
+            var x = e.pageX - left;
+            var y = e.pageY - top;
+            if (flag) {
+                context.beginPath();
+                context.moveTo(x, y);
+            }
+        }
+
+        canvas.onmousemove = function(e) {
+            var top = canvas.getBoundingClientRect().top;
+            var left = canvas.getBoundingClientRect().left;
+            var x = e.pageX - left;
+            var y = e.pageY - top;
+            console.log("x=", x);
+            console.log("y=", y);
+            if (flag) {
+                context.lineTo(x, y);
+                context.stroke();
+            }
+        }
+
+        canvas.onmouseup = function(e) {
+            flag = false;
+            context.closePath();
+        }
+    </script>
+</body>
+
+</html>

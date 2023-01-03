@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../js/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <p>苹果数量：<button @click="lessNum">-</button>{{num | numFilter}}<button @click="addNum">+</button></p>
+        <p>苹果单价：{{price | priceFilter}}/斤</p>
+        <p>总售价：{{myfun() | priceFilter}}</p>
+        <p>88折后价：{{disfun() | priceFilter}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                num: 2,
+                price: 4.7,
+                discount: 0.88
+            },
+            methods: {
+                myfun() {
+                    var total = this.num * this.price;
+                    return total;
+                },
+                disfun() {
+                    var distotal = this.num * this.price * this.discount;
+                    return distotal;
+                },
+                addNum() {
+                    this.num++;
+                    if (this.num > 50) {
+                        this.num = 50
+                    }
+                },
+                lessNum() {
+                    this.num--;
+                    if (this.num < 0) {
+                        this.num = 0
+                    }
+                }
+            },
+            filters: {
+                priceFilter(val) {
+                    var priceA = val.toFixed(1);
+                    priceA = priceA.toString();
+                    return "￥" + priceA + "元"
+                },
+                numFilter(val) {
+                    var numA = val.toFixed();
+                    numA = numA.toString();
+                    return numA + "斤"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

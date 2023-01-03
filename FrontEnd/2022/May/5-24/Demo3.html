@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        body {
+            padding: 100px;
+        }
+        
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            resize: none;
+            outline: none;
+        }
+        
+        ul {
+            margin-top: 50px;
+        }
+        
+        li {
+            width: 300px;
+            padding: 5px;
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+            background-color: rgb(254, 209, 243);
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>发布</button>
+    <ul></ul>
+    <script>
+        var btn = document.querySelector("button");
+        var text = document.querySelector("textarea");
+        var ul = document.querySelector("ul");
+        btn.onclick = function() {
+            if (text.value == " ") {
+                alert("你没有输入任何内容");
+                return false;
+            } else {
+                var li = document.createElement("li");
+                li.innerHTML = text.value;
+                ul.insertBefore(li, ul.children[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

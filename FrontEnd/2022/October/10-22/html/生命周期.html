@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../js/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <h1 :style="{opacity:opy,color: color}">霓虹灯</h1>
+        <button @click="stop()">停止变化</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                opy: 1,
+                color: 'green',
+                colorList: ['red', 'orange', 'pink', 'rosybrown', 'deeppink', 'green', 'purple'],
+                timer: null
+            },
+            methods: {
+                stop() {
+                    this.$destroy()
+                }
+            },
+            created() {
+                this.color = this.colorList[0]
+            },
+            mounted() {
+                i = 0;
+                this.timer = setInterval(() => {
+                    console.log("定时器开启" + this.opy)
+                    this.opy -= 0.01
+                    if (this.opy < 0) {
+                        i++;
+                        if (i >= this.colorList.length) {
+                            i = 0
+                        }
+                        this.color = this.colorList[i]
+                        this.opy = 1;
+                    }
+                }, 30)
+            },
+            beforeDestory() {
+                clearInterval(this.timer)
+            }
+        })
+    </script>
+</body>
+
+</html>

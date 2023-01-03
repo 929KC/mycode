@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <canvas id="a" width="500" height="400"></canvas>
+</body>
+<script>
+    var c = document.getElementById("a");
+    var x = c.getContext('2d');
+    x.moveTo(250, 50);
+    x.lineTo(450, 250);
+    x.lineTo(50, 250);
+    x.lineTo(250, 50);
+    x.fillStyle = 'red';
+    x.stroke();
+    x.fill();
+
+    x.beginPath();
+    // x.moveTo(50,250);
+    // x.lineTo(450,250);
+    // x.lineTo(450,450);
+    // x.lineTo(50,450);
+    // x.lineTo(50,250);
+    x.strokeRect(50, 250, 400, 200);
+    x.fillStyle = 'rosybrown';
+    x.fillRect(50, 250, 400, 200);
+    // x.stroke();
+    x.fill();
+
+    x.beginPath();
+    // x.moveTo(100,280);
+    // x.lineTo(170,280);
+    // x.lineTo(170,350);
+    // x.lineTo(100,350);
+    // x.lineTo(100,280);
+    x.strokeStyle = 'white';
+    x.strokeRect(100, 280, 70, 70);
+    // x.stroke();
+
+    x.beginPath();
+    // x.moveTo(230,300);
+    // x.lineTo(300,300);
+    // x.lineTo(300,450);
+    // x.lineTo(230,450);
+    // x.lineTo(230,300);
+    x.strokeStyle = 'white';
+    x.strokeRect(230, 300, 70, 150);
+    // x.stroke();
+</script>
+
+</html>

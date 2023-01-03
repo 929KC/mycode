@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .tb-promo {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            color: #13ddf8;
+            margin: 0 auto;
+        }
+        
+        .tb-promo img {
+            width: 520px;
+            height: 280px
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .prev,
+        .next {
+            position: absolute;
+            /* 绝对定位的盒子垂直居中 */
+            top: 50%;
+            margin-top: -15px;
+            /* 加了绝对定位的盒子可以直接设置高度宽度 */
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 30px;
+            text-decoration: none;
+        }
+        
+        .prev {
+            left: 0;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        
+        .next {
+            right: 0;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        
+        .promo-nav {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -35px;
+            width: 70px;
+            height: 13px;
+            background: rgba(255, 255, 255, .3);
+            border-radius: 7px;
+        }
+        
+        .promo-nav li {
+            float: left;
+            height: 8px;
+            width: 8px;
+            background-color: #fff;
+            margin: 3px;
+            border-radius: 50%;
+        }
+        
+        .promo-nav .selced {
+            background-color: #ADFF2F;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tb-promo">
+        <img src="tb_好压看图.png">
+        <a href="#">
+            <div class="prev">&lt;</div>
+        </a>
+        <a href="#">
+            <div class="next">&gt;</div>
+        </a>
+        <ul class="promo-nav">
+            <li class="selced"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

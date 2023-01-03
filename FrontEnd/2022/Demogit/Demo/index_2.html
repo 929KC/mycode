@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			#MAX {
+				width: 1600px;
+				height: 900px;
+				position: relative;
+				background: url(imags/form_bg.jpg) no-repeat;
+				background-size: cover;
+			}
+
+			form {
+				width: 600px;
+				height: 400px;
+				margin: 50px auto;
+				padding-left: 30px;
+				position: absolute;
+				left: 48%;
+				top: 10%;
+			}
+
+			h2 {
+				text-align: left;
+				margin: 16px 0;
+				padding-left: 30px;
+			}
+
+			p {
+				margin-top: 20px;
+			}
+
+			p span {
+				width: 75px;
+				display: inline-block;
+				text-align: right;
+				padding-right: 10px;
+			}
+
+			p input {
+				width: 200px;
+				height: 18px;
+				border: 1px solid #38A1BF;
+				padding: 2px;
+			}
+
+			.lucky input {
+				width: 100px;
+				height: 24px;
+			}
+
+			.btn input {
+				width: 100px;
+				height: 30px;
+				background: #93B518;
+				margin-top: 20px;
+				margin-left: 30px;
+				border-radius: 3px;
+				text-align: center;
+				color: #FFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="MAX">
+			<form action="#" method="post">
+				<h2>KC成员信息登记表</h2>
+				<p>
+					<span>用户登录：</span><input type="text" name="user_name" value="myemail@qq.com" disabled
+						readonly>(不能修改，只能查看)
+				</p>
+				<p>
+					<span>真实姓名：</span><input type="text" name="real_name" placeholder="例如:叶秋涵" required
+						autofocus />(必须填写，只能输入)
+				</p>
+				<p>
+					<span>真实年龄：</span><input type="number" name="real_lage" value="24" min="15" max="120"
+						required />(必须填写)
+				</p>
+				<p>
+					<span>出生日期：</span><input type="date" name="birthday" value="2002-9-29" required />(必须填写)
+				</p>
+				<p>
+					<span>电子邮箱：</span><input type="email" name="myemail" placeholder="3076675259@qq.com" required
+						multiple />(必须填写)
+				</p>
+				<p>
+					<span>身份证号：</span><input type="text" name="card" pattern="^\d{8,18}{0-9x}{8,18}{0-9x}{8,18}?$ "
+						required multiple multiple />(必须填写)
+				</p>
+				<p>
+					<span>手机号码：</span><input type="tel" name="telphone" pattern="^\d{11}$" required />(必须填写)
+				</p>
+				<p>
+					<span>个人主页：</span><input type="url" name="myurl" list="urllist" placeholder="https://gitee.com/"
+						pattern="^http://([\w-]+ \ .)+[\w-] + (/[w-./?%&=] *)?$" />(请输入网址)
+					<datalist>
+						<option>https://www.bilibili.com/</option>
+						<option>https://gitee.com/</option>
+						<option>https://www.csdn.net/#</option>
+					</datalist>
+				</p>
+				<p class="lucky">
+					<span>幸运颜色：</span>
+					<input type="color" name="lovecolor" value=" #38A1BF">(请选择你喜欢的颜色)
+				</p>
+				<p class="btn">
+					<input type="submit" value="提交" />
+					<input type=reset" value="重置" />
+				</p>
+			</form>
+		</div>
+	</body>
+</html>

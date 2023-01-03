@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page four</title>
+    <style type="text/css">
+        p {
+            font-family: "黑体";
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        #txtGo {
+            width: 20px;
+        }
+        
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        /* alert(location.hostname+"&&"+location.pathname+"&&"+location.port+"&&"+location.protocol+"&&"+location.href); */
+        var num1 = 4;
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+        window.onload = function() {
+            //单击"btnHome"首页按钮，则转至历史记录中的第一页
+            $("btnHome").onclick = function() {
+                    window.history.go(-3);
+                }
+                //单击"上一页"，转向历史记录中的上一页，相当于"前进"
+            $("btnPrevious").onclick = function() {
+                    window.history.go(-1);
+                }
+                //单击"转到"，根据输入的数字，从当前页面转到相应页面
+            $("btnGo").onclick = function() {
+                //获取"txtGo"文本框中输入的数字
+                var num2 = parseInt($("txtGo").value);
+                //根据数字转向相应的页面
+                $("txtGo").value = null;
+                window.history.go(num2 - num1);
+            }
+        }
+    </script>
+    <p>这是第4个页面</p><br /><br /><br /><br />
+    <div id="">
+        <input type="button" id="btnHome" value="首页" />
+        <input type="button" id="btnPrevious" value="上一页" />
+        <input type="button" id="btnNext" value="下一页" disabled=true />
+        <input type="text" id="txtGo" />
+        <input type="button" id="btnGo" value="转到" />
+        <input type="button" id="btnEnd" value="末页" disabled=true />
+    </div>
+</body>
+
+</html>

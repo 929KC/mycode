@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        .container {
+            width: 800px;
+            height: 500px;
+            border-bottom: 10px solid #000000;
+            overflow: hidden;
+        }
+        
+        .container div {
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            background-color: #4169E1;
+            margin: 0 auto;
+            animation: fall 1s linear infinite alternate;
+            float: left;
+        }
+        
+        .container .box2 {
+            background-color: #FFD700;
+            animation-delay: 0.2s;
+        }
+        
+        .container .box3 {
+            background-color: paleturquoise;
+            animation-delay: 0.4s;
+        }
+        
+        .container .box4 {
+            background-color: palevioletred;
+            animation-delay: 0.6s;
+        }
+        
+        .container .box5 {
+            background-color: green;
+            animation-delay: 0.8s;
+        }
+        
+        .container .box6 {
+            background-color: salmon;
+            animation-delay: 1s;
+        }
+        
+        .container .box7 {
+            background-color: powderblue;
+            animation-delay: 1.2s;
+        }
+        
+        .container .box8 {
+            background-color: gray;
+            animation-delay: 1.4s;
+        }
+        
+        .container .box9 {
+            background-color: blueviolet;
+            animation-delay: 1.6s;
+        }
+        
+        @keyframes fall {
+            0% {
+                margin-top: 0px;
+            }
+            100% {
+                margin-top: 420px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+    </div>
+</body>
+
+</html>

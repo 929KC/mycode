@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+</head>
+<body>
+<a href="#">添加一个学生</a>
+<table width="600" border="1" id="student_table">
+    <tr align="center">
+        <th> 学号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>身份证号码</th>
+        <th>电话号码</th>
+        <th>家庭住址</th>
+        <th>操作</th>
+    </tr>
+</table>
+<script>
+    $(function () {
+        $.ajax({
+            type: "get",
+            url: 'query',
+            dataType: 'json',
+            success: function (data) {
+                var table = $("#student_table")
+                table.empty()
+                table.append("<tr><th>学号</th><th>姓名</th> <th>性别</th> <th>身份证号  </th><th>电话号码</th><th>家庭住址</th><th>操作</th></tr>")
+                for (var i = 0; i < data.length; i++) {
+                    var str = "<tr><td>" + data[i].id + "</td><td>" + data[i].gender + "</td><td>" + data[i].username + "</td><td>" + data[i].card + "</td><td>" + data[i].phone + "</td><td>" + data[i].address + "</td><td>" + 删除 + "</td></tr>";
+                    table.append(str);
+                }
+            }
+        })
+    })
+
+</script>
+</body>
+</html>

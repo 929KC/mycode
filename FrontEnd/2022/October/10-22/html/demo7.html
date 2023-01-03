@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../js/vue.js">
+    </script>
+    <style type="text/css">
+        #info {
+            width: 80px;
+            height: 25px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        
+        .error {
+            background-color: #FF0000;
+            color: #FFFFFF;
+        }
+        
+        .right {
+            background-color: #008000;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        请输入数字：<input type="text" v-model="text" />
+        <p id="info" v-bind:class="color">{{info}}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                text: '',
+                info: '正确',
+                color: 'right'
+
+            },
+            watch: {
+                text(val) {
+                    console.log(isNaN(val));
+                    if (isNaN(val)) {
+                        this.color = "error";
+                        this.info = "错误";
+                    } else {
+                        this.color = "right";
+                        this.info = "正确";
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

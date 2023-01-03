@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+</head>
+
+<body>
+    <form id="frmAddress" name="frmAddress">
+        省份：<select name="sltSheng" id="sltSheng">
+                <option value="-1">==请选择==</option>
+            </select> 城市：
+        <select name="sltCity" id="sltCity">
+                <option value="-1">==请选择==</option>
+            </select>
+    </form>
+    <script>
+        //定义存放省份的一维数组
+        var shengs = ["湖南省", "广东省"];
+        //定义存放城市的二维数组
+        var citys = [
+            ["长沙市", "株洲市", "常德市", "邵阳市", "郴州市"],
+            ["广州市", "深圳市", "揭阳市", "东莞市"]
+        ];
+        //获得省份下拉列表框
+        var targetSheng = document.getElementById('sltSheng');
+        //获得城市下拉列表框
+        var targetCity = document.getElementById('sltCity');
+        for (var i = 0; i < shengs.length; i++) {
+            var t = new Option(shengs[i], i);
+            targetSheng.appendChild(t);
+        }
+        targetSheng.onchange = function() {
+            var t = targetSheng.value;
+            var arr = citys[t];
+            targetCity.length = 1;
+            for (var i = 0; i < arr.length; i++) {
+                var x = new Option(arr[i], i);
+                targetCity.add(x);
+            }
+        }
+    </script>
+</body>
+
+</html>

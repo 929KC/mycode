@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="calculate" method="post">
+    请输入第一个数: <input type="text" name="num1"> <br>
+    请输入第二个数: <input type="text" name="num2"> <br>
+    请选择运算:
+    <select name="select" id="select">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    结果: <h6 th:text="${result}"></h6>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
+
+

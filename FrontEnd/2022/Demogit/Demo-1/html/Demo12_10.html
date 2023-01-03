@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				list-style: none;
+			}
+			.clearfix:before,
+			.clearfix:after {
+				content: "";
+				display: table;
+			}
+			
+			.clearfix:after {
+				clear: both;
+			}
+			
+			.clearfix {
+				*zoom: 1;
+			}
+			ul {
+				height: 23px;
+				width: 647px;
+			}
+
+			ul li {
+				float: left;
+				margin-right: 18px;
+				height: 23px;
+				line-height: 23px;
+			}
+				
+			a{
+				text-decoration: none;
+			}
+			ul li a:link,
+			a:visited {
+				color: #000;
+				
+			}
+
+			ul li a:hover {
+				color: #F27B03;
+			}
+
+			ul li span {
+				color: #F27B03;
+			}
+
+			body {
+				color: #000;
+				font-size: 12px;
+				font-family: "黑体";
+			}
+
+			.box {
+				width: 994px;
+				height: 122px;
+				margin: 0 auto;
+
+			}
+
+			.logo {
+				float: left;
+				width: 333px;
+				height: 80px;
+				padding: 42px 0 0 14px;
+
+			}
+
+			.wrap {
+				float: left;
+				width: 647px;
+				height: 122px;
+			}
+
+			.current {
+				width: 60px;
+				height: 23px;
+				text-align: center;
+				background-color:  #F27B03;
+				color: #D9D9D9;
+			}
+
+			.top {
+				width: 647px;
+				height: 23px;
+				padding-top: 19px;
+			}
+
+			.content {
+				width: 647px;
+				height: 33px;
+			}
+
+			.c_left {
+				float: left;
+			}
+
+			.c_center {
+				float: left;
+				height: 29px;
+				width: 445px;
+				border-top: 2px solid #EF8219;
+				border-bottom: 2px solid #EF8219;
+			}
+
+			.c_center input {
+				width: 429px;
+				height: 29px;
+				line-height: 27px;
+				background: url(../imags/search.jpg) no-repeat left center;
+				padding-left: 16px;
+			}
+
+			.c_right {
+				float: left;
+			}
+
+			.text {
+				float: left;
+				padding-left: 10px;
+				line-height: 17px;
+			}
+
+			.bottom {
+				padding-top: 10px;
+			}
+
+			.bottom ul {
+				padding-left: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="logo"><img src="../imags/logo.jpg"></div>
+			<div class="wrap">
+				<div class="top">
+					<ul>
+						<li class="current">宝贝</li>
+						<li><a href="#">天猫<span>(淘宝商城)</span></a></li>
+						<li><a href="#">店铺</a></li>
+					</ul>
+				</div>
+				<div class="center clearfix">
+					<div class="c_left"><img src="../imags/left.jpg"></div>
+					<div class="c_center"><input type="text" name="search"></div>
+					<div class="c_right"><input type="image" src="../imags/button.jpg"></div>
+					<div class="text "><a href="#">高级搜索</a><br>
+						<a href="#">使用帮助</a>
+					</div>
+				</div>
+				<div class="bottom">
+					<ul>
+						<li><a href="#">长裙</a></li>
+						<li><a href="#">哈伦裤</a></li>
+						<li><a href="#">新款连衣裙</a></li>
+						<li><a href="#">时尚包包</a></li>
+						<li><a href="#">中老年夏装</a></li>
+						<li><a href="#">男T桖</a></li>
+						<li><a href="#">iphone4手机壳</a></li>
+						<li><a href="#">更多>></a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

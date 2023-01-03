@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"> c
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        内容<input type="text" :readonly="disAble" v-model="textValue" :style="{backgroundColor:bgcolor, borderColor: brcolor}" @dblclick="textDbclick()">
+        <button :disabled="disAble" @click="btnOk()">确定</button>
+        <p>{{result}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                textValue: "",
+                disAble: true,
+                bgcolor: '#dddddd',
+                brcolor: '#eeeeee',
+                result: ''
+            },
+            methods: {
+                textDbclick() {
+                    this.disAble = false;
+                    this.bgcolor = "#ffffff";
+                    this.brcolor = "#000000"
+                },
+                btnOk() {
+                    this.result = "你提交的文本是：" + this.textValue;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 1px solid gray;
+            width: 400px;
+            height: 80px;
+            border-radius: 20px;
+            margin: 0 auto;
+        }
+        
+        .light {
+            border: 1px solid gray;
+            width: 60px;
+            height: 60px;
+            margin: 15px;
+            border-radius: 60px;
+            float: left;
+        }
+        
+        #count {
+            text-align: center;
+            font-size: 36px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box">
+        <div id="red" class="light"></div>
+        <div id="yellow" class="light"></div>
+        <div id="green" class="light"></div>
+        <div id="count" class="light"></div>
+    </div>
+
+
+
+    <script>
+        var red = document.getElementById("red");
+        var green = document.getElementById("green");
+        var yellow = document.getElementById("yellow");
+        var count2 = document.getElementById("count");
+        var count = 3;
+        var flag = 1;
+
+        window.setInterval(show, 100);
+
+        function show() {
+            --count;
+            count.innerHTML = "" + count;
+            if (count <= 0) {
+                if (flag == 1) {
+                    count = 3;
+                    flag = 2;
+                    setYellow();
+                } else if (flag == 2) {
+                    count = 3;
+                    flag = 3;
+                    setRed();
+                } else if (flag == 3) {
+                    count = 3;
+                    flag = 1;
+                    setGreen();
+                }
+            }
+            if (count < 10) {
+                count2.innerHTML = "0" + count;
+            } else {
+                count2.innerHTML = count;
+            }
+        }
+        window.onload = function() {
+            setGreen();
+        }
+
+        function setRed() {
+            red.style.backgroundColor = "red";
+            green.style.backgroundColor = "gray";
+            yellow.style.backgroundColor = "gray";
+        }
+
+        function setYellow() {
+            red.style.backgroundColor = "gray";
+            green.style.backgroundColor = "gray";
+            yellow.style.backgroundColor = "yellow";
+        }
+
+        function setGreen() {
+            red.style.backgroundColor = "gray";
+            green.style.backgroundColor = "green";
+            yellow.style.backgroundColor = "gray";
+        }
+    </script>
+</body>
+
+</html>

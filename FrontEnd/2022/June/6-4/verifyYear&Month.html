@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type=text] {
+            width: 80px;
+            height: 25px;
+            font-size: 14px;
+            border-color: #bbb;
+            border-radius: 2px;
+            border: #ccc 1px solid;
+            outline: 0;
+            padding: 0 10px;
+            /* -webkit-transition: margin-bottom: 15px;
+            box-shadow .5s; */
+        }
+        
+        input[type=text]:hover,
+        input[type=text]:focus,
+        input[type=submit]:hover {
+            border: 1px solid #56b4ef;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 0 8px rgba(82, 168, 236, .6);
+            -webkit-transition: box-shadow .5s;
+        }
+        
+        input::-webkit-input-placeholder {
+            color: #999;
+            -webkit-transition: color .5s;
+        }
+        
+        input:focus::-webkit-input-placeholder,
+        input:hover::-webkit-input-placeholder {
+            color: #c2c2c2;
+            -webkit-transition: color .5s;
+        }
+        
+        input[type=submit] {
+            height: 30px;
+            width: 80px;
+            background: #4393C9;
+            border: 1px solid #fff;
+            color: #fff;
+            font: 14px bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form" action="ok.html" name="aaa">
+        年份 <input type="text" name="year"> 月份 <input type="text" name="month">
+        <input type="submit" value="查询">
+    </form>
+    <div id="result"></div>
+    <script>
+        window.onload = function() {
+                //获得#form表单元素对象
+                var form = document.getElementById('form');
+                //获得input元素集合
+                var inputs = document.getElementsByTagName('input');
+                //获得#result的div元素对象，用于显示提示信息
+                var result = document.getElementById('result');
+
+                //处理年份文本框的获得焦点事件
+                inputs.year.onfocus = function() { //placeholder属性提供可描述输入字段预期值的提示信息：4位数字
+                        this.placeholder = '4位数字';
+                    }
+                    //处理年份文本框的失去焦点事件
+                inputs.year.onblur = function() {
+                        this.placeholder = '';
+                        //去掉年份字符串的前后空格
+                        var t = /\s/g;
+                        inputs[0].value = inputs[0].value.replace(t, '');
+                        //调用checkYear检查年份是否符合要求
+                        //符合，清除文字提示
+                        if (checkYear(inputs[0].value)) {
+                            result.innerHTML = '';
+                            result.style.color = '';
+                        }
+                        //不符合，红色文字提示
+                        else {
+                            result.innerHTML = '输入错误，年份用4位数字表示';
+                            result.style.color = 'red';
+                        }
+                    }
+                    //处理月份文本框的获得焦点事件
+                inputs.month.onfocus = function() { //提示信息：1~2位数字
+                        this.placeholder = '1~2位数字';
+                    }
+                    //处理月份文本框的失去焦点事件
+                inputs.month.onblur = function() {
+                    this.placeholder = '';
+                    //去掉月份字符串的前后空格
+                    var t = /\s/g;
+                    inputs[1].value = inputs[1].value.replace(t, '');
+                    //调用checkMonth检查月份是否符合要求
+                    //符合，清除文字提示
+                    if (checkMonth(inputs[1].value)) {
+                        result.innerHTML = '';
+                        result.style.color = '';
+                    }
+                    //不符合，红色文字提示
+                    else {
+                        result.innerHTML = '输入错误，月份用1~2位数字表示';
+                        result.style.color = 'red';
+                    }
+                }
+
+                //处理表单的提交事件，年份、月份均符合格式要求，允许提交，否则阻止提交
+                form.onsubmit = function() {
+                    return checkMonth(inputs[1].value) && checkYear(inputs[0].value);
+                }
+            }
+            //定义checkYear函数，判断给定的年份是否符合格式要求，是，返回true，否，返回false。
+        function checkYear(year) {
+            //方法一：字符串对象的match方法
+
+            //方法二：字符串对象的search方法
+            var t = /^(20|19)\d{2}$/;
+            if (year.search(t) == -1) return false;
+            else return true;
+        }
+        //定义checkMonth函数，判断给定的月份是否符合格式要求，是，返回true，否，返回false。
+        function checkMonth(month) {
+            //方法一：正则对象的test方法
+            var t = /^0?[1-9]$|^1[0|1|2]$/;
+            if (t.test(month)) return true;
+            else return false;
+
+        }
+    </script>
+</body>
+
+</html>

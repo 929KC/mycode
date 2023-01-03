@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="dedlete" method="get">
+    <table width="900" cellspacing="" border="2px">
+        <tr align="center">
+            <th>班级号</th>
+            <th>班级名称</th>
+            <th>班主任</th>
+            <th>专业</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="myclass : ${myclasses}">
+            <td align="center" th:text="${myclass.id}"></td>
+            <td align="center" th:text="${myclass.classname}"></td>
+            <td align="center" th:text="${myclass.teacher}"></td>
+            <td align="center" th:text="${myclass.professional}"></td>
+            <td align="center" ><a th:href="@{/delete(id=${myclass.id})}" >删除</a></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+
+

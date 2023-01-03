@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+<h1>调查问卷,请您投票:</h1>
+<h2>您认为世界上那支球队能够夺冠</h2>
+<form action="vote" method="post">
+    <table width="150" border="2">
+        <tr>
+            <td align="center"><input type="radio" name="radio" value="巴西"></td>
+            <td align="center">巴西</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="radio" name="radio" value="阿根廷"></td>
+            <td align="center">阿根廷</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="radio" name="radio" value="法国"></td>
+            <td align="center">法国</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="radio" name="radio" value="英格兰"></td>
+            <td align="center">英格兰</td>
+        </tr>
+        <tr ><td align="center" border="0px"><input type="submit"></td></tr>
+    </table>
+    <h1><a th:href="@{/toview}" align="center">查看投票</a></h1>
+</form>
+</body>
+</html>
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    .main-nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: aliceblue;
+    }
+    
+    .nav li {
+        list-style: none;
+        float: right;
+        margin-right: 3px;
+    }
+    
+    .logo {
+        float: left;
+    }
+    
+    .menu {
+        float: right;
+        display: none;
+    }
+    
+    .content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .content li {
+        float: left;
+        width: 25%;
+    }
+    
+    img {
+        width: 100%;
+    }
+    
+    @media screen and (max-width:768px) {
+        .menu {
+            display: block;
+        }
+        .main-nav .nav {
+            display: none;
+        }
+        .content li {
+            width: 50%;
+        }
+    }
+    
+    @media screen and (max-width:486px) {
+        .content li {
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <nav class="main-nav">
+        <a href="#" class="logo">LOGO</a>
+        <ul class="nav">
+            <li><a href="#">电视剧</a></li>
+            <li><a href="#">动漫</a></li>
+            <li><a href="#">电影</a></li>
+        </ul>
+
+        <a href="#" class="menu">菜单</a>
+        <div style="clear: both;"></div>
+    </nav>
+
+    <div class="content">
+        <ul>
+            <li><img src="imges/mv1.jpg" alt="" /></li>
+            <li><img src="imges/mv2.jpg" alt="" /></li>
+            <li><img src="imges/mv3.jpg" alt="" /></li>
+            <li><img src="imges/mv4.jpg" alt="" /></li>
+        </ul>
+    </div>
+</body>
+
+</html>

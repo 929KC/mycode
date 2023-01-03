@@ -1,0 +1,61 @@
+.container {
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+	height: 100vh;
+	background-color: #ccc;
+}
+
+.c-video {
+	width: 100%;
+	max-width: 960px;
+	position: relative;
+	overflow: hidden;
+}
+
+.video {
+	width: 100%;
+}
+
+.controls {
+	display: flex;
+	position: absolute;
+	width: 100%;
+	flex-wrap: wrap;
+	background: rgba(0, 0, 0, 0.6);
+	transform: translateY(-100%);
+}
+
+.buttons {
+	color: #FFFFFF;
+	padding: 10px;
+}
+
+.buttons button#playPause {
+	background: none;
+	color: #FFFFFF;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}
+
+.buttons button#playx2 {
+	background: none;
+	font-size: 16px;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}
+.x2ok{
+	color: orangered;
+}
+.x1ok{
+	color: #FFFFFF;
+}
+span{
+	background: none;
+	color: #FFFFFF;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}

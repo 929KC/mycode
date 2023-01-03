@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/blog_list.css">
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/common.js"></script>
+</head>
+<body>
+<div class="nav">
+    <img src="image/1.jpg" alt="">
+    <div class="spacer"></div>
+    <span>我的博客系統</span>
+    <a href="bolg_list.html">主页</a>
+    <a href="blog_edit.html">写博客</a>
+    <a href="logout">注销</a>
+
+</div>
+<div class="container">
+    <div class="container-left">
+        <div class="card">
+            <img src="image/2.jpg" alt="" width="60px" height="60px">
+            <h3></h3>
+            <a href="https://github.com/">github</a>
+            <div class="counter">
+                <span>文章</span>
+                <span>分类</span>
+            </div>
+            <div class="counter">
+                <span>2</span>
+                <span>1</span>
+            </div>
+        </div>
+    </div>
+    <div class="container-right">
+        <div class="blog">
+            <div class="title">第一篇博客</div>
+            <div class="date">2022-11-14 13:43:00</div>
+            <div class="desc">从今天起, 我要认真敲代码. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum distinctio
+                ullam eum ut           veroab laborum numquam tenetur est in dolorum a sint, assumenda adipisci
+                similique quaerat vel.           Facere,         et.
+            </div>
+            <a href="blog_detail.html">查看全文 &gt;&gt;</a>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    function getBlogList() {
+        $.ajax({
+            type: "GET",
+            url: 'blog',
+            success: function (body) {
+                console.log(body);
+                let rightDiv = document.querySelector(".container-right");
+                rightDiv.innerHTML = '';
+                for (let blog of body) {
+                    //构造博客的Div
+                    let blogDiv = document.createElement("div");
+                    blogDiv.className = 'blog';
+                    //构造标题
+                    let titleBLog = document.createElement('div');
+                    titleBLog.className = 'title';
+                    titleBLog.innerHTML = blog.title;
+                    blogDiv.appendChild(titleBLog);
+                    //构造日日期
+                    let dateBLog = document.createElement('div');
+                    dateBLog.className = 'date';
+                    dateBLog.innerHTML = blog.postTime;
+                    blogDiv.appendChild(dateBLog);
+                    //构造正文
+                    let descBlog = document.createElement('div');
+                    descBlog.className = 'desc';
+                    descBlog.innerHTML = blog.content;
+                    blogDiv.appendChild(descBlog);
+                    let a = document.createElement("a");
+                    a.href = 'blog_detail.html?blogId=' + blog.blogId;
+                    a.innerHTML = '查看博客 &gt;&gt;'
+                    blogDiv.appendChild(a)
+                    rightDiv.appendChild(blogDiv);
+                }
+            }
+        })
+    }
+
+    function getUserInfo() {
+        $.ajax({
+            type: 'get',
+            url: 'userInfo',
+            success: function (body) {
+                console.log(body);
+                console.log(body.username);
+                let h3 = document.querySelector(".container-left > .card>h3");
+                h3.innerHTML = body.username;
+            }
+        });
+    }
+
+
+    // function  changeBackGround(){
+    //     var arr=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"];
+    //     backgroundImage.src = "image/"+arr[Math.random()*10];
+    //     setTimeout(changeBackGround,1000);
+    // }
+    // changeBackGround();
+    getBlogList();
+    getLoginStatus();
+    getUserInfo();
+</script>
+</html>

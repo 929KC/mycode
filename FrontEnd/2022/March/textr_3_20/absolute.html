@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+
+</head>
+
+<body>
+    <input type="text" id="num1">
+    <input type="button" value="计算绝对值" id="btn">
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        $("btn").onclick = function() {
+            var textValue = $("num1").value;
+            var number = parseFloat(textValue) && Number(textValue);
+            if (isNaN(number)) {
+                alert("非法数值！");
+            } else {
+                alert("绝对值为：" + getAbs(number));
+            }
+        }
+
+        function getAbs(num) {
+            if (num > 0) {
+                return num;
+            } else if (num == 0) {
+                return num;
+            } else {
+                return -num;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

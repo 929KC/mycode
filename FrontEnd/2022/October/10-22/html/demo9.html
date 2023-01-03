@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../js/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>注册页面</h1>
+        <form action="" method="">
+            姓名:<input type="text" name="xm" v-model="sname" /><br> 密码:
+            <input type="password" name="ps" v-model="pwd1" /><br> 确认密码:
+            <input type="password" name="ps2" v-model="pwd2" /><br> 电子邮件:
+            <input type="text" name="email" v-model="email" /><br> 性别:
+            <input type="radio" name="sex" id="" value="男" v-model="sex" />男
+            <input type="radio" name="sex" id="" value="女" v-model="sex" />女<br> 班级:
+            <select name="" v-model="sclass">
+					<option value="21软件1班" selected>21软件1班</option>
+					<option value="21软件2班">21软件2班</option>
+					<option value="21软件3班">21软件3班</option>
+					<option value="21软件4班">21软件4班</option>
+				</select><br> 爱好:
+            <input type="checkbox" name="a" id="" value="音乐" v-model="ah" />音乐
+            <input type="checkbox" name="a" id="" value="运动" v-model="ah" />运动
+            <input type="checkbox" name="a" id="" value="读书" v-model="ah" />读书
+            <input type="checkbox" name="a" id="" value="游戏" v-model="ah" />游戏<br> 人生格言:
+            <textarea rows="" cols="" v-model="gy">
+					我的人生格言
+				</textarea><br> 是否入党:
+            <input type="checkbox" v-model="rd" />是
+        </form>
+        <hr/>
+        <div>
+            <h1>注册信息</h1>
+            姓名:{{sname}} <br> 密码：{{pwd1}}
+            <br> 电子邮件：{{email}}
+            <br> 性别：{{sex}}
+            <br> 班级：{{sclass}}
+            <br> 爱好：{{ah}}
+            <br> 格言：{{gy}}
+            <br> 是否入党：{{rd}}
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                sname: "",
+                pwd1: '',
+                pwd2: '',
+                email: '',
+                sex: '',
+                sclass: '21软件1班',
+                ah: [],
+                gy: "",
+                rd: false
+            },
+            watch: {
+                pwd2(val) {
+                    if (this.pwd1 === val) {
+                        console.log(this.pwd1 === val);
+                    } else {
+                        console.log('密码不一致');
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>ECharts</title>
+    <!-- 引入刚刚下载的 ECharts 文件 -->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+<!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    function getAvg() {
+        var myChart = echarts.init(document.getElementById('main'));
+        var option = 0;
+        var pieData=[];
+        $.ajax({
+            type: 'GET',
+            url: 'query2',
+            success: function (data) {
+                $.each(data,function(index,obj){
+                    pieData.push({
+                        name:obj.courseName,
+                        value:obj.avgscore
+                    });
+                });
+                console.log(pieData)
+                myChart.setOption({
+                    series : [
+                        {
+                            name: '访问来源',
+                            type: 'pie',    // 设置图表类型为饼图
+                            radius: '55%',  // 饼图的半径，外半径为可视区尺寸（容器高宽中较小一项）的 55% 长度。
+                            data:pieData
+                        }
+                    ]
+                })
+                myChart.setOption(option);
+            }
+        });
+    }
+
+    getAvg();
+</script>
+</body>
+</html>

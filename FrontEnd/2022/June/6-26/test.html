@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <div v-html="message"></div> -->
+        <p v-if="seen">你可以看到我吗？</p>
+        <a v-bind:href="url">B站</a>
+        <p>{{message}}</p>
+        <input v-model="message">
+        <button v-on:click=" reverseStr">反转字符串</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false; //阻止vue启动时生成生产提示
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: 'Hello Worle',
+                seen: true,
+                url: "https://www.bilibili.com/"
+            },
+            methods: {
+                reverseStr: function() {
+                    this.message = this.message.split(' ').reverse().join(' ');
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

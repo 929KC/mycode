@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.clearfix:before,
+			.clearfix:after {
+				content: "";
+				display: table;
+			}
+
+			.clearfix:after {
+				clear: both;
+			}
+
+			.clearfix {
+				*zoom: 1;
+			}
+
+			.all {
+				position: relative;
+				width: 350px;
+				height: 400px;
+				border: 1px black  solid;
+				margin: 0 auto;
+
+			}
+
+			.fly {
+				position: absolute;
+				left: 0;
+				top: 0;
+
+			}
+
+			.all a img {
+				padding: 10px 20px;
+			}
+
+			.box .p1 strong {
+				color: red;
+				font-weight: 700;
+				font-size: 30px;
+				padding-right: 5px;
+			}
+
+			.two {
+				margin-left: 250px;
+			}
+
+			#one {
+				color: #ffaa00;
+			}
+
+			.box .p1 {
+				float: left;
+				padding: 0 10px;
+				color: #d9d9d9;
+
+			}
+
+			.box a img {
+				float: right;
+			}
+
+			.all .title {
+				width: 320px;
+				margin: 20px 0;
+				padding: 0 20px;
+			}
+
+			.all .title a {
+				color: #62aa68;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="all"><span class="fly"><img src="../imags/top_tu.gif"></span>
+			<a href="#"><img src="../imags/adv.jpg"></a>
+			<div class="title">
+				<h3><a href="#">【12店通用，领航冰品哈根达斯：冰淇淋双球，品味任选2种，节假通用.</a></h3>
+			</div>
+			<div class="box">
+				<p class="p1"><strong>￥20.8</strong>原价￥38</p>
+				<p class="p2"><a href="#"><img src="../imags/see.jpg" height="30" width="80" class="clearfix"></a>
+				</p>
+			</div>
+			<div class="two"><b id="one">32</b>人已购买</div>
+		</div>
+
+	</body>
+</html>

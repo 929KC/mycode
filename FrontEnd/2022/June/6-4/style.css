@@ -1,0 +1,102 @@
+body {
+    margin-top: 20px;
+}
+
+.box {
+    font-size: 13px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.box-head {
+    padding: 15px 20px;
+    font-size: 14px;
+    text-align: center;
+    font-size: 24px;
+    font: bolder;
+}
+
+.box-body {
+    padding: 10px 20px;
+}
+
+.box-body th {
+    font-weight: normal;
+    vertical-align: top;
+    padding-top: 12px;
+}
+
+.box-body tr:last-child {
+    text-align: center;
+}
+
+.box-body input {
+    vertical-align: middle;
+    font-family: Tahoma, simsun;
+    font-size: 12px;
+}
+
+.box-body input[type=text],
+.box-body input[type=password] {
+    border-color: #bbb;
+    height: 38px;
+    font-size: 14px;
+    border-radius: 2px;
+    outline: 0;
+    border: #ccc 1px solid;
+    padding: 0 10px;
+    width: 350px;
+    -webkit-transition: box-shadow .5s;
+    margin-bottom: 15px;
+}
+
+.box-body input[type=text]:hover,
+.box-body input[type=text]:focus,
+.box-body input[type=password]:hover,
+.box-body input[type=password]:focus {
+    border: 1px solid #56b4ef;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 0 8px rgba(82, 168, 236, .6);
+    -webkit-transition: box-shadow .5s;
+}
+
+.box-body input::-webkit-input-placeholder {
+    color: #999;
+    -webkit-transition: color .5s;
+}
+
+.box-body input:focus::-webkit-input-placeholder,
+input:hover::-webkit-input-placeholder {
+    color: #c2c2c2;
+    -webkit-transition: color .5s;
+}
+
+.box-body input[type=submit] {
+    padding: 4px 15px;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    background: #4393C9;
+    border: 1px solid #fff;
+    color: #fff;
+    font: 16px bolder;
+}
+
+.box-body .error {
+    border: 1px solid #FF3300;
+    background: #FFF2E5;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.box-body .success {
+    border: 1px solid #01BE00;
+    background: #E6FEE4;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}

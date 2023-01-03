@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表</title>
+    <style>
+        .div {
+            border: 5px rgb(0, 121, 52) solid;
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+
+    </div>
+    <button>显示内容</button>
+    <script>
+        var btn = document.querySelector("button");
+        console.log(btn);
+        btn.onclick = function() {
+            var arr = ["北京", "上海", "广州", "长沙", "株洲"];
+            var str = "";
+            for (var i in arr) {
+                str = str + "<li><a>" + arr[i] + "</li></a>";
+            }
+            str = "<ul>" + str + "</ul>";
+            document.querySelector("div").innerHTML = str;
+        }
+    </script>
+</body>
+
+</html>

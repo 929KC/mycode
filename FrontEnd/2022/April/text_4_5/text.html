@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+    <style>
+        #box {
+            width: 520px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        p {
+            height: 280px;
+            color: white;
+            font-family: "arial black";
+            font-size: 24px;
+            padding: 20px;
+            border: 2px dotted yellow;
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+
+
+<body>
+    <img src="tup01.jpg" alt="">
+    <div id="box">
+        <input id="start" type="button" value="开始播放广告" />&nbsp;&nbsp;
+        <input id="stop" type="button" value="结束播放" />
+        <p id="txt">热爱生活冷静选择(奥克斯空调) </p>
+    </div>
+    <script>
+        var arr = ["男人就应该对自己狠一点（柒牌服饰）", "我的地盘听我的（中国移动通信动感地带）", "钻石恒久远，一颗永留传。（迪比尔斯）", "帕萨特，成就明天(帕萨特系列) ", "热爱生活冷静选择(奥克斯空调) "];
+        var ret = 0;
+        var count = 0;
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+        //定义显示函数show——在段落中显示数组中的一条广告语句，显示完所有广告语之后，重头开始
+        function show() {
+            $("txt").innerHTML = arr[count];
+            count++;
+            if (count >= arr.length) {
+                count = 0;
+            }
+            ret = setTimeout("show()", 1000);
+        }
+
+        window.onload = function() {
+            $("start").onclick = function() {
+                show();
+            }
+
+            $("stop").onclick = function() {
+                clearTimeout(ret);
+            }
+        }
+    </script>
+</body>
+
+</html>

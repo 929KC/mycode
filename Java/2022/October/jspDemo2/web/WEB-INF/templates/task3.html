@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="update" method="post">
+    班级号: <input type="text" name="id"> 班级名称: <input type="text" name="classname"><br>
+    班主任: <input type="text" name="teacher"> 专业: <input type="text" name="professional">
+    <input type="submit" value="修改">
+    <table width="900" cellspacing="" border="2px">
+        <tr align="center">
+            <th>班级号</th>
+            <th>班级名称</th>
+            <th>班主任</th>
+            <th>专业</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="myclass : ${myclasses}">
+            <td align="center" th:text="${myclass.id}"></td>
+            <td align="center" th:text="${myclass.classname}"></td>
+            <td align="center" th:text="${myclass.teacher}"></td>
+            <td align="center" th:text="${myclass.professional}"></td>
+            <td align="center" ><a th:href="@{/update(id=${myclass.id})}" >选择</a></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+
+

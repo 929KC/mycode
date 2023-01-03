@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object.defineproperty</title>
+</head>
+
+<body>
+
+    <script>
+        let number = 8;
+        let person = {
+            name: "叶秋涵",
+            sex: "女",
+            age: number
+        }
+        Object.defineProperty(person, "age", {
+            // value: 19
+            enumerable: true, //可枚举,
+            writable: true, //可修改
+            configurable: true, //可删除
+            get() {
+                console.log("读取了该数据");
+                return number;
+            },
+            set(value) {
+                console.log("数据被修改了" + value);
+                number = value;
+            }
+        })
+        console.log(person);
+        console.log(Object.keys(person));
+        for (let key in person) {
+            console.log(key);
+        }
+    </script>
+</body>
+
+</html>

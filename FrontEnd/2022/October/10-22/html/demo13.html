@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>鼠标事件</title>
+    <script src="../js/vue.js">
+    </script>
+    <style>
+        #box {
+            width: 500px;
+            height: 400px;
+            background-color: #eee;
+        }
+        
+        .tp {
+            width: 100px;
+            position: absolute;
+        }
+        
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="tp" :style="{left:left+'px',top:top+'px'}" @mouseenter="menter">
+            <img src="../image/head1.jpg">
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#box',
+            data: {
+                left: 300,
+                top: 100
+            },
+            methods: {
+                menter(e) {
+                    var x = e.pageX;
+                    var y = e.pageY;
+                    var n = Math.floor(Math.random(100) * 200);
+                    if (x < this.left + 100) {
+                        this.left += n;
+                        if (this.left > 400)
+                            this.left = 80
+                    } else {
+                        this.left -= n;
+                        if (this.left < 0)
+                            this.left = 80
+                    }
+                    if (y < this.top + 100) {
+                        this.top += n;
+                        if (this.top > 300)
+                            this.top = 10
+                    } else {
+                        this.top -= n;
+                        if (this.top < 0)
+                            this.top = 10
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

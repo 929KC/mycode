@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>自动跳转</title>
+    <style>
+        body {
+            background: gray;
+        }
+        
+        div {
+            margin: 20px auto;
+            width: 360px;
+            height: 150px;
+            border: 1px solid #000;
+            background: white;
+            padding: 10px;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        span {
+            display: inline-block;
+            width: 50px;
+            text-align: center;
+            color: red;
+            font-size: 40px;
+            border: 1px solid blue;
+            background: lightgray;
+        }
+    </style>
+    <script type="text/javascript">
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        window.onload = function() {
+            var counts = 5;
+            var time;
+
+            function count() {
+                counts--;
+                if (counts == 0) {
+                    window.location.href = "https://www.baidu.com/";
+                    window.clearInterval(t);
+                } else {
+                    $("seconds").innerHTML = counts;
+                }
+            }
+            time = window.setInterval(count, 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h2>提交成功</h2>
+        <span id="seconds">5</span>秒后系统会自动跳转，也可单击<a href="http://www.baidu.com">此链接</a>跳转
+    </div>
+</body>
+
+</html>

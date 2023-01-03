@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+    <style type="text/css">
+        .div1 {
+            width: 450px;
+        }
+        
+        .div2 {
+            width: 100%;
+            height: 98px;
+            background-color: deeppink;
+        }
+        
+        .div2>ul {
+            margin: 0;
+            padding: 0;
+            margin-left: 160px;
+        }
+        
+        .div2>ul>li {
+            list-style: none;
+            float: left;
+            color: white;
+            font-size: 22px;
+            padding: 30px 5px 0px 5px;
+        }
+        
+        .div3 {
+            width: 448px;
+            height: 5px;
+            background-color: aliceblue;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+            border: 1px solid #000000;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            overflow: hidden;
+            transition: height 1s ease;
+        }
+        
+        .div3>ul {
+            margin: 0;
+            padding: 0;
+            margin-left: 40px;
+        }
+        
+        .div3>ul>li {
+            list-style: none;
+            float: left;
+            font-size: 20px;
+            padding: 8px 15px 0px 10px;
+            transition: all 0.5s;
+        }
+        
+        .div3:hover {
+            height: 50px;
+        }
+        
+        .li1:hover {
+            font-size: 23px;
+            color: #00FFFF;
+        }
+        
+        .li2:hover {
+            font-size: 23px;
+            color: #FF1493;
+        }
+        
+        .li3:hover {
+            font-size: 23px;
+            color: bisque;
+        }
+        
+        .li4:hover {
+            font-size: 23px;
+            color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <div class="div2">
+            <ul>
+                <li>首页</li>
+                <li>软件</li>
+                <li>前端设计</li>
+                <li><i class="fa fa-search fa-lg"></i></li>
+                <li><i class="fa fa-bars fa-lg"></i></li>
+            </ul>
+        </div>
+        <div class="div3">
+            <ul>
+                <li class="li1">XHTML</li>
+                <li class="li2">HTML5</li>
+                <li class="li3">CSS3</li>
+                <li class="li4">HTML</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

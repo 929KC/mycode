@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="fdiv">
+        <p id="p1">我是第一行内容</p>
+        <p id="p2">我是第二行内容</p>
+        <p id="p3">我是第三行内容</p>
+        <p id="p4">我是第四行内容</p>
+    </div>
+    <input type="button" id="btnReplace" value="将第2行内容替换为JavaScript课程" />
+    <script>
+        window.onload = function() {
+            //将#btnReplace按钮的单击事件绑定事件处理程序
+            document.getElementById("btnReplace").onclick = function() {
+                // 获得父元素div
+                var div = document.getElementById("fdiv");
+                // 获得div下的第2个p子元素
+                var p2 = div.children[1];
+                // 创建新的<div>元素节点
+                var newdiv = document.createElement("div");
+                // 设置div元素的文本内容
+                newdiv.innerHTML = "Hello World";
+                // 在父元素中，把第二个p元素替换成新元素div
+                div.replaceChild(newdiv, p2);
+
+            }
+        }
+    </script>
+</body>
+
+</html>

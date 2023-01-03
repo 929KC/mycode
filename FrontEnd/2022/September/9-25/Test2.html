@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            margin: 0 15px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+        
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+        
+        .container {
+            border-radius: 5px;
+            background-color: #ccc;
+            padding: 60px;
+        }
+        
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+        
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+        
+        .row::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>留言板</h1>
+    <div class="container">
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">Frist Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" placeholder="You Frist Name">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">Last Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" placeholder="You Last Name">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Country</label>
+                </div>
+                <div class="col-75">
+                    <select name="country" id="country">
+							<option value="Australia">Australia</option>
+							<option value="Canada">Canada</option>
+							<option value="UAS">UAS</option>
+						</select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="sub">Subject</label>
+                </div>
+                <div class="col-75">
+                    <textarea name="sub" id="sub" placeholder="Write Something..." cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <com1></com1>
+    </div>
+    <template id="son">
+			<div>
+				<p>姓名: <input type="text" v-model="sname"></p>
+				<p>成绩: <input type="text" v-model="sgrade"></p>
+				<p><button @click="add()">添加</button></p>
+			</div>
+		</template>
+    <template id="father">
+			<div>
+				<com2 @onadd='addStu'></com2>
+				<ul>
+					<li v-for="(item,index) in stuList">
+						{{index}}-----{{item.sname}}-----{{item.sgrade}}
+					</li>
+				</ul>
+			</div>
+		</template>
+    <script>
+        Vue.component('com1', {
+            template: '#father',
+            data() {
+                return {
+                    stuList: [{
+                        sname: '张三',
+                        sgrade: 99
+                    }, {
+                        sname: '李四',
+                        sgrade: 96
+                    }, {
+                        sname: '王五',
+                        sgrade: 93
+                    }]
+                }
+            },
+            methods: {
+                addStu(val) {
+                    this.stuList.push(val);
+                }
+            }
+        })
+        Vue.component('com2', {
+            template: '#son',
+            data() {
+                return {
+                    sname: '',
+                    sgrade: 0
+                }
+            },
+            methods: {
+                add() {
+                    let newStu = {
+                        sname: this.sname,
+                        sgrade: this.sgrade
+                    };
+                    this.$emit('onadd', newStu);
+                }
+            }
+        })
+        new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+
+</html>

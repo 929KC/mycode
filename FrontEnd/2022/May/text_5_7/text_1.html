@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* p,
+        div {
+            width: 300px;
+            height: 50px;
+            background-color: rgb(14, 223, 223);
+            text-align: center;
+            line-height: 50px;
+        } */
+        /* .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        
+        .box input {
+            width: 270px;
+            height: 30px;
+            border: 0;
+            outline: none;
+            /* 边框线 
+        }
+        
+        .box img {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 24px;
+        } */
+        
+        .box {
+            position: relative;
+            width: 74px;
+            height: 88px;
+            border: 1px solid #ccc;
+            color: #f40;
+            text-align: center;
+            font-size: 40px;
+            margin: 100px auto;
+        }
+        
+        .box img {
+            width: 60px;
+            margin-top: 5px;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: -1px;
+            left: -16px;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #ccc;
+            line-height: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="imgs/tao.png" alt="">
+        <i class="close-btn">×</i>
+    </div>
+    <!-- <div class="box">
+        <label for="">
+            <img src="imgs/close.png" alt="" id="eye">
+        </label>
+        <input type="password" name="" id="pwd">
+    </div> -->
+
+    <!-- <button>按钮</button>
+    <input type="text" value="输入内容"> -->
+    <!-- <img src="imgs/s.gif" alt="">
+    <div>上午好!</div> -->
+    <!-- <button id="ldh">刘德华</button>
+    <button id="zxy">张学友</button>
+    </br>
+    <img src="imgs/zxy.jpg" alt=""> -->
+    <!-- <div id="time">2019-9-9</div>
+    <script>
+        var timer = document.getElementById("time"); //返回的是一个元素对象
+        console.log(timer);
+        console.log(typeof timer); //检查timer的类型
+        //console.dir 打印我们返回元素对象，更好的查看里面的属性和方法
+        console.dir(timer);
+    </script> -->
+
+    <!-- <ul>
+        <li>知否知否，应是等你好久11</li>
+        <li>知否知否，应是等你好久11</li>
+        <li>知否知否，应是等你好久11</li>
+        <li>知否知否，应是等你好久11</li>
+
+    </ul>
+    <ol id="ol">
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+
+    </ol> -->
+    <!-- <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <div id="nav">
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+        </ul>
+    </div> -->
+    <!-- <button>显示当前系统时间</button>
+    <p>1234</p>
+    <div>某个时间</div> -->
+    <script>
+        // var lis = document.getElementsByTagName('li'); //获取的是元素对象的集合,以伪数组的方式存储
+        // console.log(lis);
+        // console.log(lis[0]);
+        // for (var i = 0; i < lis.length; i++) {
+        //     console.log(lis[i]);
+        // }
+
+        //var ol = document.getElementsByTagName('ol');//标签名获取
+        // for (var i = 0; i < ol.length; i++) {
+        //     console.log(ol[i].getElementsByTagName('li'));
+        // }
+        //  console.log(ol[0].getElementsByTagName('li'));
+        // var ol = document.getElementById('ol');
+        // console.log(ol.getElementsByTagName('li'));
+
+        // var boxs = document.getElementsByClassName("box");
+        // console.log(boxs);
+        // var firstBox = document.querySelector('.box');
+        // console.log(firstBox);
+        // var nav = document.querySelector('#nav');
+        // console.log(nav);
+        // var li = document.querySelector('li');
+        // console.log(li);
+        // var allBox = document.querySelectorAll('.box');
+        // console.log(allBox);
+        // var lis = document.querySelectorAll('li');
+        // console.log(lis);
+        // var btn = document.querySelector('button');
+        // var p = document.querySelector('p');
+        // var div = document.querySelector('div');
+        // btn.onclick = function() {
+        //     div.innerHTML = getDate();
+        // }
+
+        // function getDate() {
+        //     var date = new Date();
+        //     var year = date.getFullYear();
+        //     var month = date.getMonth() + 1;
+        //     var dates = date.getDate();
+        //     var arr = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        //     var day = date.getDay();
+        //     return "今天是:" + year + "年" + month + "月" + dates + "日" + arr[day];
+        // }
+        // p.innerHTML = getDate();
+        // var ldh = document.querySelector("#ldh");
+        // var zxy = document.querySelector("#zxy");
+        // var img = document.querySelector("img");
+        // ldh.onclick = function() {
+        //     img.src = "imgs/ldh.jpg";
+
+        // }
+
+        // zxy.onclick = function() {
+        //     img.src = "imgs/zxy.jpg"
+        // }
+        // var img = document.querySelector("img");
+        // var div = document.querySelector("div");
+        // var date = new Date();
+        // var honus = date.getHours();
+        // if (honus < 8) {
+        //     img.src = "imgs/z.gif";
+        //     div.innerHTML = "早午好,好好写代码";
+        // } else if (honus < 18) {
+        //     img.src = "imgs/s.gif";
+        //     div.innerHTML = "中午好,好好写代码";
+        // } else {
+        //     img.src = "imgs/w.gif";
+        //     div.innerHTML = "晚午好,好好写代码";
+        // }
+
+        // var btn = document.querySelector("button");
+        // var input = document.querySelector("input");
+        // btn.onclick = function() {
+        //     input.value = "被点击了";
+        //     this.disabled = true;
+        // }
+
+        // var img = document.querySelector("img");
+        // var pwd = document.getElementById("pwd");
+        // img.onclick = function() {
+        //     var falg = 0;
+        //     if (falg) {
+        //         pwd.type = 'txet';
+        //         img.src = "imgs/open.jpg";
+        //     } else {
+        //         pwd.type = 'password';
+        //         img.src = "imgs/clone.jpg";
+        //         falg = 0;
+        //     }
+        // }
+        var btn = document.querySelector(".close-btn");
+        var box = document.querySelector(".box");
+        btn.onclick = function() {
+            box.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>JavaScript程序设计</p>
+    <div id="fdiv">
+        <p id="p1">什么是JavaScript</p>
+        <p>JavaScript是一门功能强大的编程语言</p>
+        <p>第一部分 JavaScript概述</p>
+        <p>JavaScript的发展历史</p>
+    </div>
+    <input type="button" id="btnDelete" value="删除p元素" />
+    <script>
+        window.onload = function() {
+                //将#btnDelete按钮的单击事件与delp函数进行绑定
+                document.getElementById("btnDelete").addEventListener('click', delp);
+            }
+            //定义函数delp，删除指定的p元素
+        function delp() {
+            // 第一种方式
+            // 找到指定的p元素的父元素
+            // var div = document.getElementById("fdiv");
+            // // 找到要删除的子元素
+            // var p1 = document.getElementById("p1");
+            // // 将子元素从父元素中删除
+            // div.removeChild(p1);
+
+            // 第二种方式
+            // 找到要删除的子元素
+            var p1 = document.getElementById("p1");
+            // 用其parentNode 属性来找到父元素
+            var div = p1.parentNode;
+            div.removeChild(p1);
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [12, 34, 67, 87, 990, 35, 767832];
+        // var max = arr[0];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i] > max) {
+        //         max = arr[i];
+        //     }
+        // }
+        // document.write(max);
+        // document.write("<hr/>");
+
+        // var arr2 = [
+        //     [1, 2, 3, 4],
+        //     [5, 6, 7, 8],
+        //     [9, 10, 11, 12]
+        // ];
+
+        // document.write("二维数组如下：");
+        // document.write("<br/>");
+        // for (var i = 0; i < arr2.length; i++) {
+        //     for (var j = 0; j < arr2[i].length; j++) {
+        //         document.write(arr2[i][j] + " ");
+        //     }
+        //     document.write("<br/>");
+        // }
+
+        // var sum = 0;
+        // for (var i = 0; i < arr2.length; i++) {
+        //     for (var j = 0; j < arr2[i].length; j++) {
+        //         sum += arr2[i][j];
+        //     }
+        // }
+        // document.write("二维数组的和为：" + sum);
+
+        var arr = [
+            ["a", "b", "c"],
+            ["d", "e", "f"],
+            ["g", "h", "i"],
+            ["j", "k", "l"]
+        ];
+        document.write("二维数组初始数据如下：");
+        document.write("<br/>");
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < arr[i].length; j++) {
+                document.write(arr[i][j] + " ");
+                if (j < arr[i].length - 1) {
+                    document.write(",");
+                }
+            }
+            document.write("<br/>");
+        }
+        document.write("二维数组转置后：");
+        document.write("<br/>");
+        var arr2 = new Array();
+
+        for (var i = 0; i < arr[0].length; i++) {
+            arr2[i] = new Array();
+            document.write("[");
+            for (var j = 0; j < arr.length; j++) {
+                arr2[i][j] = arr[j][i];
+                document.writeln(" " + arr2[i][j] + " ");
+                if (j < arr.length - 1) {
+                    document.write(",");
+                }
+            }
+            document.writeln("]<br/>");
+        }
+    </script>
+</body>
+
+</html>

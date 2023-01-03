@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/player.css" />
+		<link rel="stylesheet" href="fonts/font-awesome.css" />
+	</head>
+	<body>
+		<!--响应式布局，在任何浏览器中显示器的样式一致-->
+		<div class="container">
+			<div class="c-video">
+				<video class="video" src="res/vadio1.mp4" id="myvideo"></video>
+				<div class="controls">
+					<div class="buttons">
+						<button id="playPause" class="fa fa-play"></button>
+						<button id="playx2" class="x2ok">X2</button>
+						<!-- <div class="display:inline-block;"> -->
+							<span id="curTime">00:00:00</span>
+							<span id="totalTime">00:00:00</span>
+						<!-- </div> -->
+						<input type="range" min="0" max="10" id="volRange" value="5"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/player.js"></script>
+	</body>
+</html>

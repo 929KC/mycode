@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>page one</title>
+    <style type="text/css">
+        p {
+            font-family: "黑体";
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        #txtGo {
+            width: 20px;
+        }
+        
+        div {
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        var num1 = 1;
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+        var ins = document.querySelectorAll('input');
+        window.onload = function() {
+            //单击"末页"，则转至历史记录中的最后一页
+            $("btnEnd").onclick = function() {
+                    window.history.go(3);
+                }
+                //单击"下一页"，转向历史记录中的下一页，相当于"前进"
+            $("btnNext").onclick = function() {
+                    window.history.go(1);
+                }
+                //单击"转到"，根据输入的数字，从当前页面转到相应页面
+            $("btnGo").onclick = function() {
+                //获取"txtGo"文本框中输入的数字
+                var num2 = parseInt($("txtGo").value);
+                //根据数字转向相应的页面
+                $("txtGo").value = null;
+                window.history.go(num2 - num1);
+
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p>这是第1个页面</p>
+    <br /><br /><br /><br />
+    <div>
+        <input type="button" id="btnHome" value="首页" disabled=true />
+        <input type="button" id="btnPrevious" value="上一页" disabled=true />
+        <input type="button" id="btnNext" value="下一页" />
+        <input type="text" id="txtGo" />
+        <input type="button" id="btnGo" value="转到" />
+        <input type="button" id="btnEnd" value="末页" />
+    </div>
+</body>
+
+</html>

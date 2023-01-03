@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 900px;
+            height: 100px;
+            font-size: 50px;
+            color: aqua;
+            margin: 0 auto;
+        }
+        
+        #bt {
+            width: 900px;
+            height: 100px;
+            font-size: 50px;
+            color: aqua;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">亲,准备好了吗？</div>
+    <div id="bt">开始点名</div>
+
+    <script>
+        var arr = ["黄茂荣", "黄茂云", "叶秋涵", "叶子秋", "叶秋寒"];
+        var bt = document.getElementById("bt");
+        var box = document.getElementById("box");
+        var ret = null;
+        var num = 0;
+
+        bt.onclick = function() {
+            if (ret == null) {
+                ret = setInterval("show()", 100);
+                bt.innerHTML = "停止点名";
+            } else {
+                clearInterval(ret);
+                bt.innerHTML = "开始点名";
+                ret = null;
+            }
+        }
+
+        function show() {
+            num = Math.floor(Math.random() * arr.length);
+            box.innerHTML = arr[num];
+        }
+    </script>
+</body>
+
+</html>

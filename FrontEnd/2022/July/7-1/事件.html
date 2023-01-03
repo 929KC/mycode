@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="showInfo1">点我提示1</button>
+        <button v-on:click="showInfo2(19,$event)">点我提示2</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: "#app",
+            methods: {
+                showInfo1(a, b, c) {
+                    console.log(a, b, c);
+                    alert("你好11");
+                },
+                showInfo2(number, ev) {
+                    console.log(ev.target.innerText);
+                    console.log(ev);
+                    console.log(ev == vm);
+                    alert("你好22");
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

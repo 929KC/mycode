@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>KC黄茂荣</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			a {
+				color: #CA5316;
+			}
+
+			body {
+				background: #f7f6f6 url(../imags/background.gif) no-repeat;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			.logo {
+				font: 700 40px "microsoft yahei";
+				margin-left: 40px;
+			}
+
+			.logo a {
+				text-decoration: none;
+				color: #ca5316;
+			}
+
+			.logo h6 {
+				font-size: 18px;
+				color: #e5e5e5;
+			}
+
+			.nav {
+				border-top: 1px solid red;
+				float: left;
+				width: 1300px;
+				background-color: #e4e4e4;
+			}
+
+			.nav li {
+				float: left;
+				margin: 0 15px;
+				border-right: 1px #E5E5E5 solid;
+				padding-right: 30px;
+			}
+
+			.nav ul li a {
+				display: block;
+				height: 42px;
+				padding: 0 10px;
+				line-height: 42px;
+				font-size: 18px;
+				color: #050505;
+				text-decoration: none;
+			}
+
+			.nav2 {
+				float: left;
+				background-color: #CA5316;
+				width: 1300px;
+			}
+
+			.nav2 li {
+				float: left;
+			}
+
+			.nav2 ul li a {
+				padding-right: 70px;
+				margin-left: 10px;
+				height: 34px;
+				line-height: 34px;
+				color: #fff;
+				text-decoration: none;
+			}
+
+			.nav ul li a:hover {
+				border-bottom: 2px solid #00a4ff;
+				color: #00a4ff;
+			}
+
+			.content {
+				float: left;
+				height: 1000px;
+				width: 700px;
+				margin-left: 50px;
+				margin-top: 30px;
+			}
+
+			.box-1 {
+				float: left;
+				height: 30px;
+				width: 691px;
+				background-color: #eeeeee;
+				padding-left: 10px;
+
+			}
+
+			.box-1 .one {
+				height: 30px;
+				line-height: 30px;
+				width: 150px;
+				background-color: #eeeeee;
+			}
+
+			.box-2 {
+				float: left;
+				height: 200px;
+				width: 700px;
+				background-color: #ffffff;
+				margin-top: 2px;
+				margin-bottom: 20px;
+			}
+
+			.box-2 ul li {
+				float: left;
+			}
+
+			.box-2 ul li .box-3 {
+				float: left;
+				margin: 10px 10px 0 10px ;
+			}
+
+			.box-2 ul li .box-3 img {
+				border: #FFFFFF 3px solid;
+			}
+
+			.box-2 .box-4 {
+				margin-top: 10px;
+			}
+
+			.box-2 .box-4 h3 {
+				padding: 3px 0;
+			}
+
+			.box-2 .box-4 h3 span {
+				color: #c8540e;
+			}
+
+			.box-2 .box-4 p {
+				padding: 3px 0;
+			}
+
+			.post1 {
+				padding-top: 10px;
+				float: left;
+				height: 250px;
+				width: 345px;
+			}
+
+			.post1 .one {
+				background-color: #eeeeee;
+			}
+
+			.post1 .one h3 {
+				padding-left: 10px;
+			}
+
+			.two img {
+				border: #FFFFFF 3px solid;
+				padding-left: 10px;
+			}
+
+			.three {
+				float: right;
+				margin-left: 180px;
+				margin-top: -150px;
+				background-color: #ffffff;
+			}
+
+			.box-3 {
+				width: 150px;
+			}
+
+			.nine #www {
+				float: left;
+				padding-left: 5px;
+				padding-top: 10px;
+			}
+
+			.nine #aaa {
+				float: right;
+				padding-right: 5px;
+				padding-top: 10px;
+			}
+
+			.nine a {
+				color: #CA5316;
+			}
+
+			.post2 {
+				padding-top: 10px;
+				float: left;
+				height: 250px;
+				width: 350px;
+				margin-left: 5px;
+			}
+
+			.post2 .six {
+				background-color: #eeeeee;
+			}
+
+			.post2 .six {
+				padding-left: 10px;
+			}
+
+			.seven {
+				float: left;
+				width: 150px;
+				background-color: #ffffff;
+			}
+
+			.seven img {
+				border: #FFFFFF 3px solid;
+				margin-left: 10px;
+				margin-top: 5px;
+				margin-bottom: 5px;
+			}
+
+			.ten {
+				float: right;
+				margin-left: 180px;
+				margin-top: -150px;
+			}
+
+			.main #sss {
+				float: left;
+				padding-left: 5px;
+			}
+
+			.main #ddd {
+				float: right;
+				padding-right: 5px;
+			}
+
+			.main a {
+				color: #CA5316;
+			}
+
+			.post3 {
+				float: left;
+				margin-top: 60px;
+				margin-left: -420px;
+				height: 250px;
+				width: 345px;
+			}
+
+			.post3 .six-1 {
+				background-color: #eeeeee;
+			}
+
+			.post3 .six-1 h3 {
+				padding-left: 10px;
+			}
+
+			.seven-1 {
+				float: left;
+				width: 150px;
+				background-color: #ffffff;
+			}
+
+			.seven-1 img {
+				border: #FFFFFF 3px solid;
+				margin-left: 10px;
+				margin-top: 5px;
+				margin-bottom: 5px;
+			}
+
+			.ten-1 {
+				float: right;
+				margin-left: 180px;
+				margin-top: -150px;
+			}
+
+			.main-1 #qqq {
+				float: left;
+			}
+
+			.main-1 #eee {
+				float: right;
+				padding-right: 5px;
+			}
+
+			.main-1 a {
+				color: #CA5316;
+			}
+
+			.post4 {
+				float: left;
+				margin-top: -216px;
+				margin-left: 355px;
+				height: 250px;
+				width: 345px;
+			}
+
+			.post4 .six-2 {
+				background-color: #eeeeee;
+			}
+
+			.post4 .six-2 {
+				padding-left: 10px;
+			}
+
+			.seven-2 {
+				float: left;
+				width: 150px;
+				background-color: #ffffff;
+			}
+
+			.seven-2 img {
+				border: #FFFFFF 3px solid;
+				margin-left: 10px;
+				margin-top: 5px;
+				margin-bottom: 5px;
+			}
+
+			.ten-2 {
+				float: right;
+				margin-left: 180px;
+				margin-top: -150px;
+			}
+
+			.main-2 #z {
+				float: left;
+				padding-left: 5px;
+			}
+
+			.main-2 #x {
+				float: right;
+				padding-right: 5px;
+			}
+
+			.main-2 a {
+				color: #CA5316;
+			}
+
+			.post5 {
+				float: left;
+				margin-top: 60px;
+				margin-left: -423px;
+				height: 250px;
+				width: 345px;
+			}
+
+			.post5 .six-3 {
+				background-color: #eeeeee;
+			}
+
+			.post5 .six-3 h3 {
+				padding-left: 10px;
+			}
+
+			.seven-3 {
+				float: left;
+				width: 150px;
+			}
+
+			.seven-3 img {
+				border: #FFFFFF 3px solid;
+				margin-left: 10px;
+				margin-top: 5px;
+				margin-bottom: 5px;
+			}
+
+			.ten-3 {
+				float: right;
+				margin-left: 180px;
+				margin-top: -150px;
+			}
+
+			.main-3 #c {
+				float: left;
+				padding-left: 5px;
+			}
+
+			.main-3 #v {
+				float: right;
+				padding-right: 5px;
+			}
+
+			.main-3 a {
+				color: #CA5316;
+			}
+
+			.post6 {
+				float: left;
+				margin-top: 40px;
+				height: 250px;
+				width: 345px;
+			}
+
+			.post6 .six-4 {
+				background-color: #eeeeee;
+			}
+
+			.post6 .six-4 h3 {
+				padding-left: 10px;
+			}
+
+			.seven-4 {
+				float: left;
+				width: 150px;
+				background-color: #ffffff;
+			}
+
+			.seven-4 img {
+				border: #FFFFFF 3px solid;
+				margin-left: 10px;
+				margin-top: 5px;
+				margin-bottom: 5px;
+			}
+
+			.ten-4 {
+				float: right;
+				margin-left: 180px;
+				margin-top: -150px;
+			}
+
+			.main-4 #b {
+				float: left;
+				padding-left: 10px;
+			}
+
+			.main-4 #n {
+				float: right;
+				padding-right: 5px;
+			}
+
+			.main-4 a {
+				color: #CA5316;
+			}
+
+			.sidebar {
+				margin-top: -541px;
+				height: 1000px;
+				width: 450px;
+				margin-left: 730px;
+			}
+
+			.sidebar .title-1 {
+				height: 30px;
+				line-height: 30px;
+				background-color: #eeeeee;
+				margin-bottom: 10px;
+			}
+
+			.sidebar .title-1 h3 {
+				padding-left: 10px;
+			}
+
+			.sider-1 {
+				height: 300px;
+				width: 450px;
+				background-color: #ffffff;
+				margin-bottom: 5px;
+			}
+
+			.sider-1 #o {
+				margin-left: 70px;
+			}
+
+			.sider-2 #n {
+				margin-left: 70px;
+
+			}
+
+			.sider-2 {
+				margin-top: -140px;
+			}
+
+			.sider-3 {
+				height: 350px;
+				width: 460px;
+				background-color: #ffffff;
+			}
+
+			.sider-3 .BOX {
+				height: 30px;
+				line-height: 30px;
+				margin: 20px -3px 10px 0;
+				background-color: #eeeeee;
+			}
+
+			.sider-3 .BOX h3 {
+				padding-left: 10px;
+			}
+
+			.sider-3 .BOX-2 {
+				margin-left: 20px;
+			}
+
+			.sider-3 .BOX-3 {
+				margin: 10px 20px;
+			}
+
+			.sider-3 .BOX-4 {
+				margin-top: 10px;
+				margin-left: 20px;
+			}
+
+			.BOX-5 {
+				margin-top: 40px;
+				width: 450px;
+				height: 300px;
+				background-color: #ffffff;
+			}
+
+			.BOX-5 .BOX-6 {
+				margin-top: -27px;
+				background-color: #eeeeee;
+			}
+
+			.BOX-5 .BOX-6 h3 {
+				padding-left: 10px;
+			}
+
+			.BOX-5 .BOX-7 {
+				width: 400px;
+				height: 100px;
+				margin-left: 20px;
+				margin-bottom: 20px;
+			}
+
+			.BOX-5 .BOX-7 span {
+				margin-left: 40px;
+			}
+
+			.BOX-5 .BOX-8 {
+				width: 400px;
+				height: 150px;
+				margin-left: 20px;
+			}
+
+			.BOX-5 .BOX-8 span {
+				margin-left: 40px;
+			}
+
+			.foter {
+				width: 1500px;
+				height: 100px;
+				background-color: #6a6a6a;
+				margin: 20px 0 0 -90px;
+			}
+
+			.foter #BO {
+				height: 100px;
+				line-height: 100px;
+				margin-left: 100px;
+			}
+
+			.foter #KE {
+				height: 100px;
+				line-height: 100px;
+				margin-left: 650px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 头部区域开始 -->
+		<div class="header ">
+			<div class="logo"><a href="#">WUYUZE</a>
+				<h6>WWW.WUYUZE.COM</h6>
+			</div>
+			<div class="nav">
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">图片</a></li>
+					<li><a href="#">社会</a></li>
+					<li><a href="#">新知</a></li>
+					<li><a href="#">文化</a></li>
+					<li><a href="#">娱乐</a></li>
+					<li><a href="#">音乐</a></li>
+					<li><a href="#">休闲</a></li>
+					<li><a href="#">教育</a></li>
+					<li><a href="#">名师</a></li>
+				</ul>
+			</div>
+			<div class="nav2">
+				<ul>
+					<li><a href="#">特别关注</a></li>
+					<li><a href="#">专栏作家</a></li>
+					<li><a href="#">百家博谈</a></li>
+					<li><a href="#">特比推荐</a></li>
+					<li><a href="#">热点专题</a></li>
+					<li><a href="#">精彩活动</a></li>
+					<li><a href="#">博客风格</a></li>
+					<li><a href="#">产品公告</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="box-1">
+				<h3>博文精粹</h3>
+			</div>
+			<div class="box-2">
+				<ul>
+					<li>
+						<div class="box-3"><img src="../imags/x.jpg"></div>
+					</li>
+				</ul>
+				<div class="box-4">
+					<h3>蒜蓉粉丝蒸开边虾</h3>
+					<h3>发表于<a href="#"><span>2012.12.6</span></a>作者<a href="#"><span>WUYUZE</span></a></h3>
+					<P> 仲秋好像刚过去没多久，十一就快来了，天气渐渐地转凉，时不时有清凉的微风吹过
+						。晚上睡觉也要盖上一点薄被了。广州的秋天看不到秋风扫落叶的景象。到处还是一片葱翠的绿色。空气间多了一丝凉意，
+						我喜欢广州秋天的感觉，不像东北方此时树叶落尽。一地枯萎
+						。多了萧瑟和些凄凉。
+					</P>
+				</div>
+			</div>
+			<div class="post1">
+				<div class="one">
+					<h3>我喜欢吃的香蕉面包</h3>
+				</div>
+				<div class="two ">
+					<ul>
+						<li><img src="../imags/001.jpg"></li>
+					</ul>
+				</div>
+				<div class="three">
+					<p>香蕉面包的方子多的是，我改来该去，终于改到了一个很满意的方子，成品软润香甜，已经用；额很长一段时间了。</p>
+				</div>
+				<div class="nine"> <a href="#" id="www">阅读全文</a>
+					<a href="#" id="aaa">已有51位博友收藏</a>
+				</div>
+			</div>
+			<div class="post2 ">
+				<div class="six">
+					<h3>似肉非肉--酥炸香菇</h3>
+				</div>
+				<div class="seven ">
+					<ul>
+						<li><img src="../imags/002%20(1).jpg"></li>
+					</ul>
+				</div>
+				<div class="ten-1">
+					<p>香菇，又名香？、冬菇，是一种生长在木材上的真菌类，在我国已有4000多年的食用历史。香菇味道鲜美，香气沁人，营养丰富，素有“植物皇后“美誉。</p>
+				</div>
+				<div class="main"> <a href="#" id="sss">阅读全文</a>
+					<a href="#" id="ddd">已有28位博友收藏</a>
+				</div </div>
+				<div class="post3">
+					<div class="six-1">
+						<h3>沙拉配鲜奶酪卷</h3>
+					</div>
+					<div class="seven-1 ">
+						<ul>
+							<li><img src="../imags/003.jpg"></li>
+						</ul>
+					</div>
+					<div class="ten-1">
+						<p>芝麻菜可算是叶菜里的稀罕物。刚吃的时候有一种芝麻香气，接着是一种辣气，如果炒熟了，辣气就又变成一种苦味了。</p>
+					</div>
+					<div class="main-1"> <a href="#" id="qqq">阅读全文</a>
+						<a href="#" id="eee">已有104位博友收藏</a>
+					</div </div>
+					<div class="post4 clearfix">
+						<div class="six-2">
+							<h3>香奶甜杏</h3>
+						</div>
+						<div class="seven-2 ">
+							<ul>
+								<li><img src="../imags/004.jpg"></li>
+							</ul>
+						</div>
+						<div class="ten-2">
+							<p>闷热夏季，自然想吃些爽口的东西，杏是个不错的选择。如果怕生吃太酸，不妨煮熟了做甜品，还能生津止渴。</p>
+						</div>
+						<div class="main-2"> <a href="#" id="z">阅读全文</a>
+							<a href="#" id="x">已有76位博友收藏</a>
+						</div>
+						<div class="post5">
+							<div class="six-3">
+								<h3>伊谢风味酸奶汤</h3>
+							</div>
+							<div class="seven-3 ">
+								<ul>
+									<li><img src="../imags/005%20(1).jpg"></li>
+								</ul>
+							</div>
+							<div class="ten-3">
+								<p>接近40度的高温天，简直恨不得把自己给冰镇了！其实冷饮多吃伤脾胃，还有许多添加的奶酪和香精，不健康、易发胖。</p>
+							</div>
+							<div class="main-3"> <a href="#" id="c">阅读全文</a>
+								<a href="#" id="v">已有76位博友收藏</a>
+							</div>
+						</div>
+						<div class="post6">
+							<div class="six-4">
+								<h3>腰果鸡丁</h3>
+							</div>
+							<div class="seven-4 ">
+								<ul>
+									<li><img src="../imags/006.jpg"></li>
+								</ul>
+							</div>
+							<div class="ten-4">
+								<p>腰果中的某些维生素和微量元素成分有很好的软化血管的作用，对保护血管、防治心血管疾病大有益处。</p>
+							</div>
+							<div class="main-4"> <a href="#" id="b">阅读全文</a>
+								<a href="#" id="n">已有32位博友收藏</a>
+							</div>
+						</div>
+					</div>
+					<div class="sidebar">
+						<div class="sider-1">
+							<div class="title-1">
+								<h3>更多美食</h3>
+							</div>
+							<span id="o"><img src="../imags/ms001.jpg"></span>
+							<span id="p"><img src="../imags/ms002.jpg"></span>
+						</div>
+						<div class="sider-2"><span id="n"><img src="../imags/ms003.jpg"></span>
+							<span id="m"><img src="../imags/ms004%20(1).jpg"></span>
+						</div>
+						<div class="sider-3">
+							<div class="BOX">
+								<h3>推荐阅读</h3>
+							</div>
+							<div class="BOX-1">
+								<div class="BOX-2"><a href="#">老少皆宜的老醋花生</a>
+									<p>老醋花生是一道能减脂降压的健康下酒菜，四季皆宜，老少皆宜，美味又健康。老醋花生的做法并不难，关键是要掌握好花生的火候，一盘脆生生的老醋花生就上桌了。</p>
+								</div>
+								<div class="BOX-3"><a href="#">清甜酥脆的小炒--腰果玉米</a>
+									<p>玉米具有排毒养颜的、降血压、降胆固醇和预防便秘等作用。腰果含有丰富的不饱含脂肪酸和油脂，有保护心血管、润肠通便、强身健体和润肤抗衰老得到功效。</p>
+								</div>
+								<div class="BOX-4"> <a href="#">超级美味--冬瓜烧排骨</a>
+									<p>冬瓜具有利尿消肿、减肥和清热解暑等等功效，非常适合夏天食用。</p>
+								</div>
+							</div>
+						</div>
+						<div class="BOX-5">
+							<div class="BOX-6">
+								<h3>博文推广</h3>
+							</div>
+							<div class="BOX-7">
+								<span><img src="../imags/tg001.jpg"></span>
+								<span><img src="../imags/tg002.jpg"></span>
+								<span><img src="../imags/tg001.jpg"></span>
+							</div>
+							<div class="BOX-8">
+								<span><img src="../imags/tg002.jpg"></span>
+								<span><img src="../imags/tg001.jpg"></span>
+								<span><img src="../imags/tg002.jpg"></span>
+							</div>
+						</div>
+					</div>
+					<div class="foter">
+						<span id="BO"> Copyright @ 2012 KC网络 All Rights Reserved</span>
+						<span id="KE">design by KC网络| 更多资讯
+							<a href="#">www.baidu.com</a></span>
+					</div>
+	</body>
+</html>

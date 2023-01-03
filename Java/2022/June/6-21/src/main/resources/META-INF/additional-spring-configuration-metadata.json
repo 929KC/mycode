@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "mycar.brand",
+      "type": "java.lang.String",
+      "description": "Description for mycar.brand."
+  }
+] }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+</head>
+
+<body>
+    <form id="frmReg" name="frmReg" action="ok.html" method="get">
+        用户名：<input type="text" id="txtName" /><br /> 电子邮箱：
+        <input type="text" id="txtEmail" /><br />
+        <input type="submit" value="注册" />
+    </form>
+    <p><span style="font-weight:bold;">注意</span><br />1、用户名必须为8-16个字符<br />2、 用户名第一个字符不能为数字字符！
+        <br />3、用户名只能包含字母、数字和下划线！<br />4、电子邮箱必须含有@和.字符
+    </p>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function isUserName(UserName) {
+            if (UserName.length < 8 || UserName.length > 16) {
+                alert("用户名必须为8~16个字符");
+                document.frmReg.txtName.select();
+                return false;
+            }
+
+            if (UserName.charAt(0) >= '0' && UserName.charAt(0) <= '9') {
+                alert("用户名不能为数字字符");
+                document.frmReg.txtName.select();
+                return false;
+            }
+
+            for (var i = 0; i < UserName.length; i++) {
+                var ch = UserName.charAt(i);
+                if ((ch < '0' || ch > '9') && (ch < 'a' || ch > 'z') && (ch != '_')) {
+                    alert("用户名只能包含字母，数字和下划线！");
+                    document.frmReg.txtName.select();
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function isEmail(email) {
+            if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                alert("电子邮件必须包含@和.字符");
+                return false;
+            }
+            return true;
+        }
+
+        function checked() {
+            if (isUserName($("txtName").value) == false ||
+                isEmail(($("txtEmail").value)) == false) {
+                return false;
+            }
+            return true;
+        }
+        $("frmReg").onsubmit = function() {
+            return checked();
+        }
+    </script>
+</body>
+
+</html>

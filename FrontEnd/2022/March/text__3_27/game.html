@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+</head>
+
+<body>
+    <h2>猜数小游戏</h2>
+    <hr />
+
+    <form id="frmGuess" name="frmGuess">
+        请选择游戏难度：
+        <select name="" id="selLevel">
+            <option value="10">简单</option>
+            <option value="30" selected="selected">普通</option>
+            <option value="50">困难</option>
+            <option value="100">抓狂</option>
+        </select>
+        <input type="button" name="" id="btnBegin" value="开始" />
+    </form>
+
+    <p id="info">单击“开始”按钮开始猜数游戏</p>
+    请输入一个整数：<input type="text" id="val"><input type="button" name="" id="btOK" value="确定" />
+    <script type="text/javascript">
+        var random = 0;
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        $("btnBegin").onclick = function() {
+            var selectValue = parseInt($("selLevel").value);
+            $("info").innerHTML = "请输入1至" + selectValue + "之间的一个整数：";
+            random = parseInt(Math.random() * selectValue + 1);
+        }
+
+        $("btOK").onclick = function() {
+            var Value = $("val").value;
+            var num = parseInt(Value)
+            if (isNaN(num)) {
+                alert("非数值,请输入数字")
+            } else {
+                if (num > random) {
+                    alert("你输入的数大了");
+
+                } else if (num < random) {
+                    alert("你输入的数小了");
+
+                } else {
+                    alert("恭喜您猜对了！");
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

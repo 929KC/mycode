@@ -1,0 +1,52 @@
+/* 针对博客编辑页写的样式 */
+
+/* 版心 */
+.blog-edit-container {
+    width: 1000px;
+    height: calc(100% - 50px);
+    margin: 0 auto;
+}
+
+/* 设置标题编辑区的样式 */
+.blog-edit-container .title {
+    height: 50px;
+    /* 只要是水平方向排列多个元素, 就想到弹性布局就好 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 针对输入框进行调整 */
+#blog-title {
+    height: 40px;
+    width: 897px;
+    font-size: 20px;
+    padding-left: 5px;
+    /* 去掉轮廓线, 选中输入框时候的黑圈 */
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    /* 加上背景半透明效果 */
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#submit {
+    height: 40px;
+    width: 100px;
+    border: none;
+
+    border-radius: 5px;
+    color: white;
+    background-color: orange;
+}
+
+#submit:active {
+    background-color: grey;
+}
+
+#editor {
+    border-radius: 10px;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* 这个属性的半透明是可以让子元素也一起生效的, 值是个百分数. 80% 就相当于 rgba 中的 0.8 */
+    opacity: 80%;
+}

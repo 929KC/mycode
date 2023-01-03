@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //JS中的作用域：就是变量在某个范围内起作用和效果，母的是为了提高程序的可靠性更重要的是减少命名冲突
+        //js的作用域：全局作用域，局部作用域
+        //全局作用域：整个script标签或者是一个单独的js文件
+        // var num = 10;
+        // var num = 435;
+        // console.log(num);
+
+        // //局部作用域(函数作用域)在函数内部就是函数作用域，只在函数内部起作用和效果
+        // function fn() {
+        //     //局部作用域
+        //     var num = 90;
+        //     console.log(num);
+        // }
+        // fn();
+
+        //变量的作用域：根据作用域的不同我们把变量分为全局变量和局部变量
+        //1.全局变量:在全局作用域下的变量，在全局范围内可以使用
+        //注意：如果在函数内部，没有声明函数直接赋值的变量也属于全局变量
+        // var num = 100; //全局变量
+        // console.log(num);
+
+        // function fn() {
+        //     console.log(num);
+        // }
+        // fn();
+
+        //2.局部变量 在局部作用域下的变量，后者在函数的内部变量， 局部变量
+        // function fun(aru) { //局部变量
+        //     var num1 = 90; //num1就是局部变量 只能在函数内部使用
+        //     num2 = 4565; //全局变量
+        // }
+        // fun();
+        // console.log(num1);
+        // console.log(num2);
+        //console.log(atu);
+        //js没有块级作用域(es6有)    {}
+        // if (3 > 2) {
+        //     var arr = 90;
+        // }
+        // console.log(arr);
+        //作用域链：内部函数访问外部函数的变量，采取的是链式查找的方式来决定取那个值，这种结构被称为作用域链，就近原则
+        // var num = 90;
+
+        // function fn() { //外部函数
+        //     var num = 9089;
+
+        //     function fun() { //内部函数
+        //         console.log(num);//站在目标出发，一层一层打的往外找
+        //     }
+        //     fun();
+
+        // }
+        // fn();
+        //预解析
+        //1.问
+        //console.log(num);//Demo_1.html:65 Uncaught ReferenceError: num is not defined
+
+        //console.log(num);//undefined
+        //var num = 90;
+        //1.var num;
+        //2.console.log(num)
+        //3.num=90;
+        //3问
+
+        // function fn() {
+        //     console.log(1243);
+        // }
+
+        // fn();
+        // function fn() {
+        //     console.log(1243);
+        // }
+        //4问
+        // fun();//Uncaught TypeError: fun is not a function
+        // var fun = function() {//fun为变量名
+        //     console.log(2345);
+        // }
+        //js引擎运行分两步：预解析 代码执行
+        //(1)，预解析 js引擎 会把里面所有的var 还有function 提升到当前作用域的最前面
+        //(2).代码执行按照代码书写的顺序从上往下执行
+        //预解析 分为(变量提升)和函数预解析(函数提升)
+        //(1)变量提升 就是把所有的变量声明提升到当前的最前面，不做赋值提升
+        //(2)函数提升 就是把所有的声明提升到当前作用域的最前面，不调用函数
+        //案例
+        // var num = 10;
+        // fun();
+
+        // function fun() {
+        //     console.log(num);
+        //     var num = 90;
+        // }
+        //创建对象的三种方式
+        // var dog = {
+        //     unname: '可可',
+        //     type: '阿拉斯加',
+        //     age: 19,
+        //     color: 'red',
+        //     back: function() {
+        //         console.log('汪汪汪！');
+        //     },
+        //     showFilm: function() {
+        //         console.log('后会无期');
+        //     }
+        // }
+        // console.log(dog.age);
+        // console.log(dog.type);
+        // console.log(dog.color);
+        // console.log(dog.unname);
+        // dog.showFilm();
+        // dog.back();
+        // //调用属性,对象名['属性']
+        // console.log(dog['age']);
+        // console.log(dog['unname']);
+        // console.log(dog['color']);
+        // console.log(dog['type']);
+        //利用newObiect形式创建对象
+        // var obj = new Object();
+        // obj.unname = '鸣人';
+        // obj.age = 19;
+        // obj.sex = '男';
+        // obj.skill = function() {
+        //     console.log('影分身之术');
+        // }
+        // console.log(obj.unname);
+        // console.log(obj['sex']);
+        // obj.skill();
+        //我们利用等号赋值的方法添加对象的属性和方法
+        //每个属性和方法之间用分号结束
+        //利用构造函数创建对象
+        //因为我们一次创建一个对象，里面很多的属性和方法是大量相同的
+        //因此我们可以利用函数的方法 重复这些相同的代码 我们把这个函数称为构造函数
+        //此函数封装的不是普通代码而是对像
+        //构造函数 就是把我们对象的里面一些相同的属性和方法抽像出来封装到了函数里面
+        // function Star(name, age, sex) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sex = sex;
+        //     this.sing = function() {
+        //         console.log("起风了");
+        //     }
+        // }
+        // var star = new Star('叶秋寒', 45, '男');
+        // console.log(typeof star);
+        // console.log(star.age)
+        // console.log(star['sex']);
+        // console.log(star['name']);
+        //1.构造函数名字首字母要大写
+        //我们构造函数不需要return就可以返回结果
+        //我们调用构造函数 必须使用new
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

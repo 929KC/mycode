@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 默认使用有参构造  -->
+    <bean id="book" class="com.bit.spring.bean.Book">
+        <property name="name" value="红楼梦"></property>
+        <property name="type" value="小说"></property>
+        <property name="author" value="曹雪芹"></property>
+<!--       <property name="address">-->
+<!--           <null/>-->
+<!--       </property>-->
+        <property name="address" >
+            <value>
+                <![CDATA[<<南京>>]]>>
+            </value>
+        </property>
+    </bean>
+
+    <bean id="orders" class="com.bit.spring.bean.Orders">
+        <constructor-arg name="oname" value="酱板鸭"> </constructor-arg>
+        <constructor-arg name="address" value="郴州"></constructor-arg>
+    </bean>
+
+
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置User对象的创建 -->
+    <bean id="user" class="com.bit.spring5.bean.User">
+        <!-- 属性注入-->
+        <property name="age" value="19" ></property>
+        <property name="name" value="叶秋涵" ></property>
+        <property name="school" value="B站大学" ></property>
+    </bean>
+
+    <bean id="student" class="com.bit.spring5.bean.Student">
+      <constructor-arg name="age"  value="19"></constructor-arg>
+        <constructor-arg name="name"  value="叶秋涵"></constructor-arg>
+        <constructor-arg name="school"  value="B站"></constructor-arg>
+    </bean>
+    <!--外联 -->
+    <bean id="userService"  class="com.bit.spring5.server.UserService">
+       //ref属性：创建userDao对象bean标签id值
+        <property name="userDao" ref="userDaoImpl"></property>
+    </bean>
+
+    <bean id="userDaoImpl" class="com.bit.spring5.dao.UserDaoImpl"></bean>
+</beans>

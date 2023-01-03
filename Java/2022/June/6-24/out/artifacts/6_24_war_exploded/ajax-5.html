@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ 用户名:<input type="text" id="user"><span id="sp"></span><br>
+<button id="btn">提交</button>
+
+ <script>
+     window.onload=function (){
+         var xhr = new XMLHttpRequest();
+         document.getElementById("btn").onclick=function(){
+             xhr.onreadystatechange=function(){
+                if(this.readyState==4){
+                    if(this.status==200){
+                        document.getElementById("sp").innerHTML=this.responseText;
+                    }else{
+                     alert(this.status);
+                    }
+                }
+
+             }
+             xhr.open("POST", "/6_24/test5", true);
+             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            var user = document.getElementById("user").value;
+             xhr.send("user="+user);
+         }
+     }
+ </script>
+</body>
+</html>

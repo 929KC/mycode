@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串对象</title>
+    <script>
+        // //字符串截取和拼接
+        // var str = 'body';
+        // console.log(str.concat(' hello'));
+        // //2。sunstr('截取的起始位置','截取几个字符');
+        // var str1 = '剑道万古如长夜';
+        // console.log(str1.substr(2, 2));
+
+        //替换字符串以及转换成数组
+        //1.替换字符 replase ('被替换的字符','替换的字符');只替换一个第一个
+        var str = 'body';
+        console.log(str.replace('b', 'x'));
+        //有一个字符串 'abcdefgooosdfoofdgolojosarosxco';
+        var str1 = 'abcdefgooosdfoofdgolojosarosxco';
+        while (str1.indexOf('0') !== -1) {
+            str1 = str1.replace('o', 'h');
+        }
+        console.log(str1);
+        //2.字符转数组 split('分隔符') 前面我们学过join
+        var str2 = 'blue,pink,red';
+        console.log(str2.split(','));
+        console.log(str2.split('&'));
+        console.log(str2.split('*'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

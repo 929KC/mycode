@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="circle" method="post">
+    请输入半径: <input type="text" name="radius"> <br>
+    圆的面积: <span th:text="${area}"></span> <br>
+    圆的周长:<span th:text="${perimeter}"></span> <br>
+    圆的半径:<span th:text="${radius}"></span> <br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
+
+

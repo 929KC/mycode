@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        <!--
+        .style1 {
+            color: #FFFFFF
+        }
+
+        -->
+    </style>
+    <link rel="stylesheet" href="css/font.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body topmargin="0" leftmargin="0" bottommargin="0">
+
+
+<form name="form1" method="post">
+    <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td height="20" bgcolor="#FFCF60">
+                <div align="center" class="style1">用户管理</div>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#666666">
+                <table width="600" border="0" align="center" cellpadding="0" cellspacing="1" id="queryInfo">
+                    <tr>
+                        <td width="224" height="20" bgcolor="#FFFFFF">
+                            <div align="center">用户昵称</div>
+                        </td>
+                        <td width="93" bgcolor="#FFFFFF">
+                            <div align="center">用户状态</div>
+                        </td>
+                        <td width="79" bgcolor="#FFFFFF">
+                            <div align="center">删除</div>
+                        </td>
+                        <td width="75" bgcolor="#FFFFFF">
+                            <div align="center">查看信息</div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table width="600" height="25" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="right">
+                <input type="submit" value="删除选项" class="buttoncss">
+            </td>
+        </tr>
+
+    </table>
+</form>
+<script>
+    function query() {
+        $.ajax({
+            type: "get",
+            url: 'query',
+            success: function (data) {
+                var table = $("#queryInfo");
+                for (var i = 0; i < data.length; i++) {
+                    var id = data[i].id;
+                    var str = "<tr><td height='20px' bgcolor='#FFFFFF'><div align='center'> " + data[i].name + "</div></td><td height='20px' bgcolor='#FFFFFF'><div align='center'>" + data[i].state + "</div></td><td height='20px' bgcolor='#FFFFFF'><div align='center'>" + "<input type='checkbox' name='43' value=43>" + "</div></td ><td height='20px' bgcolor='#FFFFFF'><div align='center' id='add'> " + "<a href=lookUserinfo.html?id="+id+" ><img src='images/button_select.png' alt=''></a>" + "</div></td></tr>";
+                    table.append(str);
+                }
+            },
+            error: function () {
+                location.assign("http://localhost:8080/shoping/error.html")
+            }
+        })
+    }
+    query();
+</script>
+</body>
+</html>

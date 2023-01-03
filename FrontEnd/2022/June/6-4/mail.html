@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            border-collapse: collapse;
+        }
+        
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+        
+        #divTitle {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>邮件列表</caption>
+        <tr>
+            <th><input type="checkbox" id="chkAll" name="chkAll" /></th>
+            <th>发件人</th>
+            <th>主题</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="chkOne" name="chkMail" /></td>
+            <td>某人</td>
+            <td>某事</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="chkTwo" name="chkMail" /></td>
+            <td>某人</td>
+            <td>某事</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="chkThree" name="chkMail" /></td>
+            <td>某人</td>
+            <td>某事</td>
+        </tr>
+
+        <script>
+            function $(id) {
+                return document.getElementById(id);
+            }
+            window.onload = function() {
+                var mail = document.getElementsByName("chkMail");
+                var chAll = document.getElementById("chkAll");
+                chAll.onclick = function() {
+                    if (chAll.checked) {
+                        for (var i = 0; i < mail.length; i++) {
+                            mail[i].checked = true;
+                        }
+                    } else {
+                        for (var i = 0; i < mail.length; i++) {
+                            mail[i].checked = false;
+                        }
+                    }
+                }
+
+                //2、chkMail
+                /* 邮件复选框的单击
+                 * 	-3个邮件复选框全都选中，则chkAll也应该选中
+                 * 	-3个邮件复选框没都选中，则chkAll也不应该选中
+                 */
+                for (var i = 0; i < mail.length; i++) {
+                    mail[i].onclick = function() {
+                        for (var i = 0; i < mail.length; i++) {
+                            if (mail[i].checked == false) {
+                                break;
+                            }
+                            if (i == 2) {
+                                chAll.checked = true;
+                            } else {
+                                chAll.checked = false;
+                            }
+                        }
+                    }
+                }
+
+            }
+        </script>
+    </table>
+</body>
+
+</html>

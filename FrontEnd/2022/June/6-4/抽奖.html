@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content {
+            border: 1px solid green;
+            width: 400px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 50px;
+        }
+        
+        img {
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contain">
+        <img src="img/2.png" alt=""><br/>
+        <img src="img/3.png" alt="" id="img">
+        <div id="content">等待开奖</div>
+        <img src="img/1.png" alt="" id="img2"><br/>
+
+
+    </div>
+
+    <script>
+        var arr = ["一等奖", "二等奖", "三等奖", "谢谢惠顾", "谢谢惠顾", "谢谢惠顾", "谢谢惠顾", "谢谢惠顾", "谢谢惠顾"];
+        var ret = 0;
+        var random = 0;
+        var img = document.getElementById("img");
+        var con = document.getElementById("content");
+        var img2 = document.getElementById("img2");
+        img.onclick = function() {
+            ret = setInterval(show, 500);
+        }
+
+        img2.onclick = function() {
+            clearInterval(ret);
+        }
+
+        function show() {
+            random = Math.floor(Math.random() * arr.length);
+            con.innerHTML = arr[random];
+        }
+    </script>
+</body>
+
+</html>

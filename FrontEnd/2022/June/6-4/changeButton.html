@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<style>
+			input {
+				font-family: "微软雅黑";
+				border: 0px;
+				vertical-align: middle;
+				margin: 8px;
+				line-height: 18px;
+				font-size: 18px;
+			}
+
+			.btn {
+				width: 221px;
+				height: 42px;
+				color: #666;
+				background: url("img/btnbg.jpg") no-repeat left -42px;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var btn = document.getElementsByClassName("btn")[0];
+				btn.onmourseover = function() {
+					btn.style.backgroundPositionX = '0px';
+					btn.style.backgroundPositionY = '0px';
+				}
+				btn.onmourseout = function() {
+					btn.style.backgroundPositionX = '0px';
+					btn.style.backgroundPositionY = '-42px';
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="button" class="btn" value="Download">
+	</body>
+
+</html>

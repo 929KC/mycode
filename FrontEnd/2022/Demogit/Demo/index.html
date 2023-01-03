@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body {
+				font: 12px "宋体";
+			}
+
+			/* 设置全局 */
+
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			/* 重置浏览器的默认属性 */
+
+			form {
+				width: 320px;
+				/* 设置宽度 */
+				height: 150px;
+				/* 设置高度 */
+				padding-top: 20px;
+				/* 设置顶部内边距为20px */
+				margin: 50px auto;
+				/* 使表单水平居中 */
+				background: #F5F8FD;
+				/* 设置表单的背景颜色 */
+				border-radius: 20px;
+				/* 表单为圆角边框 */
+				border: 3px solid #4FACCB;
+				/* 边框大小及其颜色 */
+			}
+
+			P {
+				margin-top: 15px;
+				text-align: center;
+			}
+
+			/* 外边距为15px并且文本居中 */
+
+			p span {
+				width: 40px;
+				/* span宽度为40px */
+				display: inline-block;
+				/* 将span装换成行内块元素 */
+				text-align: right;
+				/* span靠右 */
+			}
+
+			.num,
+			.pass {
+				width: 152px;
+				height: 18px;
+				border: 1px solid #38A1BF;
+				padding: 2px 2px 2px 22px;
+			}
+
+			/* .num和.pass都设置宽度为152px,高度为18px，边框为圆角，大小1px,实线，设置颜色 ,内边距上下左都为2px 右为22px*/
+
+			.num {
+				color: #999;
+				background: url(imags/1.jpg) no-repeat 5px center #FFF;
+			}
+
+			/* 添加背景图片  不平铺 水平距 span5px 是垂直居中 ，背景颜色 和文本颜色*/
+
+			.pass {
+				background: url(imags/2.jpg) no-repeat 5px center #FFF;
+			}
+
+			/* 添加背景图片  不平铺 水平距 span5px 是垂直居中 ，背景颜色*/
+
+			.bton1,
+			.bton2 {
+				width: 60PX;
+				height: 25PX;
+				border-radius: 3PX;
+				border: 1PX solid #6B5D50;
+			}
+
+			/* .bton1和.bton2都设置宽度为60px,高度为25px，边框为圆角，大小1px,实线，设置颜色 */
+
+			.bton1 {
+				background: #3BB7EA;
+			}
+
+			/* 设置背景颜色 */
+
+			.bton2 {
+				background: #FB8C16;
+			}
+
+			/* 设置背景颜色 */
+		</style>
+	</head>
+	<body>
+		<form action="#" method="post">
+			<p><span>账号：</span>
+				<input type="text" name="username" value="admin" class="num">
+			</p>
+			<p><span>账号：</span>
+				<input type="password" name="pwd" class="pass">
+			</p>
+			<p><input type="button" class="bton1" value="登录">
+				<input type="button" class="bton2" value="注册">
+			</p>
+
+		</form>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: rgb(0, 255, 0);
+            border: 3px slateblue solid;
+            color: black;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">开始播放广告</button>
+    <button id="btn2">停止播放广告</button></div>
+    <div>男人就应该对自己狠一点（柒牌服饰）</div>
+    <script>
+        var arr = ["男人就应该对自己狠一点（柒牌服饰）", "我的地盘听我的（中国移动通信动感地带）", "钻石恒久远，一颗永留传。（迪比尔斯）", "帕萨特，成就明天(帕萨特系列) ", "热爱生活冷静选择(奥克斯空调) "]
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var ret = 0;
+        var div = document.querySelector("div");
+        var count = 0;
+
+        btn1.onclick = function() {
+            ret = setInterval(show, 1000);
+        }
+        btn2.onclick = function() {
+            clearInterval(ret);
+        }
+
+        function show() {
+            div.innerHTML = arr[count];
+            count++;
+            if (count == arr.length - 1) {
+                count = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

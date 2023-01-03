@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+        }
+        
+        p {
+            text-align: center;
+        }
+        
+        div {
+            width: 300px;
+            height: 300px;
+            padding: 30px;
+            border: 10px solid #aa5500;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="img/img6.jpg" alt=""> -->
+    <div> <img src="img/img1.jpg" alt=""></div>
+    <p>微小的幸福就在身边，容易满足就是天堂。</p>
+
+    <script>
+        var count = 0;
+        var count2 = 1;
+        var arr = ["微小的幸福就在身边，容易满足就是天堂。",
+            "如果事与愿违，就相信上天一定另有安排；所有失去的，都会以另外一种方式归来。",
+            "不管什么天气，记得随时带上自己的阳光。不管什么遭遇，记得内心装满开心的童话。",
+            "世上最好的保鲜就是不断进步，让自己成为一个更好和更值得爱的人。",
+            "每一次的跌倒后重新站起来，都会让人变得愈发坚强。生活，一半是回忆，一半是继续。",
+            "不要总是羡慕别人的美好，要用心经营自己的幸福。用自己的光，照亮自己的路。"
+        ]
+        var img = document.querySelector("img");
+        var p = document.querySelector("p");
+        img.onclick = function() {
+            p.innerHTML = arr[count];
+            img.src = "img/img" + count2 + ".jpg";
+            count++;
+            count2++;
+            if (count == 6) {
+                count = 0;
+            }
+            if (count2 > 6) {
+                count2 = 1;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

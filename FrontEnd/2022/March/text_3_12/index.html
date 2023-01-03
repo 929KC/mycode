@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>07黄茂荣</title>
+		<script>
+			var arr = [
+				["a", "b", "c"],
+				["d", "e", "f"],
+				["g", "h", "i"],
+				["j", "k", "l"]
+			];
+			var arr2 = [
+				[],
+				[],
+				[]
+			];
+			console.log("二维数组转置前：");
+			for (var n in arr) {
+				console.log(arr[n]);
+			}
+
+			for (var i = 0; i < arr.length; i++) {
+				for (var j = 0; j < arr[i].length; j++) {
+					arr2[j][i] = arr[i][j];
+				}
+			}
+			document.write("二维数组转置后：");
+			for (var i = 0; i < arr2.length; i++) { 
+					console.log(arr2[i]);
+				}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

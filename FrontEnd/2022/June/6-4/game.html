@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>猜数小游戏</h1>
+    <hr/> 请选择难度：
+    <select name="" id="select">
+        <option value="10">简单</option>
+        <option value="30">普通</option>
+        <option value="50">困难</option>
+         <option value="100">地狱</option>
+    </select>
+    <button id="begin">开始</button>
+    <p>单击开始按钮即可开始游戏</p>
+    请输入一个整数: <input type="txt" id="txt"> <input type="button" value="确定" id="sure">
+
+    <script>
+        var begin = document.getElementById("begin");
+        var sure = document.getElementById("sure");
+        var p = document.querySelector("p");
+        var random = 0;
+        var count = 0;
+        var num = 0;
+        begin.onclick = function() {
+            var val = document.getElementById("select").value;
+            random = Math.floor(Math.random() * val + 1);
+            p.innerHTML = "游戏开始,请输入一个1~" + val + "之间的整数";
+
+        }
+        sure.onclick = function() {
+            ++count;
+            num = parseInt(document.getElementById("txt").value);
+            if (num > random) {
+                alert("你猜的数大了," + "你已经猜了" + count + "次。");
+            } else if (num < random) {
+                alert("你猜的数小了" + "你已经猜了" + count + "次。");
+            } else {
+                alert("恭喜你,猜对了" + "你已经猜了" + count + "次。");
+            }
+        }
+    </script>
+</body>
+
+</html>

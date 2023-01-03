@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+</head>
+
+<body>
+    <h2>猜数小游戏</h2>
+    <hr />
+    <form id="frmGuess" name="frmGuess">
+        <p id="info">请猜一个1~10之间(包含1、10)的整数</p>
+        请输入一个整数：<input type="text" id="val" name="val" />
+        <input type="button" id="btOK" value="确定" />
+    </form>
+    <script type="text/javascript">
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        var random = parseInt(Math.random() * 10 + 1);
+        $("btOK").onclick = function() {
+            var Value = $("val").value;
+            var num = parseInt(Value)
+
+            if (isNaN(num)) {
+                alert("非数值,请输入数字")
+            } else {
+                if (num > random) {
+                    alert("你输入的数大了");
+
+                } else if (num < random) {
+                    alert("你输入的数小了");
+
+                } else {
+                    alert("恭喜您猜对了！");
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

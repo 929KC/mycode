@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>学号:{{student.sno}}</p>
+        <p>姓名:{{student.sname}}</p>
+        <p>成绩:{{student.achis}}</p>
+        <p>最高分:{{Math.max(student.achis[0],student.achis[1])}}</p>
+        <p>反序姓名:{{student.sname.split('').reverse().join('')}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                student: {
+                    sno: 07,
+                    sname: "黄茂荣",
+                    score: 99,
+                    achis: [99, 93]
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

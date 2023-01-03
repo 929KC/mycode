@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.one {
+				position: relative;
+				width: 949PX;
+				height: 687PX;
+				background: url(sy.png) no-repeat center;
+				margin: 0 auto;
+			}
+
+			p {
+				margin-top: 10px;
+			}
+
+			P span {
+				display: inline-block;
+				width: 100px;
+				text-align: right;
+				padding-right: 10px;
+			}
+
+			p input {
+				height: 25px;
+				border: 2px solid #38A1BF;
+			}
+
+			form {
+				position: absolute;
+				left: 20%;
+				top: 19%;
+				padding-left: 30px;
+				margin: 0 auto;
+			}
+
+			h1 {
+				text-align: center;
+				margin: 16px 0px;
+			}
+
+			.advise {
+<<<<<<< HEAD
+=======
+				position: relative;
+>>>>>>> 8f5db03166cf89185fecb2e9346f006b1976fbde
+				height: 75px;
+				line-height: 75px;
+			}
+
+			.text {
+				position: absolute;
+			}
+
+			.btn input {
+				width: 150px;
+				height: 30px;
+				background: #ffffff;
+				margin-left: 110px;
+				border-radius: 3px;
+				font: 18px "microsoft yahei";
+				color: black;
+			}
+
+			.btn #last {
+				margin-left: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">
+			<form action="#" method="get">
+				<h1>会员注册</h1>
+				<p>
+					<span>性质:</span><input type="radio" name="compay" checked="checked">个人
+					<input type="radio" name="compay">公司
+				</p>
+				<p> <span>昵称:</span><input type="text" placeholder="小明" required></p>
+				<p><span>密码:</span><input type="password" /></p>
+				<p><span>电子邮箱：</span><input type="email " name="
+				myemail" placeholder="3076675259@qq.com" required></p>
+				<p>
+					<span>所在地：</span><select>
+						<option>广州</option>
+						<option>郴州</option>
+						<option>长沙</option>
+					</select>
+				</p>
+				<p>
+					<span>身份证号：</span><input type="text" name="card" pattern="
+						^\d{8,18}|[0-9x]|{8,18}|[0-9X]{8,18}?$" required>
+				</p>
+				<p><span>
+						手机号码：
+					</span>
+					<input type=" tel" name="telephone" pattern="^\d{11}$" required>
+				</p>
+
+				<p><span class="advise">意见反馈：</span>
+					<textarea rows="4" cols="40" class="text">如果你有什么意见或问题可以告诉我！
+						
+					</textarea>
+				</p>
+				<p class="btn">
+					<input type="submit" value="提交" />
+					<input type="reset" value="重置" id="last" />
+				</p>
+			</form>
+		</div>
+	</body>
+</html>

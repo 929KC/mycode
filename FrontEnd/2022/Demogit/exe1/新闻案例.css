@@ -1,0 +1,32 @@
+body {
+				font: 16px/28px "microsoft yahei"
+			}
+			h1 {
+				font-weight: 400;
+				text-align: center;
+			}
+			.gray {
+				text-align: center;
+				font-size: 12px;
+				color: #888;
+				}
+				a {
+					text-decoration: none;
+				}
+				.search{
+					color: #666
+					width: 100px;
+				}
+				.bin{
+					font-weight: 700;
+				}
+				p {
+					text-indent: 2em;
+				}
+				.pic {
+					text-align: center;
+				}
+				.footer {
+					color: #888888
+					font-size: 12px;
+				}

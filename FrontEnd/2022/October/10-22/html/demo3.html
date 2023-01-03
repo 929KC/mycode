@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../js/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <p>邮件地址：<input type="text" v-model="email"></p>
+        <p>域名：<input type="text" v-model="domain"></p>
+        <P>
+            修改前的邮箱是：{{oldEmail}}，修改后的邮箱是：{{email}}
+        </P>
+        <P>修改的历史记录：{{updateArr}}</P>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                email: "aa@qq.com",
+                domain: 'qq.com',
+                oldEmail: '',
+                updateArr: []
+            },
+            watch: {
+                email(newVal, oldVal) {
+                    this.domain = (newVal.split('@'))[1];
+                    this.oldEmail = oldVal;
+                    this.updateArr.push(oldVal);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

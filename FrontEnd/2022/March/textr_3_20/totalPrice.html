@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+</head>
+
+<body>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function compute() {
+            var num1 = parseFloat($("num1").value);
+            var num2 = parseFloat($("num2").value);
+            var sum = num1 * num2;
+            if (isNaN($("num1").value) || isNaN($("num2").value)) {
+                alert("您输入了非法数值！");
+            } else {
+                alert("您购买的商品单价为：" + num1 + ";" + "数量为：" + num2 + ";" + "总价为：" + sum);
+            }
+        }
+    </script>
+    <p>单价：<input type="text" id="num1"></p>
+    <p>数量：<input type="text" id="num2"></p>
+    <input type="button" value="计算总价格" id="btn" onclick="compute()">
+</body>
+
+</html>

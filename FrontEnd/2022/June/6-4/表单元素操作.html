@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 500px;
+            margin: 0 auto;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        .right {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <form id="frmReg" name="frmReg" action="" method="" onSubmit="">
+            <table border="" cellspacing="" cellpadding="">
+                <caption>会员注册</caption>
+                <tr>
+                    <td class="right">登录名：</td>
+                    <td><input type="text" id="txt1" name="txtName" /></td>
+                </tr>
+                <tr>
+                    <td class="right">密码：</td>
+                    <td><input type="password" id="txt2" name="txtPwd" /></td>
+                </tr>
+                <tr>
+                    <td class="right">确认密码：</td>
+                    <td><input type="password" id="txt3" name="txtPwd" /></td>
+                </tr>
+                <tr>
+                    <td class="right">性别：</td>
+                    <td>
+                        <input type="radio" id="rdoMale" name="rdoSex" value="male" checked="true" />男性
+                        <input type="radio" id="rdoFemale" name="rdoSex" value="female" />女性
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">年龄：</td>
+                    <td>
+                        <select id="sltAge" name="sltAge">
+                            <option value="-1" selected="selected">--请选择--</option>
+                            <option value="18">18岁</option>
+                            <option value="19">19岁</option>
+                            <option value="20">20岁</option>
+                            <option value="21">21岁</option>
+                            <option value="22">22岁</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">爱好：</td>
+                    <td>
+                        <input type="checkbox" name="chkFond" id="chkBasketball" value="basketball" />篮球
+                        <input type="checkbox" name="chkFond" id="chkFootball" value="football" />足球
+                        <input type="checkbox" name="chkFond" id="chkVolleyball" value="vollyball" />排球
+                        <input type="checkbox" name="chkFond" id="chkInternet" value="internet" />上网聊天
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">自我介绍：</td>
+                    <td>
+                        <textarea id="txtareaIntro" rows="6" cols="50">请输入......</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right"><input type="button" id="btnSubmit" name="btnSubmit" value="提交" /></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+        window.onload = function() {
+            $("btnSubmit").onclick = function() {
+                //获取登录名
+                var name = document.getElementById("txt1").value;
+                //获取密码
+                var password1 = document.getElementById("txt2").value;
+                var password2 = document.getElementById("txt3").value;
+                //获取性别
+                var male = document.getElementById("rdoMale");
+                var sex = "\n性别";
+                if (male.checked) {
+                    sex += 'male';
+                } else {
+                    sex += 'female';
+                }
+                //获取年龄
+                var age = document.getElementById("sltAge").value;
+                //获取爱好
+                var ins = document.getElementsByName("chkFond");
+                var hobbys = "\n爱好";
+                for (var i = 0; i < ins.length; i++) {
+                    if (ins[i].checked) {
+                        hobbys += ins[i].value + "";
+                    }
+                }
+
+                //获取自我介绍
+                var show = "自我介绍\n" + document.getElementById("txtareaIntro").value;
+
+                //弹出相应信息		
+                alert(name + sex + password1 + password2 + age + hobbys + show);
+            }
+        }
+    </script>
+</body>
+
+</html>

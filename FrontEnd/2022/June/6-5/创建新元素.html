@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .divStyle {
+            background-color: yellow;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>第1个段落</p>
+    <div>第1个div</div>
+    <script type="text/javascript">
+        //创建<div>元素节点
+        var newdiv = document.createElement("div");
+        //设置div元素的内容
+        newdiv.innerHTML = "Hello World";
+        //设置div元素的属性
+        newdiv.style.backgroundColor = "yellow";
+        newdiv.style.height = "50px";
+        newdiv.style.width = "500px";
+        newdiv.style.textAlign = "center";
+        newdiv.style.lineHeight = "50px";
+        //将新创建的元素<div>追加到<body>中
+        document.body.appendChild(newdiv);
+
+        //设置该<div>元素的背景色为黄色、大小为200px*50px、文字内容水平居中、垂直居中
+    </script>
+</body>
+
+</html>

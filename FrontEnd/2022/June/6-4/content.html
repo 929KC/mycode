@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            float: left;
+        }
+        
+        input {
+            margin: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>过滤前内容:<br>
+        <textarea id="pre" rows="10" cols="40"></textarea>
+        <input id="btn" type="button" value="过滤">
+    </div>
+    <div>过滤后内容:<br>
+        <textarea id="res" rows="10" cols="40"></textarea>
+    </div>
+
+    <script>
+        document.getElementById("btn").onclick = function() {
+            //定义正则
+            var arr = /[\u4e00-\u9fa5]/g;
+            //获取过滤前的字符串
+            var pre = document.getElementById("pre");
+            //利用正则替换过滤前字符串中的特定子字符串
+            var str = pre.value.replace(arr, "*");
+            //将替换后的字符串显示
+            var res = document.getElementById("res");
+            res.value = str;
+        }
+    </script>
+</body>
+
+</html>

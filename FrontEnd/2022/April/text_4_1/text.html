@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>07黄茂荣</title>
+</head>
+
+<body>
+    <form id="frmZhuCe" action="ok.html" method="get">
+        用户名:<input type="text" name="txtUserName" id="txtUserName" value="" /> </br>
+        输入密码： <input type="password" name="pwd1" id="pwd1" value="" /> </br>
+        确认密码： <input type="password" name="pwd2" id="pwd2" value="" /> </br>
+        电子邮件： <input type="text" name="email" id="email" value="" /></br>
+        <input id="btnZhusCe" type="submit" value="注册" />
+    </form>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        $("frmZhuCe").onsubmit = function() {
+                return cheKUserName($("txtUserName").value) &&
+                    cheKPassword($("pwd1").value, $("pwd2").value) &&
+                    checkEmail($("email").value);
+            }
+            //检查用户名
+        function cheKUserName(un) {
+            var len = un.length;
+            var ret = indexOf("admin");
+            if (len > 3 || len < 30 || ret == -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        //检查密码
+        function cheKPassword(pa, p2) {
+            if (p1 == "" || p2) {
+                alert("密码不能为空");
+                return false;
+            }
+
+            if (p1 != p2) {
+                alert("密码须一致");
+                return false;
+            }
+            return true;
+
+        }
+
+        function checkEmail(email) {
+            if (email.indexOf("@") == email.lastIndexOf("@") && email.indexOf("@") !=
+                -1 && email.lastIndexOf("@") != -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+</head>
+
+<body>
+    <form action="">
+        输出字符串：<input type="text" id="str"></br>
+        <input type="button" value="提取" id="get"></br>
+        输出后的字符串：<input type="text" id="number"></br>
+    </form>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        //得到数字
+        function getNumber(str) {
+            var result = " ";
+            for (var i = 0; i < str.length; i++) {
+                if (str[i] >= '0' && str[i] <= '9') {
+                    result = result + str[i]
+                }
+            }
+            return result;
+        }
+
+        $("get").onclick = function() {
+            var ret = getNumber($("str").value);
+            $("number").value = ret;
+        }
+    </script>
+</body>
+
+</html>

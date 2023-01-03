@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .cls {
+        border: 5px red solid;
+        width: 900px;
+        height: 50px;
+        margin: 0 auto;
+        color: aqua;
+        background-color: green;
+        text-align: center;
+        line-height: 50px;
+    }
+    
+    #d {
+        margin: 0 700px auto;
+    }
+</style>
+
+<body>
+
+
+    <div class="cls"> </div>
+    <div id="d">
+        <button id="btn1">开始</button>
+        <button id="btn2">暂停</button>
+    </div>
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var div = document.getElementsByClassName("cls")[0];
+        var ret = 0;
+
+        function click() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth(); //0~11
+            month = month > 10 ? month + "0" : month;
+            var date2 = date.getDate();
+            var day = date.getDay();
+            var hours = date.getHours(); //0~23;
+            hours = hours < 10 ? "0" + hours : hours;
+            var minoutes = date.getMinutes(); //0~59
+            minoutes = minoutes < 10 ? "0" + minoutes : minoutes;
+            var seconds = date.getSeconds(); //0~59
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            var mill = date.getMilliseconds(); //0~999
+            var arr = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
+            var str = year + "年" + (month + 1) + "月" + date2 + "日";
+            var now = (hours) + "时" + (minoutes) + "分" + (seconds) + "秒" + mill + "毫秒" + arr[day];
+            div.innerHTML = "当前系统时间:" + str + "&nbsp;" + (hours) + "时" + (minoutes) + "分" + (seconds) + "秒" + mill + "毫秒";
+            ret = window.setTimeout(click, 1000);
+        }
+
+        btn1.onclick = function() {
+            click();
+        }
+
+        btn2.onclick = function() {
+            window.clearTimeout(ret);
+        }
+    </script>
+</body>
+
+</html>

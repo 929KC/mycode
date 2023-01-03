@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgb(19, 161, 200);
+            background-color: aquamarine;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">变大了</div>
+    <script>
+        var flag = true;
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        $("box").onclick = function() {
+            if (flag) {
+                $("box").style.width = 100;
+                $("box").style.height = 200;
+            }
+        }
+    </script>
+</body>
+
+</html>

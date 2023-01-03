@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/blog_detail.css">
+
+    <!-- 引入 editor.md 的依赖 -->
+    <link rel="stylesheet" href="editor.md/css/editormd.min.css"/>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="editor.md/lib/marked.min.js"></script>
+    <script src="editor.md/lib/prettify.min.js"></script>
+    <script src="editor.md/editormd.js"></script>
+    <script src="js/common.js"></script>
+</head>
+
+<body>
+<div class="nav">
+    <img src="image/1.jpg" alt="">
+    <div class="spacer"></div>
+    <span>我的博客系統</span>
+    <a href="bolg_list.html">主页</a>
+    <a href="blog_edit.html">写博客</a>
+    <a href="logout">注销</a>
+    <a href="" id="delete-btn">删除</a>
+</div>
+
+<div class="container">
+    <div class="container-left">
+        <div class="card">
+            <img src="image/2.jpg"  width="60px" height="60px">
+            <h3>安然</h3>
+            <a href="https://github.com/">github</a>
+            <div class="counter">
+                <span>文章</span>
+                <span>分类</span>
+            </div>
+            <div class="counter">
+                <span>2</span>
+                <span>1</span>
+            </div>
+        </div>
+    </div>
+    <div class="container-right">
+        <div class="blog-detail">
+            <h3></h3>
+            <div class="date"></div>
+            <!-- #content 这个 div 表示用来存放博客的正文的部分 -->
+            <div id="content" style="background-color: transparent">
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function getBlogDetail() {
+        $.ajax({
+            type: 'get',
+            url: 'blog' + location.search,
+            success: function (body) {
+                let h3 = document.querySelector('.blog-detail>h3');
+                h3.innerHTML = body.title;
+                let dateDiv = document.querySelector('.blog-detail>.date');
+                dateDiv.innerHTML = body.postTime;
+                // let contentDiv = document.querySelector('#content');
+                // contentDiv.innerHTML = body.content
+                // 此处使用 editor.md 来进行渲染
+                editormd.markdownToHTML('content', {markdown: body.content});
+            }
+        })
+    }
+
+    function getUserInfo() {
+        $.ajax({
+            type: 'get',
+            url: 'userInfo' + location.search,
+            success: function (body) {
+                console.log(body);
+                let h3 = document.querySelector('.container-left>.card>h3');
+                h3.innerHTML = body.username;
+            }
+        });
+    }
+    function deleteBlog() {
+        let btn = document.querySelector("#delete-btn");
+        btn.href = 'blog_delete' + location.search
+    }
+
+    getUserInfo();
+    getLoginStatus();
+    getBlogDetail();
+    deleteBlog();
+</script>
+</html>

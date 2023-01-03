@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body topmargin="0" leftmargin="0" bottommargin="0">
+<form name="form1" method="post" action="deleteMessage">
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0" >
+        <tr bgcolor="#FFCF60">
+            <td height="20" colspan="2">
+                <div align="center"><font color="#FFFFFF">用户留言管理</font></div>
+            </td>
+        </tr>
+        <tr>
+            <td height="40" colspan="2" bgcolor="#333333">
+                <table width="750" border="0" align="center" cellpadding="0" cellspacing="1" id="queryInfo">
+                    <tr>
+                        <td width="357" height="20" bgcolor="#FFFFFF">
+                            <div align="center">留言主题</div>
+                        </td>
+                        <td width="80" bgcolor="#FFFFFF">
+                            <div align="center">留言者</div>
+                        </td>
+                        <td width="156" bgcolor="#FFFFFF">
+                            <div align="center">留言时间</div>
+                        </td>
+                        <td width="93" bgcolor="#FFFFFF">
+                            <div align="center">操作</div>
+                        </td>
+                        <td width="58" bgcolor="#FFFFFF">
+                            <div align="center">删除</div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr height="15px">
+            <td></td>
+        </tr>
+        <tr>
+            <td width="100%" bgcolor="#FFFFFF" align="right">
+                <input type="submit" value="删除选项" class="buttoncss"></td>
+        </tr>
+
+</table>
+</form>
+<script>
+    function queryMessage() {
+        $.ajax({
+            type: "get",
+            url: "queryMessage",
+            success: function (data) {
+                var table = $("#queryInfo");
+                for (var i = 0; i < data.length; i++) {
+                    console.log(data)
+                    var id = data[i].id;
+                    var str = "<tr><td height='20px' bgcolor='#FFFFFF'><div align='left'>" + data[i].title + "</div></td><td height='20px' bgcolor='#FFFFFF'><div aligin='center'>"+
+                       data[i].name +"</div></td><td height='20px' bgcolor='#FFFFFF'><div align='center'>"+
+                       data[i].time +"</div></td><td height='20px' bgcolor='#FFFFFF'><div align='center'>"+"<a href=leavewordInfo.html?id="+id+">"+'查看'+
+                        "</a></div></td><td height='20px' bgcolor='#FFFFFF'><div align='center'>"+"<input type='checkbox' name='id' value="+id+">" +"</div></td></tr>"
+                    table.append(str);
+                }
+            }, error: function () {
+
+            }
+        })
+    }
+
+    queryMessage();
+</script>
+</body>
+</html>

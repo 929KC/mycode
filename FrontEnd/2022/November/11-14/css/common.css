@@ -1,0 +1,116 @@
+/*
+ 导航栏通用样式
+ */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    /*
+        使用样式后再给元素添加内外边距不会撑大盒子
+    */
+    box-sizing: border-box;
+}
+
+html {
+    /* 百分比是以其父元荤为基准*/
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-image: url(../image/cat.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.nav {
+    height: 50px;
+    /**
+        开启弹性布局
+     */
+    display: flex;
+    color: white;
+    background-color: rgba(50, 50, 50, 0.4);
+    /**
+     其子元素横向分布
+  */
+    justify-content: flex-start;
+    /**
+        其子元素垂直居中
+     */
+    align-items: center;
+}
+
+.nav img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.nav .spacer {
+    width: 70%;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    padding: 0px 10px;
+}
+
+.container {
+    width: 1000px;
+    /* 水平居中 */
+    margin: 0 auto;
+    height: calc(100% - 50px);
+    display: flex;
+    /* 子元素之间带上空白 */
+    justify-content: space-between;
+}
+
+.container .container-left {
+    height: 100%;
+    width: 200px;
+}
+
+.container .container-right {
+    height: 100%;
+    width: 796px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow: auto;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+}
+
+.card h3 {
+    text-align: center;
+}
+
+.card a {
+    display: block;
+    text-decoration: none;
+    color: #999;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.card .counter {
+    display: flex;
+    /* 空格环绕 */
+    justify-content: space-around;
+    padding: 5px;
+}

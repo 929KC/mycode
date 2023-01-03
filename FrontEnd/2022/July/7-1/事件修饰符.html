@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>欢迎来到{{name}}</h2>
+        <a href="http://www.baidu.com" @click=" showInfo">百度</a>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                name: "计算机"
+            },
+            methods: {
+                showInfo(event) {
+                    event.preventDefault(); //阻止点击超链接的时候跳转到相应的页面
+                    alert("Hello World");
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

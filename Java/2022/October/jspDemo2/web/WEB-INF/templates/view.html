@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        span {
+            display: inline-block;
+            text-align: left;
+            line-height:50px;
+        }
+
+        #skyblue {
+            background-color: deepskyblue;
+            width: 900px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div th:each="vote : ${votes}">
+    <div th:if="${vote.content} == '巴西'">
+        <span id="skyblue">选项1:巴西</span><br>
+        投票率: <img src="images/tp2.jpg" alt="" th:width="${width[0]} +'px'" height="8px"><span th:text="(${arr[0]})+'%'"></span> (得:<span th:text="${vote.numb}"></span>票 共: <span
+            th:text="${sumnumbs}"></span> )<br></div>
+    <div th:if="${vote.content} == '阿根廷'">
+        <span id="skyblue">选项2:阿根廷</span><br>
+        投票率:<img src="images/tp2.jpg" alt="" th:width="${width[1]} +'px'" height="8px"><span th:text="(${arr[1]})+'%'"></span>  (得:<span th:text="${vote.numb}"></span>票 共:
+        <span  th:text="${sumnumbs}"></span>) <br>
+    </div>
+    <div th:if="${vote.content} == '法国'">
+        <span id="skyblue">选项3:法国</span><br>
+        投票率:<img src="images/tp2.jpg" alt="" th:width="${width[2]} +'px'" height="8px"><span th:text="(${arr[2]})+'%'"></span>  (得:<span th:text="${vote.numb}"></span>票 共:
+        <span  th:text="${sumnumbs}"></span>)<br>
+    </div>
+    <div th:if="${vote.content} == '意大利'">
+        <span id="skyblue">选项4:意大利</span><br>
+        投票率:<img src="images/tp2.jpg" alt="" th:width="${width[3]} +'px'" height="8px"> <span th:text="(${arr[3]})+'%'"></span> (得:<span th:text="${vote.numb}"></span>票 共:
+        <span  th:text="${sumnumbs}"></span>)<br>
+    </div>
+    <div th:if="${vote.content} == '英格兰'">
+        <span id="skyblue">选项5:英格兰</span><br>
+        投票率:<img src="images/tp2.jpg" alt="" th:width="${width[4]} +'px'" height="8px"> <span th:text="(${arr[4]})+'%'"></span> (得:<span th:text="${vote.numb}"></span>票 共:
+        <span  th:text="${sumnumbs}"></span>)
+    </div>
+    <br>
+</div>
+</body>
+</html>
+
+

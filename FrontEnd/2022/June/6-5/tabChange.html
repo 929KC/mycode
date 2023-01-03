@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #box {
+            border: 1px solid #666666;
+            border-top: 2px solid #004276;
+            width: 396px;
+        }
+        
+        .tabBox {
+            height: 31px;
+            overflow: auto;
+        }
+        
+        .tab {
+            background-color: #ADD8E6;
+            border-right: 1px solid #666666;
+            border-bottom: 1px solid #666666;
+            width: 98px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            float: left;
+        }
+        
+        .tabCurrent {
+            background-color: white;
+            border-bottom: white;
+        }
+        
+        .contentBOx {
+            height: 150px;
+        }
+        
+        .content {
+            width: 396px;
+            height: 150px;
+            line-height: 150px;
+            display: none;
+            text-align: center;
+        }
+        
+        .contentCurrent {
+            /* //隐藏 */
+            display: block;
+        }
+        
+        .contentTail {
+            border-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="tabBox">
+            <div class="tab tabCurrent">标签一</div>
+            <div class="tab ">标签二</div>
+            <div class="tab">标签三</div>
+            <div class="tab">标签四</div>
+        </div>
+        <div class="contetnBox ">
+            <div class="content   contentCurrent" style="background-color: coral;">展示内容1</div>
+            <div class="content" style="background-color: burlywood;">展示内容2</div>
+            <div class="content" style="background-color: darkcyan;">展示内容3</div>
+            <div class="content" style="background-color: darkgreen;">展示内容4</div>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            //获取所有的选项卡tab
+            var tabs = document.getElementsByClassName("tab"); //0 1 2...tabs.length-1(3)	
+            //获取所有的内容content
+            var contents = document.getElementsByClassName("content");
+
+            //为所有的选项卡tab的鼠标移入事件(onmouseover)绑定事件处理程序
+            for (let k = 0; k < tabs.length; k++) {
+                tabs[k].onmouseover = function() {
+
+                    for (var i = 0; i < tabs.length; i++) {
+                        tabs[i].classList.remove("tabCurrent");
+                        contents[i].classList.remove("contentCurrent");
+                    }
+                    //将tabs[k]的样式设置成tabCurrent
+                    tabs[k].classList.add("tabCurrent");
+
+                    //将contents[k]的样式设置成contentCurrent
+                    contents[k].classList.add("contentCurrent");
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

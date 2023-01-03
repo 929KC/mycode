@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        
+        th {
+            border: 1px solid black;
+            background-color: #fff;
+        }
+        
+        td {
+            border: #0C5288 1px solid;
+        }
+        
+        .odd {
+            background-color: #CDF2FA;
+        }
+        
+        .even {
+            background-color: #3D9EEF;
+        }
+        
+        .oddOther {
+            background-color: #FFC;
+        }
+        
+        .evenOther {
+            background-color: #FC0;
+        }
+        
+        .select {
+            background-color: lightpink;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var count = 0;
+            var trs = document.querySelectorAll("tr");
+            // for (var i = 0; i < trs.length; i++) {
+            //     if (i % 2 == 0) {
+            //         trs[i].className = 'even';
+            //     } else {
+            //         trs.className = 'odd';
+            //     }
+            // }
+
+            document.getElementById("btnChange").onclick = function() {
+                count++;
+                if (count % 2 != 0) {
+                    for (var i = 1; i < trs.length; i++) {
+                        if (i % 2 == 0) {
+                            trs[i].className = 'oddOther';
+                        } else {
+                            trs.className = 'evenOther';
+                        }
+                    }
+
+                } else {
+                    for (var i = 1; i < trs.length; i++) {
+                        if (i % 2 == 0) {
+                            trs[i].className = 'even';
+                        } else {
+                            trs.className = 'odd';
+                        }
+                    }
+                }
+
+            }
+
+
+            document.getElementById("btnSelect").onclick = function() {
+                var t = parseInt(document.getElementById("txtLine").value);
+                trs[t].className = 'select';
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>地址</th>
+        </tr>
+        <tr class="odd">
+            <td>s001</td>
+            <td>张三</td>
+            <td>18</td>
+            <td>重庆市</td>
+        </tr>
+        <tr class="even">
+            <td>s002</td>
+            <td>李四</td>
+            <td>19</td>
+            <td>长沙市</td>
+        </tr>
+        <tr class="odd">
+            <td>s003</td>
+            <td>王五</td>
+            <td>20</td>
+            <td>北京市</td>
+        </tr>
+        <tr class="even">
+            <td>s004</td>
+            <td>赵六</td>
+            <td>19</td>
+            <td>上海市</td>
+        </tr>
+        <tr class="odd">
+            <td>s005</td>
+            <td>钱七</td>
+            <td>21</td>
+            <td>广州市</td>
+        </tr>
+    </table>
+    <form name="myfrm">
+        <input type="button" id="btnChange" value="更改颜色" />请输入选中的行：
+        <input type="text" id="txtLine" value="" size="3">
+        <input type="button" id="btnSelect" value="选中">
+    </form>
+
+</body>
+
+</html>

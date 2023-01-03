@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>产品浏览及查询</h2>
+<div>
+    产品名称:&nbsp;
+    <input name="productName" type="text" id="txtPname" style="width:127px;"/>&nbsp;
+    <input type="button" name="Button1" value="查询产品" id="Button1" onclick="Jundge()"/><br/>
+</div>
+<p></p>
+<div>
+    <div>
+        <table cellspacing="0" cellpadding="4" border="0" style="color:#333333;border-collapse:collapse;"
+               id="queryInfo">
+            <tr style="color:White;background-color:#990000;font-weight:bold;">
+                <th>产品编号</th>
+                <th>类别编号</th>
+                <th>产品名称</th>
+                <th>产品价格</th>
+                <th>产品描述</th>
+                <th>登记日期</th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+    function query() {
+        $.ajax({
+            type: "get",
+            url: "query",
+            success: function (data) {
+                console.log(data)
+                var table = $("#queryInfo");
+                for (var i = 0; i < data.length; i++) {
+                    console.log(data)
+                    var str = "<tr style='color:#333333;background-color:#FFFBD6;'><td>" + data[i].productId + "</td><td>" + data[i].categoryId + "</td><td>" + data[i].productName + "</td><td style='with:200px'>" + data[i].price + "</td><td>" + data[i].remark + "</td><td>" + data[i].registerTime + "</td></tr>";
+                    table.append(str);
+                }
+
+            }, errot: function () {
+
+            }
+
+        })
+    }
+
+    function getName() {
+        var text = document.getElementById("txtPname");
+        console.log(text.value)
+        return productName = text.value;
+    }
+
+    function Jundge() {
+        var text = document.getElementById("txtPname");
+        var name = text.value;
+        if (name == "") {
+            query();
+        } else {
+            queryLike();
+        }
+    }
+
+    function queryLike() {
+        $.ajax({
+            type: "get",
+            url: "queryLike?name="+getName(),
+            success: function (data) {
+                console.log(data)
+                var table = $("#queryInfo");
+                table.empty();
+                console.log(data)
+                var str1= "<tr style=' style=\"color:White;background-color:#990000;font-weight:bold;\"'><th>"+'产品编号' +"</th><th>"+'类别编号'+"</th><th>"+'产品名称'+"</th><th>"+'产品价格'+"</th><th>"+'产品描述'+"</th><th>"+'登记日期'+"</th></tr>"
+                var str = str1+"<tr style='color:#333333;background-color:#FFFBD6;'><td>" + data.productId + "</td><td>" + data.categoryId + "</td><td>" + data.productName + "</td><td style='with:200px'>" + data.price + "</td><td>" + data.remark + "</td><td>" + data.registerTime + "</td></tr>";
+                table.append(str);
+            }, errot: function () {
+
+            }
+
+        })
+    }
+</script>
+</body>
+</html>

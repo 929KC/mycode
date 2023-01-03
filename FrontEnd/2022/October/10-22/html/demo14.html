@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../js/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <p>姓名:<input type="text" v-model="name" @keydown.tab="getName()"></p>
+        <p>语文:<input type="text" v-model="chinese" @keydown.tab="getChinese()" @copy="copytxt()"></p>
+        <p>数学:<input type="text" v-model="math" @keydown.tab="getMath()" @paste="pastetxt()"></p>
+        <p>英语<input type="text" v-model="english" @keydown.tab="getEnglish()"></p>
+        <p><input type="button" value="确定" @click="getResult()"></p>
+        <p v-html="result"></p>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                name: '',
+                chinese: '',
+                math: '',
+                english: '',
+                result: ''
+            },
+            methods: {
+                getName() {
+                    this.result += "姓名:" + this.name + '</br>';
+                },
+                getChinese() {
+                    this.result += "语文:" + this.chinese + '</br>';
+                },
+                getMath() {
+                    this.result += "数学:" + this.math + '</br>';
+                },
+                getEnglish() {
+                    this.result += "英语:" + this.english + '</br>';
+                },
+                getResult() {
+                    this.result = "姓名:" + this.name + '</br>语文' +
+                        this.chinese + '</br>数学' + this.math + '</br>英语:' +
+                        this.english + '</br>'
+                },
+                copytxt() {
+                    console.log("复制成功");
+                },
+                pastetxt(txt) {
+                    console.log("你的文本是复制的", txt);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

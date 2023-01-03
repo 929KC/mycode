@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        /* button {
+            width: 500px;
+            height: 50px;
+            background: #ffffff;
+        }
+        
+        div {
+            width: 500px;
+            height: 50px;
+            background: rgb(211, 120, 17);
+            text-align: center;
+            line-height: 50px;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">盒子</div>
+    <div class="box">盒子</div>
+    <div id="nav">
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+        </ul>
+    </div> -->
+    <!-- <button id="btn">点击我会发生奇迹</button>
+    <div>
+        当前的时间
+    </div> -->
+
+    <!-- <div></div>
+    <p>
+        叶秋涵
+        <span>123</span>
+    </p> -->
+    <!-- <button id="mn1">美女1号</button>
+    <button id="mn2">美女2号</button>
+    <img src="D:\Git\GitHub\github代码\html+css+js.coder\Html-CSS-Js-\js\images\美女1号.jpg" alt=""> -->
+
+    <button>按钮</button>
+    <input type="text" value="5201314">;
+    <script>
+        // //1.getElementsByClassName() 根据类名获得某些元素
+        // var boxs = document.getElementsByClassName('box');
+        // console.log(boxs);
+        // //2.querySelector() 返回指定选择器的第一个元素 里面的选择器需要加符号
+        // var firstBox = document.querySelector('.box');
+        // console.log(firstBox);
+        // var nav = document.querySelector('#nav');
+        // console.log(nav);
+        //3.querySelectorAll()返回指定选择器的所有元素集合
+        // var allBox = document.querySelectorAll('.box');
+        // console.log(allBox);
+        // var lis = document.querySelectorAll('li');
+        // console.log(lis);
+
+        //获取body和html元素
+        // var bodyElem = document.body;
+        // console.log(bodyElem);
+        // var html = document.documentElement;
+        // console.log(html);
+        //1。事件是有三部分组成 事件源 事件类型 事件处理程序 事件三要素
+        //事件源 事件触发的对象
+        //事件类型 如何触发 什么事件 比如点击
+        //事件处理程序 通过一个函数赋值完成
+        // var btn = document.getElementById('btn');
+        // btn.onclick = function() {
+        //     alert('天天开心');
+        // }
+
+        //操作元素
+        // var btn = document.querySelector('button');
+        // var div = document.querySelector('div');
+        // btn.onclick = function() {
+        //     div.innerText = getDate()
+        // }
+
+        // function getDate() {
+        //     var date = new Date();
+        //     var year = date.getFullYear();
+        //     var month = date.getMonth() + 1;
+        //     var day = date.getDate();
+        //     var arr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        //     return year + '年' + month + '月' + day + '日';
+        // }
+
+        //innerText和innerHTML的区别
+        //innerText不识别html标签 去除空格和换行 IE制定
+        // var div = document.querySelector('div');
+        // // div.innerText = '<strong>今天是：</strong> 2022-1-30';
+        // // div.innerHTML = '<strong>今天是：</strong> 2022-1-30';
+        // //2,innerHTml是识别html标签w3c标椎
+        // // div.innerHTML = document.querySelector('p');
+        // // //这两个属性时可读写的 可以获取元素里面的内容
+        // var p = document.querySelector('p');
+        // console.log(p.innerHTML);
+        // console.log(p.innerText);
+        // var mn1 = document.getElementById('mn1');
+        // var mn2 = document.getElementById('mn2');
+        // var img = document.querySelector('img');
+
+        // mn2.onlink = function() {
+        //     img.src = "D:\Git\GitHub\github代码\html+css+js.coder\Html-CSS-Js-\js\images\美女2号.jpg";
+        //     img.title = '美女2号';
+        // }
+
+        // mn1.onlink = function() {
+        //     src.img = "D:\Git\GitHub\github代码\html+css+js.coder\Html-CSS-Js-\js\images\忆江南叶洛洛西瓜jun单曲酷我音乐好音质用酷我-87.jpg";
+
+        // }
+
+        //修改表单属性
+
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        btn.onclick = function() {
+            input.value = '我不爱你';
+            //    btn.disabled = true;<--> this.disabled = true; 
+            //this指向的是事件函数的调用者 btn
+        }
+    </script>
+</body>
+
+</html>

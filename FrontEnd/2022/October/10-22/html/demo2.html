@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        请输入单价: <input type="text" v-model="price">
+        <br>请输入数量: <input type="text" v-model="number">
+        <p>单价:{{price}}</p>
+        <p>数量:{{number}}</p>
+        <p>总价:{{getSum()}}</p>
+    </div>
+    <script>
+        Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。
+
+        new Vue({
+            el: "#app",
+            data: {
+                price: 0,
+                number: 0,
+                sum: 0
+            },
+            methods: {
+                getSum() {
+                    return this.sum = this.price * this.number;
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bit.dao.UserMapper">
+    <cache
+            eviction="FIFO"
+            flushInterval="60000"
+            size="512"
+            readOnly="true"/>
+
+    <select id="queryUserById" resultType="com.bit.bean.User">
+    select *from user where id = #{id}
+    </select>
+    <update id="updateUser" parameterType="com.bit.bean.User">
+        update mybatis.user set name =#{name},pwd=#{pwd},id=#{id} where id=#{id};
+    </update>
+</mapper>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <style type="text/css">
+        <!--
+        .style1 {
+            color: #FFFFFF
+        }
+
+        -->
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body topmargin="0" leftmargin="0" bottommargin="0">
+<table width="650" border="0" align="center" cellpadding="0" cellspacing="0" >
+    <tr>
+        <td height="20" bgcolor="#FFCF60">
+            <div align="center" class="style1">用户信息查看</div>
+        </td>
+    </tr>
+    <tr>
+        <td height="98" bgcolor="#666666">
+            <table width="650" border="0" align="center" cellpadding="0" cellspacing="1" id="queryInfo">
+
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td height="20">
+            <div align="center"><a href="">
+                冻结该用户</a></div>
+        </td>
+    </tr>
+</table>
+
+<script>
+    function query() {
+        $.ajax({
+            type: "get",
+            url: 'queryInfo' + location.search,
+            success: function (data) {
+                console.log(data)
+                console.log(data.name)
+                var table = $("#queryInfo");
+                    var str ="<tr><td width='99' bgcolor='#FFFFFF'><div align='center'>"+'用户昵称' +"</div></td><td width='180' bgcolor='#FFFFFF'><div align='center'>"+data.name+"</div></td><td width='256px' bgcolor='#FFFFFF'><div align='left'>"+ data.state +"</div></td></tr>"+
+                        "<tr><td height='20px' bgcolor='#FFFFFF'><div>"+ '真实姓名'+"</div></td><td colspan='3' bgcolor='#FFFFFF'><div aligin='left'>"+data.trueName+"</div></td></tr>"+ "<tr><td height='20px' bgcolor='#FFFFFF'><div>"+'身份证号'+"</div></td><td colspan='3' bgcolor='#FFFFFF'><div aligin='left'>"+data.cardId +"</div></td></tr>"+
+                        "<tr><td height='20px' bgcolor='#FFFFFF'><div>"+ 'E-mail'+"</div></td><td colspan='3' bgcolor='#FFFFFF'><div aligin='left'>"+data.email+"</div></td></tr>"+
+                        "<tr><td height='20px' bgcolor='#FFFFFF'><div>"+ '联系电话'+"</div></td><td colspan='3' bgcolor='#FFFFFF'><div aligin='left'>"+data.telephone+"</div></td></tr>"+
+                        "<tr><td height='20px' bgcolor='#FFFFFF'><div>"+ 'QQ号码'+"</div></td><td colspan='3' bgcolor='#FFFFFF'><div aligin='left'>"+data.qqId+"</div></td></tr>"+
+                        "<tr><td height='20px' bgcolor='#FFFFFF'><div>"+ '注册时间'+"</div></td><td colspan='3' bgcolor='#FFFFFF'><div aligin='left'>"+data.regTime+"</div></td></tr>"+
+                        "<tr><td height='20px' bgcolor='#FFFFFF'><div>"+ '密码提示答案'+"</div></td><td colspan='3' bgcolor='#FFFFFF'><div aligin='left'>"+data.question+"</div></td></tr>"
+                    table.append(str);
+            },
+            error: function () {
+                location.assign("http://localhost:8080/shoping/error.html")
+            }
+        })
+    }
+    query();
+</script>
+</body>
+</html>

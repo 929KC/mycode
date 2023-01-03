@@ -1,0 +1,40 @@
+/*
+ 导航栏通用样式
+ */
+*{
+    margin: 0px;
+    padding: 0px;
+    /*
+        使用样式后再给元素添加内外边距不会撑大盒子
+    */
+    box-sizing: border-box;
+}
+.nav {
+    height: 50px;
+    /**
+        开启弹性布局
+     */
+    display: flex;
+    color: white;
+    background-color: rgba(50, 50, 50, 0.4);
+    /**
+     其子元素横向分布
+  */
+    justify-content: flex-start;
+    /**
+        其子元素垂直居中
+     */
+    align-items: center;
+}
+.nav img {
+    height: 40px;
+    width: 40px;
+    boder-radius: 20px;
+    margin-left:30px;
+    margin-margin: 10px;
+}
+.nav a {
+    text-decoration: none;
+}
+
+

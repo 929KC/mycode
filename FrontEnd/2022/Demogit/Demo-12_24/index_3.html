@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>12雷小敏</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			.bg {
+				position: relative;
+				width: 949PX;
+				height: 687PX;
+				background: url(imags/sy.png) no-repeat center;
+				margin: 0 auto;
+			}
+
+			p {
+				margin-top: 10px;
+			}
+
+			P span {
+				display: inline-block;
+				width: 100px;
+				text-align: right;
+				padding-right: 10px;
+			}
+
+			p input {
+				border: 2px solid #38A1BF;
+			}
+
+			form {
+				position: absolute;
+				left: 20%;
+				top: 19%;
+				padding-left: 30px;
+				margin: 0 auto;
+			}
+
+			h1 {
+				text-align: center;
+				margin: 16px 0px;
+			}
+
+			.btn input {
+				width: 150px;
+				height: 30px;
+				background: #ffffff;
+				margin-left: 110px;
+				border-radius: 3px;
+				font: 18px "microsoft yahei";
+				color: black;
+			}
+
+			.yj {
+				position: relative;
+				height: 75px;
+				line-height: 75px;
+			}
+
+			.text {
+				position: absolute;
+			}
+
+			#last {
+				margin-left: 59px;
+				padding-left: 2px;
+			}
+
+			.te {
+				padding-left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bg">
+			<form action="#" method="get">
+				<h1>会员注册</h1>
+				<p>
+					<span>性质:</span><input type="radio" name="compay" checked="checked">个人
+					<input type="radio" name="compay">公司
+				</p>
+				<p><span>昵称:</span><input type="text" name="nicheng" pattern="^[\4e00-\u9fa5]{0,}$" placeholder="小明" />
+				</p>
+				<p><span>密码:</span><input type="password" /></p>
+				<p><span>电子邮箱:</span><input type="email" name="myemail" placeholder="123456@.126com" /></p>
+				<p><span>所在地:</span><select>
+						<option>广州</option>
+					</select></p>
+				<p><span>身份证号:</span><input type="text" name="card" requird
+						pattern="^\d{8,18}|[0-9x]{8,18}|[0-9x]{8,18}?$" /></p>
+				<p><span>手机号码:</span><input type="tel" name="telphone" pattern="^\d{11}$" required /></p>
+				<p><span class="yj">意见反馈:</span><textarea cols="50" rows="5" class="text">如果您有什么意见或问题可以告诉我！</textarea>
+				</p>
+				<p class="btn">
+					<input type="submit" value="提交" />
+					<input type="reset" value="重置" />
+				</p>
+			</form>
+		</div>
+	</body>
+</html>

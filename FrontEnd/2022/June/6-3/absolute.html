@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="txt"><br/>
+        <input type="button" id="btn" value="求绝对值">
+    </form>
+    <script>
+        var v = document.getElementById("txt").value;
+        var val = parseFloat(v) && Number(v);
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+            if (isNaN(val)) {
+                alert("非数值");
+            } else {
+                alert(Math.abs(val));
+            }
+        }
+    </script>
+</body>
+
+</html>

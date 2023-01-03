@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>07黄茂荣</title>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 300px;
+            padding: 30px;
+            border: 10px ridge #aa5500;
+            margin: auto;
+        }
+        
+        img {
+            width: 300px;
+            height: 300px;
+        }
+        
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div><img src="images/img1.jpg" id="box"></div>
+    <p id="p">微小的幸福就在身边，容易满足就是天堂</p>
+</body>
+<script type="text/javascript">
+    function $(id) {
+        return document.getElementById(id);
+    }
+    var imgs = ['images/img1.jpg', 'images/img2.jpg', 'images/img3.jpg', 'images/img4.jpg',
+        'images/img5.jpg', 'images/img6.jpg'
+    ];
+    var txts = ['微小的幸福就在身边，容易满足就是天堂。', '如果事与愿违，就相信上天一定另有安排；所有失去的，都会以另外一种方式归来。', '不管什么天气，记得随时带上自己的阳光。不管什么遭遇，记得内心装满开心的童话。', '世上最好的保鲜就是不断进步，让自己成为一个更好和更值得爱的人。', '每一次的跌倒后重新站起来，都会让人变得愈发坚强。生活，一半是回忆，一半是继续。', '不要总是羡慕别人的美好，要用心经营自己的幸福。用自己的光，照亮自己的路。'];
+    var index = 0;
+    var time = 0;
+    var t2 = document.getElementById("box");
+    var t3 = document.getElementsByTagName('p');
+    t2.onclick = function() {
+        index++;
+        if (index == 6) index = 0;
+        time = 0;
+        t2.src = imgs[index];
+        t3[0].innerHTML = txts[index];
+    }
+
+    setInterval(function() {
+        time++;
+        if (time == 5) {
+            time = 0;
+            index++;
+            if (index == 6) index = 0;
+            t2.src = imgs[index];
+            t3[0].innerHTML = txts[index];
+        }
+    }, 1000)
+</script>
+
+</html>
+
+</html>

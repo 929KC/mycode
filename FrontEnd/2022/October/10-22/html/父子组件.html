@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="../js/vue.js">
+    </script>
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <stu-s></stu-s>
+    </div>
+    <template id="son">
+			<li>{{stuNo}}-----{{student.sname}}-----{{student.sgrade}}</li>
+		</template>
+
+    <template id="father">
+			<div>
+				<p>姓名: <input type="text" v-model="sname"></p>
+				<p>成绩: <input type="text" v-model="sgrade"></p>
+				<p><button @click="add()">添加</button></p>
+				<ul>
+					<stu-info v-for="(stu,index) in stuList" :stu-no="index" :student="stu"></stu-info>
+				</ul>
+			</div>
+		</template>
+    <script>
+        Vue.component('stuInfo', {
+            template: '#son',
+            props: ['stuNo', 'student']
+        })
+        Vue.component('stuS', {
+            template: '#father',
+            data() {
+                return {
+                    sname: '',
+                    sgrade: 0,
+                    stuList: [{
+                        sname: '张三',
+                        sgrade: 99
+                    }, {
+                        sname: '李四',
+                        sgrade: 96
+                    }, {
+                        sname: '王五',
+                        sgrade: 93
+                    }]
+                }
+            },
+            methods: {
+                add() {
+                    let newStu = {
+                        sname: this.sname,
+                        sgrade: this.sgrade
+                    };
+                    this.stuList.push(newStu);
+                }
+            }
+        })
+        new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	height: 100vh;
+	background: linear-gradient(to bottom, #2887e3 50%, #288 50%);
+}
+
+.music-player {
+	width: 300px;
+	background-color: #FFFFFF;
+	padding: 65px 45px;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	border-radius: 10px;
+	box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.3);
+}
+
+.music-player img {
+	width: 100%;
+}
+
+.song-detail {
+	font-family: '微软雅黑';
+	text-align: center;
+}
+
+.song-detail #song-name {
+	font-size: 25px;
+	font-weight: 600;
+	letter-spacing: 3px;
+
+}
+
+.song-detail #artist {
+	font-size: 18px;
+}
+
+.player-opthions {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin: 0 10px;
+	margin: 30px 10px 0 0;
+}
+
+.player-opthions button {
+	border: none;
+	background-color: transparent;
+}
+
+.player-opthions #shuffle,
+.player-opthions #repeat {
+	color: #949494;
+	font-size: 16px;
+}
+
+.player-opthions #prev,
+.player-opthions #next {
+	font-size: 18px;
+}
+
+.player-opthions #playPause {
+	width: 70px;
+	height: 70px;
+	background-color: #2887e3;
+	border-radius: 50%;
+	color: #FFFFFF;
+	font-size: 24px;
+}
+
+#process-bar {
+	position: relative;
+	width: 100%;
+	height: 8px;
+	background-color: #EEEEEE;
+	border-radius: 4px;
+	margin-top: 25px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+#cur-process {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 4px;
+	background-color: #2887E3;
+}
+
+.time-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

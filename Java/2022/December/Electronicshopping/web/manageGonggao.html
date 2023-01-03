@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>公告管理</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <style type="text/css">
+
+        <!--
+        .style1 {
+            color: #FFFFFF
+        }
+
+        -->
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body topmargin="0" leftmargin="0" bottommargin="0">
+<form name="form1" method="post" action="deleteNotice">
+    <table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td height="20" bgcolor="#FFCF60">
+                <div align="center" class="style1">公告管理</div>
+            </td>
+        </tr>
+        <tr>
+            <td height="50" bgcolor="#666666">
+                <table width="750" height="25" border="0" align="center" cellpadding="0" cellspacing="1" id="queryInfo">
+
+                    <tr>
+                        <td width="50" height="25" bgcolor="#FFFFFF">
+                            <div align="center">复选</div>
+                        </td>
+                        <td width="621" bgcolor="#FFFFFF">
+                            <div align="center">公告主题</div>
+                        </td>
+                        <td width="75" bgcolor="#FFFFFF">
+                            <div align="center">操作</div>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table width="750" height="25" border="0" align="center" cellpadding="0" cellspacing="0" >
+        <tr>
+
+            <td align="right">
+                <input type="submit" value="删除选项" class="buttoncss">
+            </td>
+        </tr>
+
+    </table>
+</form>
+<script>
+    function queryNotice() {
+        $.ajax({
+            type: "get",
+            url: "queryNotice",
+            success: function (data) {
+                var table = $("#queryInfo");
+                for (var i = 0; i < data.length; i++) {
+                    console.log(data)
+                    var id = data[i].id;
+                    var str = "<tr><td height='25px' bgcolor='#FFFFFF'><div align='center'>"+"<input type='checkbox' name='id' value="+id+">"+"</div></td><td height='25px' bgcolor='#FFFFFF'><div align='center'>"+data[i].title +"</div></td><td height='25px' bgcolor='#FFFFFF'><div algin='center'><a href=editGonggao.html?id="+id+">"+'查看编辑' +"</a></div></td></tr>";
+                    table.append(str);
+                }
+            }, error: function () {
+
+            }
+        })
+    }
+    queryNotice();
+</script>
+</body>
+</html>

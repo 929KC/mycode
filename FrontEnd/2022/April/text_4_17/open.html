@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+</head>
+
+<body>
+
+
+    <input type="button" value="打开窗口" id="open">
+    <input type="button" value="关闭窗口" id="close">
+
+
+    <script>
+        var newWindows;
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+
+        $("open").onclick = function() {
+            newWindows = open("https://www.baidu.com");//返回新窗口的对象
+        }
+        $("close").onclick = function() {
+            newWindows.close();
+        }
+    </script>
+</body>
+
+</html>

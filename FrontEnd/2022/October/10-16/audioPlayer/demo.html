@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<audio src="res/mp3_1.mp3" controls id="myaudio"></audio>
+		<br/>
+		<button id="btnPlay">播放</button>
+		<script type="text/javascript">
+			var audio=document.getElementById("myaudio");
+			var play=document.getElementById("btnPlay");
+			
+			play.onclick=function(){
+				audio.volume=0.3;
+				audio.play();
+			}
+			audio.addEventListener("timeupdate",function(){
+				
+			})
+		</script>
+	</body>
+</html>

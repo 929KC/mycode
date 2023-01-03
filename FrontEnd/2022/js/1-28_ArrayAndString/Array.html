@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //筛选数组
+        // var arr = [1000, 1440, 4554, 2048, 2150];
+        // var newArr = [];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i] > 2000) {
+        //         newArr.push(arr[i]);
+        //     }
+        // }
+        // console.log(newArr);
+
+        //数组排序
+        //翻转数组
+        // var arr1 = [12, 45, 78, 415245, 278];
+        // var arr2 = [45, 12, 4, 78512, 5745];
+        // arr2.reverse();
+        // console.log(arr2);
+        // //冒泡排序
+        // arr1.sort(function(a, b) {
+        //     return a - b; //升序的顺序
+        //     // return b-a;//降序
+        // });
+        // console.log(arr1);
+
+        //数组索引获取方法
+        // var arr1 = ['pink', '叶秋涵', '叶子秋', 'blue', '叶秋涵'];
+        // console.log(arr1.indexOf('叶秋涵')); //从前往后找，只返回第一个满足条件的索引号，如果找不到则返回-1
+        // console.log(arr1.lastIndexOf('pink')); //从后往前找
+
+        //数组去重案例
+        // function unique(arr) {
+        //     var newArray = [];
+        //     for (var i = 0; i < arr.length; i++) {
+        //         if (newArray.indexOf(arr[i]) == -1) {
+        //             newArray.push(arr[i]);
+        //         }
+        //     }
+        //     return newArray;
+        // }
+        // var demo = unique(['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b']);
+        // console.log(demo);
+
+        //数组转字符串
+        // var arr2 = [1, 2545, 1245, 4545, 454, 244, 52314, 63];
+        // console.log(arr2);
+        // console.log(arr2.toString());
+        // var arr = ['green', 'red', 'blue', 'yellow'];
+        // console.log(arr.join()); //允许添加分隔符
+        // console.log(arr.join('-'));
+        // console.log(arr.join('&'));
+
+        //统计字符出现的字符次数
+        var str = "abcdefoxyzooogfh";
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (o[chars]) {
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        console.log(o);
+        var max = 0;
+        var ch = '';
+        for (var k in o) {
+            //k 得到的是属性名
+            //o[k]得到的是 属性值
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log(max);
+        console.log('最多的字符是：' + ch);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

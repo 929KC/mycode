@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="800px" height="600px"></canvas>
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var context = canvas.getContext('2d');
+        var text = "Big smile";
+        context.beginPath();
+        context.font = "italic bold 80px 微软雅黑";
+        context.fillStyle = "red";
+        context.fillText("Big smile", 150, 150);
+        context.strokeStyle = "blue";
+        context.lineWidth = 5;
+        context.strokeText("Big smile", 150, 250);
+
+        var x = context.measureText(text).width;
+        var y = context.measureText(text).height;
+
+        var gradent = context.createLinearGradient(350, 350, x, 100);
+        gradent.addColorStop(0, "hotpink");
+        gradent.addColorStop(0.5, "blue");
+        gradent.addColorStop(0.9, "red");
+
+        context.fillText(text, 150, 350);
+        context.fillStyle = gradent;
+        context.lineWidth = 3;
+        context.fillText(text, 150, 350);
+
+
+        context.closePath();
+    </script>
+</body>
+
+</html>

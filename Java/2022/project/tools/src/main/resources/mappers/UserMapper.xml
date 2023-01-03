@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kc.tools.mapper.UserMapper">
+    <sql id="Base_Column_List">
+        id, role, name, password, id_card, phone, gender, entry_time, status
+    </sql>
+    <select id="countByUserId" resultType="int" parameterType="int">
+        select count(1) from user where id=#{id};
+    </select>
+    <select id="selectLoginInfo" resultType="com.kc.tools.model.User" >
+        select
+        <include refid="Base_Column_List"/>
+        from user where id=#{id} and password=#{password}
+    </select>
+</mapper>

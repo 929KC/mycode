@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+    <style type="text/css">
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 1px aqua solid;
+        }
+    </style>
+    <script type="text/javascript">
+        function pr() {
+            var arr = ["北京", "上海", "广州", "长沙", "株洲"];
+            var str = "<ul>";
+            for (var n in arr) {
+                str += "<li><a>" + arr[n] + "</a></li>";
+
+            }
+            str += "</ul>"
+            document.getElementById("box").innerHTML = str;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"> </div>
+    <input type="button" value="显示内容" onclick="pr()" />
+</body>
+
+</html>

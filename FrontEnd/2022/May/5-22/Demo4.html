@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣 </title>
+
+</head>
+
+<body>
+    <script>
+        window.onload = function() {
+                //调用init()，初始化
+                init();
+                //将#btnRemoveOne的单击事件与removeOne进行绑定
+                document.getElementById("btnRemoveOne").onclick = function() {
+                    removeOne();
+                }
+
+                //将#btnRemoveAll的单击事件与removeAll进行绑定
+                document.getElementById("btnRemoveAll").onclick = function() {
+                    removeAll();
+                }
+
+                //将#btnGetOne的单击事件与getOne进行绑定
+                document.getElementById("btnGetOne").onclick = function() {
+                    getOne();
+                }
+
+            }
+            //初始化下拉列表框
+        function init() {
+            //获取下拉列表框										
+            var sle = document.querySelector('select');
+
+            //创建第1个option元素节点
+            var op1 = document.createElement('option');
+            op1.innerHTML = 'java面向对象编程';
+            op1.value = 'java';
+            //向下拉列表中添加第1个option选项					
+            sle.appendChild(op1);
+            //创建第2个option元素节点
+            var op2 = document.createElement('option');
+            op2.innerHTML = 'javaScript网页编程';
+            op2.value = 'js';
+            //向下拉列表中添加第2个option选项
+            sle.appendChild(op2);
+            //创建第3个option元素节点
+            var op3 = document.createElement('option');
+            op3.innerHTML = 'MYSQL数据库编程';
+            op3.value = 'mysql';
+            //向下拉列表中添加第3个option选项
+            sle.appendChild(op3);
+            //设置某个option选项被选中
+            sle.value = 'java';
+        }
+        //移除选中的项
+        function removeOne() {
+            //获取下拉列表框
+            var sle = document.querySelector('select');
+            //获取被选中项的索引
+            var value = sle.value;
+            if (value == '-1') {
+                alert('请选择某个科目');
+                return;
+            }
+            //删除被选中项的索引
+            for (var i = 1; i < sle.length; i++) {
+                if (value == sle.children[i].value) {
+                    sle.removeChild(sle.children[i]);
+                    break;
+                }
+            }
+        }
+        //移除所有选项
+        function removeAll() {
+            //获取下拉列表框
+            var sle = document.querySelector('select');
+            //删除所有选项
+            while (sle.children.length > 1) {
+                sle.removeChild(sle.children[1]);
+            }
+        }
+        //访问被选中的项
+        function getOne() {
+            //获取下拉列表框
+            var sle = document.querySelector('select');
+            //获取被选中项的索引
+            var x = sle.selectedIndex;
+            alert(x);
+            //获取被选中项
+            var t = sle.options[x];
+
+            //弹出警告框，显示选中项的文本和值
+            alert('你选择的是:' + t.innerHTML + ';\n值:' + t.value);
+        }
+    </script>
+    <form>
+        科目：
+        <select name="sltSubjects">
+            <option value="-1">请选择</option>
+        </select>
+        <br />
+        <input type="button" id="btnRemoveOne" value="移除选中的项" />
+        <input type="button" id="btnRemoveAll" value="移除所有科目" />
+        <input type="button" id="btnGetOne" value="访问被选中的项" />
+    </form>
+</body>
+
+</html>

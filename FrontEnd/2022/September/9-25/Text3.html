@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .clock {
+            width: 500px;
+            height: 500px;
+            border-radius: 100%;
+            border: 5px solid black;
+            background-image: url(imgs/time.png);
+            background-size: 100% 100%;
+        }
+        
+        .hour {
+            width: 8px;
+            height: 130px;
+            background-color: black;
+            position: absolute;
+            left: 253px;
+            top: 127px;
+            animation: run 80000s linear infinite;
+        }
+        
+        .minute {
+            width: 4px;
+            height: 180px;
+            background-color: blue;
+            position: absolute;
+            left: 253px;
+            top: 77px;
+            animation: run 3600s linear infinite;
+        }
+        
+        .seconds {
+            width: 2px;
+            height: 220px;
+            background-color: black;
+            position: absolute;
+            left: 253px;
+            top: 37px;
+            animation: run 60s steps(60) infinite;
+        }
+        
+        @keyframes run {
+            from {
+                transform: rotate(0deg);
+                transform-origin: bottom;
+            }
+            to {
+                transform: rotate(360deg);
+                transform-origin: bottom;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="seconds"></div>
+    </div>
+</body>
+
+</html>

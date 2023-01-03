@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="mydiv">
+        <h1>name:{{name}}</h1>
+        <h1>age:{{age}}</h1>
+        <h1>address:{{address}}</h1>
+        <h1>{{datalis()}}</h1>
+    </div>
+    <div id="two">
+        <div v-html="message"></div>
+    </div>
+    <script>
+        Vue.config.productionTip = false; //阻止vue启动时生成生产提示
+        var data = {
+            name: "叶秋涵 ",
+            age: 19,
+            address: "郴州"
+        }
+        var vm = new Vue({
+            el: '#mydiv',
+            data: data,
+            methods: {
+                datalis: function() {
+                    return "我是" + this.name + "今年" + this.age + "来自" + this.address;
+                }
+            }
+        })
+        document.write(vm.name == data.name);
+        data.name = "叶子秋";
+        document.write(vm.name);
+        document.write("<br>")
+            //除了数据属性，Vue 实例还提供了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的属性区分开来。
+        document.write(document.getElementById("mydiv") == vm.$el);
+    </script>
+</body>
+
+</html>

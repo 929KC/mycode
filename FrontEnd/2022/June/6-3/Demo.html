@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-复习-数组</title>
+</head>
+
+<body>
+    <script>
+        var arr = new Array("唐僧", "孙悟空", "猪八戒", "沙僧");
+        for (var i = 0; i < arr.length; i++) {
+            document.write(arr[i]);
+            document.write("<hr/>");
+        }
+        document.write(arr); //write,直接打印该数组所有的元素
+        document.write("<hr/>");
+        //方法2
+        for (var i in arr) {
+            document.write(arr[i]);
+            document.write("<hr/>");
+        }
+        document.write(arr);
+    </script>
+</body>
+
+</html>

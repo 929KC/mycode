@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组对象</title>
+    <script>
+        //利用数组字面量创建数组
+        // var arr = [1, 2, 3];
+        // console.log(arr[0]);
+        // //利用new Arry()
+        // var arr1 = new Array(); //创建空数组
+        // console.log(arr1);
+        // var arr2 = new Array(); //里面有两个元素空元素的数组
+        // console.log(arr2);
+        // var arr3 = new Array(1, 2); //等价于[1,2]这样写表示里面有2个数组元素
+        // console.log(arr3);
+
+        // //检测是否为数组的两种形式
+        // //(1)instanceof
+        // var arr = [];
+        // var obj = {};
+        // console.log(arr instanceof Array);
+        // console.log(obj instanceof Array);
+        // //(2)Array.isArray(参数) H5新增的方法
+        // console.log(Array.isArray(arr));
+        // console.log(Array.isArray(obj));
+
+        //添加数组元素
+        //(1)push是可以给数组追加新的元素
+        //参数直接写数组元素就可以
+        //push完毕之后 ，返回的结果是新数组的长度
+        //原数组的长度会发生变化
+        //unshift是可以给数组追加新的元素
+        //参数直接写数组元素就可以
+        //完毕之后 ，返回的结果是新数组的长度
+        //参数直接写数组元素就可以
+        var arr = [1, 2, 3, 4];
+        // arr.push('叶秋涵', 520);
+        // arr.unshift("叶子秋", 1314);
+        // console.log(arr);
+        //删除数组元素
+        //pop是可以删除数组的最后一个元素 记住一次只能删除一个
+        //pop完毕之后返回的是删除的那个元素
+        //pop没有参数
+        //原数组也会变化
+        //.shift()删除数组的第一个元素
+        //没有参数
+        //shift完毕之后返回的是删除的那个元素
+        console.log(arr.pop());
+        console.log(arr);
+        console.log(arr.shift());
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

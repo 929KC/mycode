@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>ºìÂÌµÆ</title>
+		<style>
+			#box{
+				border:1px solid gray;
+				width: 360px;
+				height: 80px;
+				border-radius: 20px;
+				margin:0 auto;
+			}
+			.light{
+				border:1px solid gray;
+				width: 60px;
+				height: 60px;
+				float:left;
+				margin:10px;
+				border-radius: 60px;
+			}
+			#count{
+				text-align: center;
+				font-size: 36px;
+				border: none;
+			
+			}
+		</style>
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="red" class="light"></div>
+			<div id="yellow"  class="light"></div>
+			<div id="green"  class="light"></div>
+			<div id="count" class="light">12</div>
+		</div>
+		
+		<script type="text/javascript">
+		var count=12;
+		var flag=1;
+		window.setInterval("show()",500);
+		
+		function $(id){
+		return document.getElementById(id);
+		}
+		window.onload=function(){
+			setGreen();
+		}
+			
+		function show(){
+			count--;
+			 if(count<=0){
+				if(flag==1){
+					setYellow();
+					count=3;
+					flag=2;
+					
+				}else if(flag==2){
+					setRed();
+					count=12;
+					flag=3;
+				}else if(flag==3){
+					setGreen();
+					flag=1;
+					count=12;
+				}
+			
+			} 
+				
+			if(count<10){
+				$("count").innerHTML="0"+count;
+				
+			}else{
+				$("count").innerHTML=count;
+			}
+			
+		}
+			
+		function setGreen(){
+				$("green").style.backgroundColor="green";
+				$("red").style.backgroundColor="white"
+				$("yellow").style.backgroundColor="white";
+		}
+		
+		function setRed(){
+			$("red").style.backgroundColor="red";
+			$("green").style.backgroundColor="white";
+			$("yellow").style.backgroundColor="white";
+		}
+		
+		function setYellow(){
+			$("yellow").style.backgroundColor="yellow";
+			$("red").style.backgroundColor="white";
+			$("green").style.backgroundColor="white";
+		}
+	
+		</script>
+	</body>
+</html>

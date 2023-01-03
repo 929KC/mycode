@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="按钮">
+<div id="mydiv"></div>
+<script>
+    //创建对象
+    var xhr = new XMLHttpRequest();
+    window.onload = function () {
+        document.getElementById("btn").onclick = function () {
+            xhr.onreadystatechange = callback;
+            xhr.open("GET","/6_24/test2",true);
+            xhr.send();
+        }
+    }
+
+    function  callback(){
+        if(xhr.readyState ==4){
+            if(xhr.status==200){
+                document.getElementById("mydiv").innerHTML=xhr.responseText;
+            }else{
+                alert(xhr.status);
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

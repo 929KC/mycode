@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+    <style>
+        .cal {
+            width: 60px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>请输入第一个数：<input type="text" id="num1"></p>
+    <p>请输入第二个数：<input type="text" id="num2"></p>
+    <input type="button" value="+" class="cal" onclick="cacu(add)">
+    <input type="button" value="-" class="cal" onclick="cacu(sub)">
+    <input type="button" value="*" class="cal" onclick="cacu(mul)">
+    <input type="button" value="/" class="cal" onclick="cacu(div)">
+    <p>结果：<input type="text" id="result"></p>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function cacu(fun) {
+
+            var num1 = parseInt($("num1").value);
+            var num2 = parseInt($("num2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("非法数值");
+                return;
+            }
+            $("result").value = fun(num1, num2);
+
+        }
+
+        function add(num1, num2) {
+            return num1 + num2;
+        }
+
+        function sub(num1, num2) {
+            return num1 - num2;
+        }
+
+        function mul(num1, num2) {
+            return num1 * num2;
+        }
+
+        function div(num1, num2) {
+            if (num2 == 0) {
+                alert(除数不能为0);
+                return;
+            }
+            return num1 / num2;
+        }
+    </script>
+
+</body>
+
+</html>

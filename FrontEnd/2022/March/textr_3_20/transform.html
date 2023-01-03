@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+
+</head>
+
+<body>
+    <h1>大小写转换</h1>
+    <p>原数据：<input type="text" id="old"></p>
+    <p>操作：<input type="button" value="转大写" onclick="deal('upper')"> &nbsp
+        <input type="button" value="转小写" onclick="deal('lower')"></p>
+    <p>新数据：<input type="text" id="new"></p>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function deal(opt) {
+            var str = $("old").value;
+            switch (opt) {
+                case 'upper':
+                    str = str.toUpperCase();
+                    break;
+                case 'upper':
+                    str = str.toLowerCase();
+                    break;
+            }
+            $("new").value = str;
+        }
+    </script>
+</body>
+
+</html>

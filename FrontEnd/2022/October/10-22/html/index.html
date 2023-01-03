@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../js/vue.js">
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        产品名称：{{name}}<br /> 原单价：{{price}}
+        <br /> 数量：{{num}}
+        <br /> 原总价：{{zj()}}
+        <br /> 折扣（打九折）：{{discount}}
+        <br /> 现总价（计算属性）：{{getDisTotal}}
+        <br />
+        <p>
+            单价：<input type="text" v-model="price" />
+            <button @click="addNum()">增加数量</button>
+            <button @click="lessNum()">减少数量</button>
+        </p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name: "苹果",
+                price: 2,
+                num: 10,
+                discount: 0.9
+            },
+            methods: {
+                zj() {
+                    return this.price * this.num
+                },
+                addNum() {
+                    this.num++;
+                    if (this.num > 50) {
+                        num = 50
+                    }
+                },
+                lessNum() {
+                    this.num--;
+                    if (this.num < 0) {
+                        num = 0
+                    }
+                }
+            },
+            computed: {
+                getDisTotal() {
+                    let total = this.price * this.num * this.discount;
+                    total = total.toFixed(2);
+                    return total;
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

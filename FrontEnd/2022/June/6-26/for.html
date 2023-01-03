@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <!-- <div id="app">
+        <ol>
+            <li v-for="site in sites">
+                {{site.name}}
+            </li>
+        </ol>
+    </div> -->
+    <!-- <div id="app">
+        <ol> -->
+    <!-- <li v-for="value in Object">
+                {{value}}
+            </li> -->
+
+    <!-- <li v-for="(key ,value) in Object">
+                {{key}}:{{value}}
+            </li> -->
+    <!-- <li v-for="value in Object">
+                {{index}}.{{key}}:{{value}}
+            </li>
+        </ol>
+    </div> -->
+    <div id="app2">
+        <ul>
+            <li v-for="n in 10">{{n}}</li>
+        </ul>
+    </div>
+    <script>
+        Vue.config.productionTip = false; //阻止vue启动时生成生产提示
+        // var vm = new Vue({
+        //     el: "#app",
+        //     data: {
+        //         sites: [{
+        //             name: "黄茂荣",
+        //         }, {
+        //             name: "叶秋涵",
+        //         }, {
+        //             name: "叶子秋"
+        //         }]
+        //     }
+        // })
+
+        // var vm = new Vue({
+        //     el: "#app",
+        //     data: {
+        //         Object: {
+        //             url: "www.bilibili.com",
+        //             name: "B站",
+        //             age: 19
+        //         }
+        //     }
+        // })
+
+        var vm = new Vue({
+            el: "#app2",
+            data: {
+                Object: {
+                    url: "www.bilibili.com",
+                    name: "B站",
+                    age: 19
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

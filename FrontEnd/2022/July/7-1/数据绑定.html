@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+<!-- 
+    单向绑定:数据从页面流向data
+    双向绑定:数据《--》页面互相流通
+    v-model可以简写为v-model:默认针对表单元素的value值
+-->
+
+<body>
+    <div id="app">单向绑定: <input type="text" :value="name">
+        <br/> 双向绑定: <input type="text" v-model="name"></div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                name: "你好世界",
+                url: "https://www.baidu.com"
+            }
+        })
+    </script>
+</body>
+
+</html>

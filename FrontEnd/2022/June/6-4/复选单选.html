@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+
+    <form action="" method="post">
+        <fieldset id="">
+            <legend>您的爱好</legend>
+            <input type="checkbox" name="chkAll" id="chkAll" value="" />全选/全不选<br />
+            <input type="checkbox" name="chkFond" id="chkBasketball" value="basketball" />篮球
+            <input type="checkbox" name="chkFond" id="chkFootball" value="football" />足球
+            <input type="checkbox" name="chkFond" id="chkVolleyball" value="vollyball" />排球
+            <input type="checkbox" name="chkFond" id="chkInternet" value="internet" />上网聊天
+            <br /><br />
+            <input type="button" id="btnAll" value="全　选" />
+            <input type="button" id="btnNoAll" value="全不选" />
+            <input type="button" id="btnFan" value="反　选" />
+        </fieldset>
+        <fieldset id="">
+            <legend>您的性别</legend>
+            <input type="radio" name="sex" id="rdoMale" value="男" checked="checked" />男
+            <input type="radio" name="sex" id="rdoFemale" value="女" />女
+        </fieldset><br />
+        <input type="button" name="btnShow" id="btnShow" value="显示" />
+    </form>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+        window.onload = function() {
+            var ins = document.getElementsByName('chkFond');
+            var sex = document.getElementsByName('sex');
+            var chkAll = $('chkAll');
+            var checkall = document.getElementById("btnAll");
+            //全选
+            checkall.onclick = function() {
+                    for (var i = 0; i < ins.length; i++) {
+                        ins[i].checked = true;
+
+                    }
+                    chkAll.checked = true;
+                }
+                //全不选
+            var checknoll = document.getElementById("btnNoAll");
+            checknoll.onclick = function() {
+                for (var i = 0; i < ins.length; i++) {
+                    ins[i].checked = false;
+                }
+                chkAll.checked = false;
+            }
+
+            //反选
+            $("btnFan").onclick = function() {
+                chkAll.checked = true;
+                for (var i = 0; i < ins.length; i++) {
+                    if (ins[i].checked) {
+                        ins[i].checked = false;
+                    } else {
+                        ins[i].checked = true;
+                    }
+                }
+
+                for (var j = 0; j < ins.length; j++) {
+                    if (ins[j].checked == false) {
+                        chkAll.checked = false;
+                        break;
+                    }
+                }
+            }
+
+            chkAll.onclick = function() {
+                if (this.checked) {
+                    for (var i = 0; i < ins.length; i++) {
+                        ins[i].checked = true;
+                    }
+                } else {
+                    for (var i = 0; i < ins.length; i++) {
+                        ins[i].checked = false;
+                    }
+                }
+            }
+
+            for (var i = 0; i < ins.length; i++) {
+                ins[i].onclick = function() {
+                    for (var i = 0; i < ins.length; i++) {
+                        if (ins[i].checked == false) {
+                            break;
+                        }
+                        if (i == 3) {
+                            chkAll.checked = true;
+                        } else {
+                            chkAll.checked = false;
+                        }
+                    }
+                }
+            }
+
+            $("btnShow").onclick = function() {
+                var sum = "";
+                var sex = document.getElementById("rdoMale");
+                for (var i = 0; i < ins.length; i++) {
+                    if (ins[i].checked) {
+                        sum += ins[i].value + "\n";
+                    }
+                    if (sex.checked) {
+                        sum += "男";
+                    } else {
+                        sum += "女";
+                    }
+                }
+                alert(sum);
+            }
+        }
+    </script>
+</body>
+
+</html>

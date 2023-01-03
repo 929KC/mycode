@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="Student" class="com.bit.spring.bean.Student">
+        <property name="course">
+            <array>
+                <value>mysql</value>
+                <value>Linux</value>
+                <value>C++</value>
+                <value>java</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+              <ref bean="course1"></ref>
+                <ref bean="course2"></ref>
+            </list>
+        </property>
+        <property name="map">
+           <map>
+               <entry key="课程一" value="java"></entry>
+               <entry key="课程二" value="javaScript"></entry>
+           </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>g</value>
+                <value>f</value>
+                <value>e</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="course1" class="com.bit.spring.bean.Course">
+        <property name="cname" value="java"></property>
+    </bean>
+
+    <bean id="course2" class="com.bit.spring.bean.Course">
+        <property name="cname" value="javaScript"></property>
+    </bean>
+
+</beans>

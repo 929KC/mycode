@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            perspective: 400px;
+        }
+        
+        form {
+            width: 400px;
+            height: 200px;
+            border: 3px solid skyblue;
+            margin: 50px auto;
+            text-align: center;
+            border-radius: 13px;
+            animation: run 1s;
+        }
+        
+        @keyframes run {
+            from {
+                transform: rotateX(90deg) translateZ(-200px) scale(0.2, 0.2);
+            }
+            to {
+                transform: rotateX(0deg) translateZ(0px) scale(1, 1);
+            }
+        }
+        
+        input {
+            margin-top: 20px;
+            border-style: none;
+            border: 2px solid skyblue;
+        }
+        
+        input[type=text] {
+            margin-top: 60px;
+            height: 20px;
+            background: url("img/user.jpg") no-repeat;
+            background-position: 2px 3px;
+            padding-left: 20px;
+        }
+        
+        input[type=password] {
+            height: 20px;
+            background: url("img/pwd.jpg") no-repeat;
+            background-position: 2px 3px;
+            padding-left: 20px;
+        }
+        
+        input[type=submit] {
+            height: 25px;
+            width: 50px;
+            margin-right: 20px;
+            background-color: aqua;
+        }
+        
+        input[type=reset] {
+            height: 25px;
+            width: 50px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="user">账号：</label>
+        <input type="text" name="user" id="user" placeholder="admin">
+        <br>
+        <label for="user">密码：</label>
+        <input type="password" name="user" id="user">
+        <br>
+        <input type="submit" value="登录" />
+        <input type="reset" value="注册">
+    </form>
+</body>

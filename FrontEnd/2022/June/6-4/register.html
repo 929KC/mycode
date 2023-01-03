@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <form action="ok.html" method="post" onsubmit="return checkName();">
+        用户名：<input type="text" id="username">
+        <input type="submit" value="注册" id="sub">
+        <span>用户名长度在3~30之内,且不允许出现敏感词admin</span>
+    </form>
+
+    <script>
+        function checkName() {
+            var user = document.getElementById("username").value;
+            var len = user.length;
+            var inf = user.toLowerCase().indexOf("admin");
+            if (len < 3 || len > 30 || inf != -1) {
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

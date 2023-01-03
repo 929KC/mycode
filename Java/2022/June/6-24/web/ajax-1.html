@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="按钮">
+<div id="mydiv"></div>
+<script>
+    window.onload = function () {
+        document.getElementById("btn").onclick = function () {
+            //1.创建AJAX核心对象
+            var xhr = new XMLHttpRequest();
+           xhr.onreadystatechange = function () {
+               //注册回调函数
+               //0-->1
+               //1-->2
+               //2-->3
+               //3-->4
+               if(xhr.readyState==4){
+                   if(this.status==404){
+                       alert("不好意思,请检查路径,资源找不到");
+                   }else if(this.status==500){
+                       alert("不服务器内部错误");
+                   }else if(this.status==200){
+                       document.getElementById("mydiv").innerHTML=this.responseText;
+                       //alter("恭喜你,响应成功");
+                   }
+
+               }
+           }
+        //开启通道
+            //method,url,async,user,psw ,请求方式,地址,
+            //async:只能为布尔值,true表示异步请求,false表示同步请求
+            xhr.open("GET","/6_24/test?userName=叶秋涵&userAge=19",true);
+            //发送请求
+            xhr.send();
+        }
+
+    }
+</script>
+</body>
+</html>

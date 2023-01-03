@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe/title>
+        <script>
+            //    函数就是封装一段重复执行的代码 目的：就是让大量的代码重复使用
+            // function get_sum(num1, num2) {
+            //     var sum = 0;
+            //     for (var i = num1; i <= num2; i++) {
+            //         sum += i;
+            //     }
+            //     console.log(sum);
+            // }
+            // get_sum(1, 10);   
+
+            // // // function SayHi() {
+            //     console.log('hi~');
+            // }
+            // SayHi();
+
+            // function getSum() {
+            //     var sum = 0;
+            //     for (var i = 1; i <= 100; i++) {
+            //         sum += i;
+            //     }
+            //     console.log(sum);
+            // }
+
+            // function getSum();
+            // function cook(aru) { //形参是接受实参 aru='吃鱼' 形参类似于一个变量
+            //     console.log(aru);
+            // }
+            // cook('吃鱼');
+            // cook('吃屁'); //参数可有可无，参数无限
+            //1.求任意两个数的和 函数
+            // function getSum(num1, num2) {
+            //     console.log(num1 + num2);
+            // }
+            // getSum(1, 2);
+            // // 1.求任意两个数之间的和 函数
+            // function get_sum(num1, num2) {
+            //     var sum = 0;
+            //     for (var i = num1; i <= num2; i++) {
+            //         sum += i;
+            //     }
+            //     console.log(sum);
+            // }
+            // get_sum(1, 5);
+
+            //函数参数匹配问题
+            //1.如果实参的个数与形参一致
+            // function getSum(num1, num2) {
+            //     console.log(num1 + num2);
+            // }
+            // getSum(1, 2);
+
+            //2.如果实参的个数多于形参 会取到形参的个数
+            // function getSum(num1, num2) {
+            //     console.log(num1 + num2);
+            // }
+            // getSum(1, 2, 2);
+            //2.如果实参的个数少于形参 结果undefined NaN
+            // function getSum(num1, num2) {
+            //     console.log(num1 + num2);
+            // }
+            // getSum(1);
+
+            //函数的返回值
+            //函数只是单纯的实现某种功能，最终结果需要返回给函数的调用者， 函数名（）=return后面的结果
+            // function getResult() {
+            //     return 6666;
+            // }
+            // console.log(getResult());
+            // 求两个数最值
+            function getMax(num1, num2) {
+                if (num1 > num2) {
+                    return num1;
+                } else {
+                    return num2;
+                }
+            }
+            console.log(getMax(1, 20));
+        </script>
+        <!-- <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(29, 216, 154);
+        }
+    </style> -->
+
+</head>
+
+<body>
+    <div>
+
+
+    </div>
+
+
+</body>
+
+</html>

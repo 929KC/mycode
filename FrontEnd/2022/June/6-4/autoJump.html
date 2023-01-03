@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 200px;
+            border: 1px solid sandybrown;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        span {
+            border: 2px solid red;
+            width: 80px;
+            display: inline;
+            text-align: center;
+            color: red;
+            font-size: 20px;
+            background: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>提交成功</h1>
+        <span id="seconds">5</span> 秒后系统将会自动跳转,也可以单机 <a href="https://www.baidu.com/">此链接</a>
+    </div>
+
+    <script>
+        var s = document.getElementById("seconds");
+        window.onload = function() {
+            var ret = 0;
+            var count = 5;
+
+            function counts() {
+                count--;
+                if (count == 0) {
+                    window.location.href = "https://www.baidu.com/";
+                    window.clearInterval(ret);
+                } else {
+                    s.innerHTML = count;
+                }
+            }
+            ret = window.setInterval(counts, 1000);
+        }
+    </script>
+</body>
+
+</html>

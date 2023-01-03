@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/v2.6.10/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<login></login>
+		</div>
+		<template id="son">
+			<div>
+				<h1>用户登录</h1>
+				<p>用户名：<input type="text" v-model="txtuser"></p>
+				<p>密码：<input type="password" v-model="txtpwd"></p>
+				<p>
+					<button @click="begin()">登录</button>
+					<button @click="reset()">重置</button>
+				</p>
+			</div>
+		</template>
+		<template id="father" >
+			<div>
+				<son @onresult='onrs'></son>
+				<div>
+					<h1>{{title}}</h1>
+					<h3>{{content}}</h3>
+				</div>
+			</div>
+		</template>
+		<script>
+			Vue.component('login',{
+				template:'#father',
+				data(){
+					return{
+						title:'',
+						content:''
+					}
+				},
+				methods:{
+					onrs(val,val2,val3){
+						if(val){
+							this.title ='登录成功信息';
+							this.content = '用户名:'+val2+' 密码:'+val3;
+						}else {
+							this.title ='登录失败信息';
+							this.content = '用户名或密码有误';
+						}
+					}
+				}
+			})
+			Vue.component('son',{
+				template:'#son',
+				data(){
+					return{
+						txtuser:'',
+						txtpwd:'',
+						isok:false
+					}
+				},
+				methods:{
+					begin(){
+						if(this.txtuser == "admin" && this.txtpwd == "123"){
+							this.isok = true;
+						}else {
+							this.isok = false;
+						}
+						this.$emit('onresult',this.isok,this.txtuser,this.txtpwd);
+					},
+					reset(){
+						this.txtuser = '';
+						this.txtpwd = '';
+					}
+				}
+			})
+			new Vue({
+				el:'#app'
+			})
+		</script>
+	</body>
+</html>

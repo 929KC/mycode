@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+用户名: <input type="text" id="user"><br>
+年龄: <input type="text" id="age"><br>
+<button id="btn">发送post请求</button>
+<div id="mydiv"></div>
+<script>
+    window.onload = function () {
+        var xhr = new XMLHttpRequest();
+        document.getElementById("btn").onclick = function () {
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        document.getElementById("mydiv").innerHTML = this.response;
+                    } else {
+                        alert(this.status);
+                    }
+                }
+            }
+            xhr.open("POST", "/6_24/test4", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            var user = document.getElementById("user").value;
+            var age = document.getElementById("age").value;
+            xhr.send("user=" + user + "&age=" + age);
+        }
+    }
+</script>
+</body>
+</html>

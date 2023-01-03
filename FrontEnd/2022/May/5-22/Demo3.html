@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+</head>
+
+<body>
+    <form>
+        <select id="province">
+          <option value="-1">请选择</option>
+        </select>
+        <select id="city"></select>
+        <select id="county"></select>
+    </form>
+    <script>
+        // 省份数组
+        var provinceArr = ['上海', '江苏', '河北'];
+        // 城市数组
+        var cityArr = [
+            ['上海市'],
+            ['苏州市', '南京市', '扬州市'],
+            ['石家庄', '秦皇岛', '张家口']
+        ];
+        // 区域数组
+        var countyArr = [
+            [
+                ['黄浦区', '静安区', '长宁区', '浦东区']
+            ],
+            [
+                ['虎丘区', '吴中区', '相城区', '姑苏区', '吴江区'],
+                ['玄武区', '秦淮区', '建邺区', '鼓楼区', '浦口区'],
+                ['邗江区', '广陵区', '江都区']
+            ],
+            [
+                ['长安区', '桥西区', '新华区', '井陉矿区'],
+                ['海港区', '山海关区', '北戴河区', '抚宁区'],
+                ['桥东区', '桥西区', '宣化区', '下花园区']
+            ]
+        ];
+
+        function creteoption(obj, arr) {
+            for (var i in arr) {
+                var n = new Option(arr[i], i);
+                obj.add(n);
+            }
+        }
+        var pro = document.getElementById("province");
+        var city = document.getElementById("city");
+        var count = document.getElementById("county");
+        creteoption(pro, provinceArr);
+        pro.onchange = function() {
+            city.length = 0;
+            creteoption(city, cityArr[pro.value]);
+            count.length = 0;
+            creteoption(count, countyArr[pro.value][city.value]);
+        }
+        city.onchange = function() {
+            count.length = 0;
+            creteoption(count, countyArr[pro.value][city.value]);
+        }
+    </script>
+</body>
+
+</html>

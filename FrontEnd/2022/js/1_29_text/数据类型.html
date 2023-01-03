@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+</head>
+
+
+<body>
+    <!-- //1.文档 页面从上往下加载，所以先得有标签，所以script写到标签的下面-->
+    <!-- 参数 id是一个敏感的字符串 -->
+    <!-- 返回的是一个元素对象 -->
+    <!-- <div id='time'>
+        5201314
+    </div>
+    <script>
+        var timer = document.getElementById('time');
+        console.log(timer);
+        console.log(typeof timer);
+        //console.dir 打印我们返回的元素对象 更好的查看里面的属性和方法
+        console.dir(timer);
+    </script> -->
+
+    <ul>
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+    </ul>
+    <ol id="ol">
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+        <li>天不生我李淳罡，剑道万古如长夜。</li>
+    </ol>
+    <script>
+        //1.返回的是获取过来的对象的集合 以伪数组的形式储存
+        //2.如果页面中只有一个li返回的还是伪数组的形式
+        //3.如果页面中没有这个元素返回的是空的伪数组的形式
+        // var lis = document.getElementsByTagName('li');
+        // console.log(lis);
+        // console.log(lis[2]);
+        // for (var i = 0; i < lis.length; i++) {
+        //     console.log(lis[i]);
+        // }
+        var ol = document.getElementsByTagName('ol');
+        // console.log(ol.getElementsByTagName('li'));
+        // console.log(ol[0].getElementsByTagName('li'));
+        var ol = document.getElementById('ol');
+        console.log(ol.getElementsByTagName('li'));
+    </script>
+</body>
+
+</html>

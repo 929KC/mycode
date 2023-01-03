@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07黄茂荣</title>
+    <style>
+        #clock {
+            width: 410px;
+            height: 30px;
+            border: 5px solid #F00;
+            padding: 15px 10px;
+            background: rgb(0, 136, 255);
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="clock"></div>
+    <script>
+        function show() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            var weekday = now.getDay();
+            var str = year + "年" + month + "月" + day + "日" + hour + "时" + minute + "分" + second + "秒" + "星期" + weekday;
+            document.getElementById("clock").innerHTML = str;
+            window.setTimeout("show()", 1000);
+        }
+        window.onload = show;
+    </script>
+</body>
+
+</html>

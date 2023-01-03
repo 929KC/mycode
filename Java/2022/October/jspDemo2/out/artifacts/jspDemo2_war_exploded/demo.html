@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="view">
+    <p>点击下面的按钮，将 Ajax 请求回来的数据更新在该文本内</p>
+</div>
+<button type="button" id="btn">发送AJAX请求</button>
+</body>
+<script>
+    document.getElementById("btn").onclick = ajaxRequest;
+
+    function ajaxRequest () {
+        //该XMLHttpRequest异步的与服务器交换数据(超文本传输请求)
+        var xhr = new XMLHttpRequest();
+        //指定请求类型以及资源的地址同时也可决定该请求是异步或者是同步请求
+        xhr.open("GET", "http://localhost:8080/demo.html", false);
+        //向服务器端发送请求
+        xhr.send();
+        //  存储函数（或函数名），每当readyState的属性改变时，就会调用该函数。
+        //readyState
+        /* 存有的XMLHttpRequest的状态从0到4发生变化。
+        0：请求未初始化
+        1：服务器连接已建立
+        2：请求已接收
+        3：请求处理中
+        4：请求已完成，且响应已就绪*/
+        //status状态码
+        //异步请求
+        //     xhr.onreadystatechange = function(){
+        //         if (xhr.readyState === 4 && xhr.status === 200) {
+        //             document.getElementById("view").innerHTML = "Hello World";
+        //         }
+        //     }
+        // }
+        //同步请求
+        document.getElementById("view").innerHTML = "Hello World";
+    }
+</script>
+</html>

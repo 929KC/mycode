@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<!-- 一个vue对应一个容器,从上往下扫描代码,VUE首先看到第一个为app的容器,先会为它解析 
+        {{}}中为js表达式
+        插值语法：作用于标签体-->
+
+<body>
+    <div id="app">
+        <h1>{{name}}</h1>
+        <a v-bind:href="url">百度</a>
+        <a :href="url">百度</a>
+    </div>
+
+    <div id="app">
+        <h1>{{name}}</h1>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                name: "你好",
+                url: "https://www.baidu.com"
+            }
+        })
+    </script>
+</body>
+
+</html>

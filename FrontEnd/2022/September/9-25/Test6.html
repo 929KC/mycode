@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .htmleaf-container {
+            background-color: rgb(188, 32, 149);
+            color: white;
+            width: 700px;
+            height: 500px;
+            padding-right: 30px;
+            padding-left: 10px;
+        }
+        
+        .container {
+            margin-top: 30px;
+            width: 680px;
+            height: 300px;
+            padding: 19px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        ul {
+            margin-bottom: 30px;
+            height: 160px;
+            border: 1px solid white;
+            padding: 6px;
+        }
+        
+        li {
+            list-style: none;
+            float: left;
+            margin-right: 20px;
+        }
+        
+        img {
+            width: 200px;
+            border: 1px solid gold;
+            transition: all 1s;
+        }
+        
+        .div1:hover img {
+            border-top-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+        }
+        
+        .div2:hover img {
+            transform: translate(30px, 30px);
+        }
+        
+        .div3:hover img {
+            transform: rotate(30deg);
+        }
+        
+        .div4:hover img {
+            transform: skew(30deg, 30deg);
+        }
+        
+        .div5:hover img {
+            transform: scale(2, 2);
+        }
+        
+        .li6:hover img {
+            box-shadow: 0px 0px 5px 3px #FFD700;
+        }
+        
+        .li6:hover h3 {
+            text-shadow: 0px 0px 5px #FFD700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="htmleaf-container">
+
+
+        <h1>越努力！越幸运！ </h1>
+
+        <div class="container">
+            <ul>
+                <li>
+                    <h3>1、变特殊圆角 </h3>
+                    <div class="div1">
+                        <img src="imgs/page.png" class="img1" />
+                    </div>
+                </li>
+                <li>
+                    <h3>2、2D转换 平移</h3>
+                    <div class="div2">
+                        <img src="imgs/page.png" class="img2" />
+                    </div>
+                </li>
+                <li>
+                    <h3>3、旋转30度</h3>
+                    <div class="div3">
+                        <img src="imgs/page.png" class="img3" />
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <h3>4、倾斜</h3>
+                    <div class="div4">
+                        <img src="imgs/page.png" class="img4" />
+                    </div>
+                </li>
+                <li>
+                    <h3>5、缩放</h3>
+                    <div class="div5">
+                        <img src="imgs/page.png" class="img5" />
+                    </div>
+                </li>
+                <li class="li6">
+                    <h3>6、盒子阴影、文字阴影</h3>
+                    <div class="div6">
+                        <img src="imgs/page.png" class="img6" />
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"> </div>
+        </div>
+    </div>
+</body>
+
+</html>

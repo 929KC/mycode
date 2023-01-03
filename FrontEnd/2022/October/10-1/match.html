@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        canvas {
+            border: 2px solid skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="a" width="600" height="600"></canvas>
+</body>
+<script>
+    var c = document.getElementById("a");
+    var x = c.getContext('2d');
+
+    x.arc(400, 100, 30, Math.PI / 180 * 0, Math.PI / 180 * 360, false);
+    x.lineWidth = '5';
+    x.stroke();
+
+    x.beginPath();
+    x.moveTo(400, 130);
+    x.lineTo(400, 145);
+    x.stroke();
+
+    x.beginPath();
+    x.moveTo(400, 145);
+    x.lineTo(400, 285);
+    x.lineWidth = '25';
+    x.stroke();
+    //上手臂
+    x.beginPath();
+    x.moveTo(400, 145);
+    x.lineTo(450, 215);
+    x.lineCap = 'round';
+    x.lineWidth = '7';
+    x.stroke();
+
+    x.beginPath();
+    x.strokeRect(360, 215, 80, 50);
+    x.fillStyle = 'red';
+    x.lineWidth = '5';
+    x.stroke();
+    x.fillRect(360, 215, 80, 50);
+
+    x.beginPath();
+    x.arc(400, 255, 10, Math.PI / 180 * 0, Math.PI / 180 * 360, false);
+    x.fillStyle = 'black';
+    x.stroke();
+    x.fill();
+
+    x.beginPath();
+    x.moveTo(450, 215);
+    x.lineTo(400, 255);
+    x.lineWidth = '7';
+    x.stroke();
+
+    x.beginPath();
+    x.moveTo(400, 285);
+    x.lineTo(390, 420);
+    x.lineCap = 'square';
+    x.lineWidth = '9';
+    x.stroke();
+
+    x.beginPath();
+    x.moveTo(400, 285);
+    x.lineTo(430, 420);
+    x.lineCap = 'square';
+    x.lineWidth = '9';
+    x.stroke();
+
+    x.beginPath();
+    x.arc(378, 425, 12, Math.PI / 180 * 0, Math.PI / 180 * 180, true);
+    x.fillStyle = 'white';
+    x.closePath();
+    x.stroke();
+    x.fill();
+
+    x.beginPath();
+    x.arc(418, 425, 12, Math.PI / 180 * 0, Math.PI / 180 * 180, true);
+    x.fillStyle = 'white';
+    x.closePath();
+    x.stroke();
+    x.fill();
+</script>
+
+</html>
