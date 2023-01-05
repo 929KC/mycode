@@ -31,11 +31,21 @@
             <el-button type="primary" @click="dialogVisible = true">
                 +新增
             </el-button>
+
+            <el-table :data="tableData" style="width: 100%">
+                <el-table-column prop="date" label="日期" width="180">
+                </el-table-column>
+                <el-table-column prop="name" label="姓名" width="180">
+                </el-table-column>
+                <el-table-column prop="address" label="地址">
+                </el-table-column>
+            </el-table>
         </div>
     </div>
 </template>
 
 <script>
+import {getUser}  from "../api/"
 export default {
     name: "User",
     data() {
@@ -64,7 +74,8 @@ export default {
                 addr: [{
                     required: true, message: "请输入你的地址:"
                 }]
-            }
+            },
+            tableData:[]
         };
     }, methods: {
         submit() {
@@ -80,7 +91,11 @@ export default {
             this.dialogVisible = false;
         }, cancle() {
             this.handleClose();
-        }
+        },mounted() {
+            getUser().then(({data})=>{
+               console.log(data);
+            })
+        },
     }
 }
 </script>
