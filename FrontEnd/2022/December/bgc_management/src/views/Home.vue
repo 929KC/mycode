@@ -103,7 +103,6 @@ export default {
     },
     mounted() {
         getData().then(({ data }) => {
-            console.log(data);
             const { tableData } = data.data;
             this.tableData = tableData;
             //基于准备好的dom,初始化echarts示例
