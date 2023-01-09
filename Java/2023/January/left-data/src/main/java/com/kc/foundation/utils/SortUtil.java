@@ -38,10 +38,12 @@ public class SortUtil {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{4, 3, 2, 5, 1};
+        int[] arr = new int[]{4, 3, 2, 5, 1,45,99};
         bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
         insertSort(arr);
+        System.out.println(Arrays.toString(arr));
+        shellSort(arr);
         System.out.println(Arrays.toString(arr));
     }
     /**
@@ -67,5 +69,26 @@ public class SortUtil {
 
     private static void selectSort(int[] arr) {
 
+    }
+    private static void shell(int[] arr,int gap) {
+        for (int i = gap; i < arr.length; i++) {
+            int j = i - gap;
+            int temp = arr[i];
+            for (; j >= 0; j -= gap) {
+                if (arr[j] > temp) {
+                    arr[j + gap] = arr[j];
+                } else {
+                    break;
+                }
+            }
+            arr[j + gap] = temp;
+        }
+
+    }
+    private static void shellSort(int [] array) {
+        int [] gap ={5,2,1};
+        for (int i : gap) {
+            shell(array,i);
+        }
     }
 }
