@@ -45,6 +45,8 @@ public class SortUtil {
         System.out.println(Arrays.toString(arr));
         shellSort(arr);
         System.out.println(Arrays.toString(arr));
+        selectSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
     /**
      * 直接插入排序
@@ -68,8 +70,28 @@ public class SortUtil {
     }
 
     private static void selectSort(int[] arr) {
-
+        for (int i=0;i<arr.length;i++) {
+            int midIndex = i;
+            for (int j=i+1;j<arr.length;j++) {
+                if (arr[j]<arr[midIndex]) {
+                    midIndex = j;
+                }
+            }
+            swap(arr,midIndex,i);
+        }
     }
+    private static void selectSort2(int[] arr) {
+        for (int i=0;i<arr.length;i++) {
+            int midIndex = i;
+            for (int j=i+1;j<arr.length;j++) {
+                if (arr[j]<arr[midIndex]) {
+                    midIndex = j;
+                }
+            }
+            swap(arr,midIndex,i);
+        }
+    }
+
     private static void shell(int[] arr,int gap) {
         for (int i = gap; i < arr.length; i++) {
             int j = i - gap;
