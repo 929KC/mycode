@@ -10,7 +10,7 @@ import com.kc.mapper.CategoryMapper;
 import com.kc.service.ArticleService;
 import com.kc.service.CategoryService;
 import com.kc.utils.BeanCopyUtils;
-import com.kc.vo.CategoryVo;
+import com.kc.domain.vo.CategoryVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
