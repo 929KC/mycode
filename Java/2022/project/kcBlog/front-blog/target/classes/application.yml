@@ -31,3 +31,7 @@ spring:
         max-idle: 8
         min-idle: 0
       shutdown-timeout: 200ms
+oss:
+   accessKey: _i-I2ORJ-8MdH9qRmoUX6JufKsdPgprpy7pjG6xH
+   secretKey: t7dVF3Fb1DCofjUvFMq978wXmT-mkq1NQank_r34
+   bucket: 929kcblogimage

@@ -1,4 +1,4 @@
-package com.kc.utils.constants;
+package com.kc.constants;
 
 public class SystemConstants {
     /**
@@ -15,4 +15,12 @@ public class SystemConstants {
     文章审核通过
      */
     public static final String LINK_STATUS_NORMAL = "0";
+    /**
+     * 评论
+     */
+    public static final String ARTICLE_COMMENT = "0";
+    /**
+     * 友链
+     */
+    public static final String LINK_COMMENT = "1";
 }

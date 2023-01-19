@@ -48,9 +48,9 @@ public class BlogLoginServiceImpl implements BlogLoginService {
     public ResponseResult logout() {
         //获取token解析获取userId
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        LoginUser LoginUser = (LoginUser)authentication.getPrincipal();
+        LoginUser loginUser = (LoginUser)authentication.getPrincipal();
         //获取userId
-        Long userId = LoginUser.getUser().getId();
+        Long userId = loginUser.getUser().getId();
         //删除redis中的用户信息
         redisCache.deleteObject("bloglogin:"+userId);
         return ResponseResult.okResult();

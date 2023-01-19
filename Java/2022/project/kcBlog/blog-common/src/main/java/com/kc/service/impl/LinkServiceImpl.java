@@ -2,7 +2,7 @@ package com.kc.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.kc.utils.constants.SystemConstants;
+import com.kc.constants.SystemConstants;
 import com.kc.domain.ResponseResult;
 import com.kc.domain.entity.Link;
 import com.kc.domain.vo.LinkVo;

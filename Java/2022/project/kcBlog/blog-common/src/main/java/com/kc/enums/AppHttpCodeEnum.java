@@ -1,6 +1,7 @@
 package com.kc.enums;
 
 public enum AppHttpCodeEnum {
+    CONTENT_NOT_NULL(506,"评论不能为空"),
     // 成功
     SUCCESS(200,"操作成功"),
     // 登录
