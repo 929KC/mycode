@@ -1,9 +1,10 @@
 package com.kc.service;
 
+import com.kc.domain.ResponseResult;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.xml.ws.Response;
+
 
 public interface UploadService {
-    Response uploadImg(MultipartFile img);
+    ResponseResult uploadImg(MultipartFile img);
 }
