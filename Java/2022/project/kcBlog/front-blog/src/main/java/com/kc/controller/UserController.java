@@ -21,4 +21,12 @@ public class UserController {
     public ResponseResult updateUserInfo(@RequestBody User user){
         return userService.updateUserInfo(user);
     }
+
+    @PostMapping("/register")
+    public ResponseResult register(@RequestBody User user){
+        return userService.register(user);
+    }
+
+
+
 }

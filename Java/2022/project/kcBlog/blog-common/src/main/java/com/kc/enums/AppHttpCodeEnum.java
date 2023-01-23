@@ -3,6 +3,11 @@ package com.kc.enums;
 public enum AppHttpCodeEnum {
     CONTENT_NOT_NULL(506,"评论不能为空"),
     // 成功
+    USERNAME_NOT_NULL(508, "用户名不能为空"),
+    NICKNAME_NOT_NULL(509, "昵称不能为空"),
+    PASSWORD_NOT_NULL(510, "密码不能为空"),
+    EMAIL_NOT_NULL(511, "邮箱不能为空"),
+    NICKNAME_EXIST(512, "昵称已存在"),
     SUCCESS(200,"操作成功"),
     // 登录
     NEED_LOGIN(401,"需要登录后操作"),

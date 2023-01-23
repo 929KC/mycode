@@ -1,0 +1,5 @@
+com\kc\service\impl\UserDetailsServiceImpl.class
+com\kc\domain\vo\BlogUserLoginVo.class
+com\kc\domain\entity\LoginUser.class
+com\kc\mapper\UserMapper.class
+com\kc\domain\vo\UserInfoVo.class

@@ -43,12 +43,11 @@ public class OSSTest {
 //...其他参数参考类注释
         UploadManager uploadManager = new UploadManager(cfg);
 //默认不指定key的情况下，以文件内容的hash值作为文件名
-        String key = "帅哥.jpg";
-
+        String key = "moon.jpg";
         try {
 //            byte[] uploadBytes = "hello qiniu cloud".getBytes("utf-8");
 //            ByteArrayInputStream byteInputStream = new ByteArrayInputStream(uploadBytes);
-            InputStream inputStream = new FileInputStream("E:\\笔记\\C语言资料\\C语言学习资料\\px\\zht.jpg");
+            InputStream inputStream = new FileInputStream("C:\\Users\\萧寒\\Desktop\\moon.jpg");
             Auth auth = Auth.create(accessKey, secretKey);
             String upToken = auth.uploadToken(bucket);
 
