@@ -1,5 +1,6 @@
 package com.kc.controller;
 
+import com.kc.anotaion.SystemLog;
 import com.kc.domain.ResponseResult;
 import com.kc.domain.entity.User;
 import com.kc.service.UserService;
@@ -18,6 +19,7 @@ public class UserController {
         return userService.userInfo();
     }
     @PutMapping("/userInfo")
+    @SystemLog(businessName = "更新用户信息")
     public ResponseResult updateUserInfo(@RequestBody User user){
         return userService.updateUserInfo(user);
     }
@@ -26,7 +28,5 @@ public class UserController {
     public ResponseResult register(@RequestBody User user){
         return userService.register(user);
     }
-
-
 
 }

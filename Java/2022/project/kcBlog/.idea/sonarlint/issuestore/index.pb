@@ -87,8 +87,6 @@ f
 6blog-common/src/main/java/com/kc/utils/RedisCache.java,8\f\8f174ddbe6794b04654e6476207c669c9e1e7570
 r
 Bblog-common/src/main/java/com/kc/service/impl/UserServiceImpl.java,c\2\c2c89e74ab630853fad3f1267ea17bd0fb58af2e
-h
-8blog-common/src/main/java/com/kc/anotaion/SystemLog.java,e\2\e2aa2e083fe9cba91f7bbf0fa1cd7b28d50364ba
 i
 9blog-common/src/main/java/com/kc/service/UserService.java,0\7\074700e48127c054d1460b41889d926d8c2883fb
 e
@@ -99,5 +97,9 @@ k
 ;blog-common/src/main/java/com/kc/enums/AppHttpCodeEnum.java,f\7\f7fab1e0b52db4b663e383f6f84fa569f4d70ab9
 \
 ,admin-blog/src/test/java/com/kc/OSSTest.java,0\1\01941decc3ce5fdc2be5a8b25caead534283f589
+h
+8blog-common/src/main/java/com/kc/anotaion/SystemLog.java,e\2\e2aa2e083fe9cba91f7bbf0fa1cd7b28d50364ba
 n
 >front-blog/src/main/java/com/kc/controller/UserController.java,7\6\7640345a415ff79f72c1911ae94f937b94d3aa5a
+f
+6blog-common/src/main/java/com/kc/aspect/LogAspect.java,b\8\b8ddb78c326ac779ce0fec6c1743cea146680314
