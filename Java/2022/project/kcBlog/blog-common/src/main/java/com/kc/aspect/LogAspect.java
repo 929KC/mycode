@@ -56,7 +56,6 @@ public class LogAspect {
         log.info("IP             : {}", request.getRemoteHost());
         // 打印请求入参
         log.info("Request Args   : {}", JSON.toJSON(joinPoint.getArgs()));
-
     }
 
     private SystemLog getSystemLog(ProceedingJoinPoint joinPoint) {
