@@ -9,7 +9,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Component
@@ -21,10 +20,9 @@ public class UpdateViewCountJop {
 
     @Scheduled(cron = "0/5 * * * * ?")
     public void updateViewCount() {
-        Map<String, Integer> viewCacheMap = redisCache.getCacheMap("article:viewCount");
+        Map<String, Integer> viewCacheMap = redisCache.getCacheMap("article:viewCountMap");
         viewCacheMap.entrySet().stream().map(entry ->new Article(Long.valueOf(entry.getKey()),entry.getValue().longValue()))
                 .collect(Collectors.toList());
-
 
     }
 }

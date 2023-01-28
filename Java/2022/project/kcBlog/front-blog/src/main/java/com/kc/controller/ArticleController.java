@@ -3,10 +3,7 @@ package com.kc.controller;
 import com.kc.domain.ResponseResult;
 import com.kc.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 929KC
@@ -31,6 +28,10 @@ public class ArticleController {
     }
     @GetMapping("/{id}")
     public ResponseResult getArticleDetail(@PathVariable("id") Long id){
-        return articleService.getAttachmentDetail(id);
+        return articleService.getArticleDetail(id);
+    }
+    @PutMapping("/updateViewCount/{id}")
+    public ResponseResult updateViewContent(@PathVariable("id") Long id){
+        return articleService.updateViewContent(id);
     }
 }
