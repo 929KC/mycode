@@ -24,23 +24,24 @@ public class BlogLoginServiceImpl implements BlogLoginService {
     private AuthenticationManager authenticationManager;
     @Autowired
     private RedisCache redisCache;
+
     @Override
     public ResponseResult login(User user) {
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword());
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword());
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
         if (Objects.isNull(authenticate)) {
-            throw  new RuntimeException("用户名和密码错误");
+            throw new RuntimeException("用户名和密码错误");
         }
         //获取userId,生成token
-        LoginUser loginUser =(LoginUser) authenticate.getPrincipal();
+        LoginUser loginUser = (LoginUser) authenticate.getPrincipal();
         String userId = loginUser.getUser().getId().toString();
         String jwt = JwtUtil.createJWT(userId);
         //将信息存入redis
-        redisCache.setCacheObject("bloglogin:"+userId,loginUser);
+        redisCache.setCacheObject("bloglogin:" + userId, loginUser);
         //把token和userInfo封装返回
         //把User转换成UserInfo
         UserInfoVo userInfoVo = BeanCopyUtils.copyBean(loginUser.getUser(), UserInfoVo.class);
-        BlogUserLoginVo vo = new BlogUserLoginVo(jwt,userInfoVo);
+        BlogUserLoginVo vo = new BlogUserLoginVo(jwt, userInfoVo);
         return ResponseResult.okResult(vo);
     }
 
@@ -48,11 +49,11 @@ public class BlogLoginServiceImpl implements BlogLoginService {
     public ResponseResult logout() {
         //获取token解析获取userId
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        LoginUser loginUser = (LoginUser)authentication.getPrincipal();
+        LoginUser loginUser = (LoginUser) authentication.getPrincipal();
         //获取userId
         Long userId = loginUser.getUser().getId();
         //删除redis中的用户信息
-        redisCache.deleteObject("bloglogin:"+userId);
+        redisCache.deleteObject("bloglogin:" + userId);
         return ResponseResult.okResult();
     }
 }

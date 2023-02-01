@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @author makejava
  * @since 2023-01-30 19:57:03
  */
-@Service("tagService")
+@Service
 public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagService {
 
 }
