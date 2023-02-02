@@ -23,4 +23,6 @@ public class SystemConstants {
      * 友链
      */
     public static final String LINK_COMMENT = "1";
+    public static final Object MENU = "C";
+    public static final Object BUTTON = "F";
 }
