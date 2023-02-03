@@ -5,6 +5,8 @@ import com.kc.domain.entity.Role;
 import com.kc.mapper.RoleMapper;
 import com.kc.service.RoleService;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,8 +20,14 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
 
     @Override
     public List<String> selectRoleKeyByUserId(Long id) {
+        if(id==1L) {
+            ArrayList<String> rolesKeys = new ArrayList<String>();
+            rolesKeys.add("admin");
+            return rolesKeys;
 
-        return null;
+        }
+
+        return getBaseMapper().selectRoleKeyUserId(id);
     }
 }
 

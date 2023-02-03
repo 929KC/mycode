@@ -2,8 +2,10 @@ package com.kc.controller;
 
 import com.kc.domain.ResponseResult;
 import com.kc.domain.entity.LoginUser;
+import com.kc.domain.entity.Menu;
 import com.kc.domain.entity.User;
 import com.kc.domain.vo.AdminUserInfo;
+import com.kc.domain.vo.RoutersVo;
 import com.kc.domain.vo.UserInfoVo;
 import com.kc.enums.AppHttpCodeEnum;
 import com.kc.exception.SystemException;
@@ -53,5 +55,13 @@ public class LoginController {
         List<String>  rolesKeyList =  roleService.selectRoleKeyByUserId(loginUser.getUser().getId());
         AdminUserInfo adminUserInfo = new AdminUserInfo(perms,rolesKeyList,userInfoVo);
         return ResponseResult.okResult(adminUserInfo);
+    }
+
+    @GetMapping("getRouters")
+    public ResponseResult<RoutersVo> getRouters(){
+        Long userId = SecurityUtils.getUserId();
+        List<Menu> menus = menuService.selectRouterTreeByUserId(userId);
+        return ResponseResult.okResult(new RoutersVo(menus));
+
     }
 }
