@@ -5,6 +5,7 @@ import java.util.Date;
 import java.io.Serializable;
 import java.util.List;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.kc.domain.vo.MenuVo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,6 +29,7 @@ import lombok.experimental.Accessors;
 public class Menu  {
     //菜单ID@TableId
     private Long id;
+    @TableField(exist = false)
     private List<Menu> children;
     //菜单名称
     private String menuName;
