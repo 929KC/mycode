@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/%20game_hall.css">
+</head>
+<body>
+<div class="nav">
+    联机五子棋
+</div>
+<div class="container">
+    <div>
+        <div id="screen"></div>
+        <button id="match-button">开始匹配</button>
+    </div>
+</div>
+
+<script>
+    $.ajax({
+        method: 'get',
+        url: '/userInfo',
+        success: function (data) {
+            let screen = document.querySelector('#screen');
+            screen.innerHTML = '玩家: ' + data.username + ', 分数: ' + data.score + "<br> 比赛场次: " + data.totalCount + ", 获胜场次: " + data.winCount;
+        }
+    });
+    // 1. 和服务器建立连接. 路径要写作 /findMatch, 不要写作 /findMatch/
+    let websocket = new WebSocket('ws://127.0.0.1:8080/findMatch');
+    // 2. 点击开始匹配
+    let button = document.querySelector('#match-button');
+    button.onclick = function () {
+        if (websocket.readyState == websocket.OPEN) {
+            if (button.innerHTML == '开始匹配') {
+                console.log('开始匹配!');
+                websocket.send(JSON.stringify({
+                    message: 'startMatch',
+                }));
+            } else if (button.innerHTML == '匹配中...(点击取消)') {
+                console.log('取消匹配!');
+                websocket.send(JSON.stringify({
+                    message: 'stopMatch'
+                }));
+            }
+        } else {
+            alert('当前您连接断开! 请重新登录!');
+            location.assign('/login.html');
+        }
+    }
+
+    // 3. 处理服务器的响应
+    websocket.onmessage = function (e) {
+        let resp = JSON.parse(e.data)
+        if (!resp.ok) {
+            console.log('游戏大厅中发生错误: ' + resp.reason);
+            location.assign('/login.html');
+            return;
+        }
+        if (resp.message == 'startMatch') {
+            console.log('进入匹配队列成功!');
+            button.innerHTML = '匹配中...(点击取消)';
+        } else if (resp.message == 'stopMatch') {
+            console.log('离开匹配队列成功!');
+            button.innerHTML = '开始匹配';
+        } else if (resp.message == 'matchSuccess') {
+            console.log('匹配成功! 进入游戏页面!');
+            location.assign('/game_room.html');
+        } else {
+            console.log('非法的 message: ' + resp.message);
+        }
+    }
+
+    // 4. 监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+    window.onbeforeunload = function () {
+        websocket.close();
+    }
+</script>
+</body>
+</html>
