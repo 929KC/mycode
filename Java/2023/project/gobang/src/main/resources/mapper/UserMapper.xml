@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kc.gobang.mapper.UserMapper">
-    <select id="insetUser">
+    <!-- 新增用户 -->
+    <insert id="insetUser">
         insert into user values (null,#{username},#{password},1000,0,0);
-    </select>
+    </insert>
+
+
+    <!-- 根据用户名查找用户用户 -->
     <select id="selectByUsername" resultType="com.kc.gobang.model.domain.User">
-        select *from user where username = #{username};
+        select * from user where username=#{username};
     </select>
 </mapper>
