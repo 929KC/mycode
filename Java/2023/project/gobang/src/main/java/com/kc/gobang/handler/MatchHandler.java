@@ -25,8 +25,8 @@ public class MatchHandler extends TextWebSocketHandler {
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         try {
             User user = (User) session.getAttributes().get("user");
-            WebSocketSession tempSession = onlineUserManager.getSessionFromGameHall(user.getUserId());
-            if (tempSession != null) {
+            if (onlineUserManager.getSessionFromRoomHall(user.getUserId())!=null||
+                    onlineUserManager.getSessionFromGameHall(user.getUserId())!=null) {
                 MatchResponse matchResponse = new MatchResponse();
                 matchResponse.setOk(false);
                 matchResponse.setReason("当前禁止多开");
@@ -35,6 +35,7 @@ public class MatchHandler extends TextWebSocketHandler {
                 return;
             }
             onlineUserManager.enterGameHall(user.getUserId(), session);
+            System.out.println("玩家"+user.getUsername()+"进入游戏打厅");
         } catch (NullPointerException e) {
             e.printStackTrace();
             MatchResponse matchResponse = new MatchResponse();
@@ -65,6 +66,8 @@ public class MatchHandler extends TextWebSocketHandler {
             response.setOk(false);
             response.setMessage("非法的请求匹配");
         }
+        String json = objectMapper.writeValueAsString(response);
+        session.sendMessage(new TextMessage(json));
     }
 
     @Override
