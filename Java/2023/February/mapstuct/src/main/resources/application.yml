@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 2222
+    url: jdbc:mysql://localhost:3306/gobang?characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    username: root
