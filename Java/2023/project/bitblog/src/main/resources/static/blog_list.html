@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客列表</title>
+    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/blog_list.css">
+    <style>
+        
+        .nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+        }
+        .container{
+            padding-top: 80px;
+            height: auto;
+        }
+        .container-right{
+            width: auto;
+        }
+        .blog-pagnation-wrapper{
+            height: 40px;
+            margin: 16px 0;
+            text-align: center;
+        }
+        .blog-pagnation-item{
+            display: inline-block;
+            padding: 8px;
+            border: 1px solid #d0d0d5;
+            color: #333;
+        }
+        .blog-pagnation-item:hover{
+            background: #4e4eeb;
+            color: #fff;
+        }
+        .blog-pagnation-item.actvie{
+            background: #4e4eeb;
+            color: #fff;
+        }
+
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src="img/logo2.jpg" alt="">
+        <span class="title">我的博客系统</span>
+        <!-- 用来占据中间位置 -->
+        <span class="spacer"></span>
+        <a href="blog_list.html">主页</a>
+        <a href="blog_edit.html">写博客</a>
+        <a href="login.html">登陆</a>
+    </div>
+    <!-- 版心 -->
+    <div class="container">
+        <!-- 右侧内容详情 -->
+        <div class="container-right" style="width: 100%;">
+            <div id="artListDiv">
+            </div>
+            
+            <hr>
+            <div class="blog-pagnation-wrapper">
+                <button onclick="goFirstPage()" class="blog-pagnation-item">首页</button> 
+                <button onclick="goBeforePage()" class="blog-pagnation-item">上一页</button>  
+                <button onclick="goNextPage()" class="blog-pagnation-item">下一页</button>
+                <button onclick="goLastPage()" class="blog-pagnation-item">末页</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 当前页码
+        var pindex = 1;
+        // 每页显示条数
+        var psize = 2;
+        // 最大页数
+        var pcount =1;
+        // 1.先尝试得到当前 url 中的页码
+        pindex = (getUrlValue("pindex")==""?1:getUrlValue("pindex"));
+        // 2.查询后端接口得到当前页面的数据，进行展示
+        function initPage(){
+           jQuery.ajax({
+            url:"/art/listbypage",
+            type:"POST",
+            data:{"pindex":pindex,"psize":psize},
+            success:function(result){
+                if(result!=null && result.code==200 && result.data.list.length>0){
+                    var artListHtml = "";
+                    for(var i=0;i<result.data.list.length;i++){
+                        var articleinfo = result.data.list[i];
+                        artListHtml +='<div class="blog">';
+                        artListHtml +='<div class="title">'+articleinfo.title+'</div>';
+                        artListHtml +='<div class="date">'+articleinfo.updatetime+'</div>';
+                        artListHtml +='<div class="desc">'+articleinfo.content+'</div>';
+                        artListHtml +='<a href="blog_content.html?id='+ articleinfo.id
+                            +'" class="detail">查看全文 &gt;&gt;</a>';
+                        artListHtml +='</div>';    
+                    }
+                    jQuery("#artListDiv").html(artListHtml);
+                    pcount = result.data.pcount;
+                }
+            }
+           });     
+        }
+        initPage();
+        // 跳转到首页
+        function goFirstPage(){
+            if(pindex<=1){
+                alert("当前已经在首页了");
+                return;
+            }
+            location.href = "blog_list.html";
+        }
+        // 点击上一页按钮
+        function goBeforePage(){
+            if(pindex<=1){
+                alert("当前已经在首页了");
+                return;
+            }
+            pindex = parseInt(pindex) -1;
+            location.href ="blog_list.html?pindex="+pindex;
+        }
+        function goNextPage(){
+            if(pindex>=pcount){
+               alert("已经在末页了");
+               return; 
+            }
+            pindex = parseInt(pindex)+1;
+            location.href ="blog_list.html?pindex="+pindex;
+        }
+        function goLastPage(){
+            if(pindex>=pcount){
+               alert("已经在末页了");
+               return; 
+            }
+            location.href ="blog_list.html?pindex="+pcount;
+        }
+    </script>
+</body>
+</html>

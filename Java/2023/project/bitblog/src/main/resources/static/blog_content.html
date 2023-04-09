@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客正文</title>
+    <link rel="stylesheet" href="css/conmmon.css">
+    <link rel="stylesheet" href="css/blog_content.css">
+    <link rel="stylesheet" href="editor.md/css/editormd.preview.min.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="editor.md/editormd.js"></script>
+    <script src="editor.md/lib/marked.min.js"></script>
+    <script src="editor.md/lib/prettify.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src="img/logo2.jpg" alt="">
+        <span class="title">我的博客系统</span>
+        <!-- 用来占据中间位置 -->
+        <span class="spacer"></span>
+        <a href="blog_list.html">主页</a>
+        <a href="blog_edit.html">写博客</a>
+        <a href="login.html">登陆</a>
+    </div>
+    <!-- 版心 -->
+    <div class="container">
+        <!-- 左侧个人信息 -->
+        <div class="container-left">
+            <div class="card">
+                <img src="img/doge.jpg" class="avtar" alt="">
+                <h3 id="username"></h3>
+                <a href="http:www.github.com">github 地址</a>
+                <div class="counter">
+                    <span>文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="counter">
+                    <span id="artCount"></span>
+                    <span>1</span>
+                </div>
+            </div>
+        </div>
+        <!-- 右侧内容详情 -->
+        <div class="container-right">
+            <div class="blog-content">
+                <!-- 博客标题 -->
+                <h3 id="title"></h3>
+                <!-- 博客时间 -->
+                <div class="date">发布时间：<span id="updatetime"></span> &nbsp;&nbsp;
+                    阅读量：<span id="rcount"></span>
+                </div>
+                <!-- 博客正文 -->
+                <div id="editorDiv">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+            var editormd;
+            function initEdit(md){
+                editormd = editormd.markdownToHTML("editorDiv", {
+                markdown : md, // Also, you can dynamic set Markdown text
+                // htmlDecode : true,  // Enable / disable HTML tag encode.
+                // htmlDecode : "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
+                });
+            }
+            // 查询文章详情
+            function getArtDetail(id){
+                if(id==""){
+                    alert("非法参数！");
+                    return;
+                }
+                jQuery.ajax({
+                    url:"art/detail",
+                    type:"POST",
+                    data:{"id":id},
+                    success:function(result){
+                        if(result!=null && result.code==200){
+                            jQuery("#title").html(result.data.title);
+                            jQuery("#updatetime").html(result.data.updatetime);
+                            jQuery("#rcount").html(result.data.rcount);
+                            initEdit(result.data.content);
+                            // 得到用户 id
+                            showUser(result.data.uid);
+                        }else{
+                            alert("查询失败，请重试！");  
+                        }
+                    }
+                });
+            }
+            getArtDetail(getUrlValue("id"));
+            // 查询用户的详情信息
+            function showUser(id){
+                jQuery.ajax({
+                    url:"/user/getuserbyid",
+                    type:"POST",
+                    data:{"id":id},
+                    success:function(result){
+                        if(result!=null && result.code==200 && result.data.id>0){
+                            jQuery("#username").text(result.data.username);
+                            jQuery("#artCount").text(result.data.artCount);
+                        }else{
+                            alert("抱歉：查询用户信息失败，请重试！");
+                        }
+                    }
+                });
+            }
+            // 阅读量 +1
+            function updataRCount(){
+                // 先得到文章 id
+                var id = getUrlValue("id");
+                if(id!=""){
+                    jQuery.ajax({
+                        url:"/art/incr-rcount",
+                        type:"POST",
+                        data:{"id":id},
+                        success:function(result){}
+                    });
+                }
+            }
+            updataRCount();
+    </script> 
+</body>
+
+</html>
