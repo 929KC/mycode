@@ -7,4 +7,7 @@
     <select id="getUserByName" resultType="com.kc.bitblog.model.domain.Userinfo">
         select * from userinfo where username = #{username};
     </select>
+    <select id="getUserById" resultType="com.kc.bitblog.model.domain.Userinfo">
+        select * from userinfo where id = #{id};
+    </select>
 </mapper>

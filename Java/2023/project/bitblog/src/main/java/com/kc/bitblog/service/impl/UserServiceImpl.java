@@ -21,4 +21,9 @@ public class UserServiceImpl implements UserService {
     public Userinfo getUserByName(String name) {
         return userMapper.getUserByName(name);
     }
+
+    @Override
+    public Userinfo getUserById(Integer id) {
+        return userMapper.getUserById(id);
+    }
 }

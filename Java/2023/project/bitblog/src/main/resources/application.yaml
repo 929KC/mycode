@@ -1,7 +1,9 @@
-
 spring:
+  jackon:
+    date-format: yyyy-MM-dd HH:mm:ss.ss
+    time-zone: GTM+8
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/mycnblog?characterEncoding=utf8&SSL=true
+    url: jdbc:mysql://127.0.0.1:3306/mycnblog?characterEncoding=utf8&SSL=false
     username: root
     password: 2222
     driver-class-name: com.mysql.jdbc.Driver
@@ -17,3 +19,4 @@ mybatis:
       com:
         kc:
           controller: debug
+
