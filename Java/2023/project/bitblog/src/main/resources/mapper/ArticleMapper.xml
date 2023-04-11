@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kc.bitblog.mapper.ArticleMapper">
+    <insert id="addArticle">
+        insert into articleinfo (title, content, uid)
+        values (#{title}, #{content}, #{uid});
+    </insert>
+    <update id="incrementRCount">
+        update articleinfo
+        set rcount = rcount + 1
+        where id = #{id};
+    </update>
+    <update id="updateArticle">
+        update articleinfo
+        set title      = #{title},
+            content    = #{content},
+            updatetime = #{updatetime}
+        where id = #{id}
+          and uid = #{uid};
+    </update>
     <delete id="deleteArticleById">
-        delete article  from where id = #{id} and uid = #{uid};
+        delete
+        articleinfo  from where id =
+        #{id}
+        and
+        uid
+        =
+        #{uid};
     </delete>
     <select id="getArtCountByUid" resultType="java.lang.Integer">
-        select  count(*) articleinfo where uid = #{uid};
+        select count(*) articleinfo where uid = #{uid};
     </select>
     <select id="mylist" resultType="com.kc.bitblog.model.domain.Articleinfo">
-        select  count(*) articleinfo where uid = #{uid};
+        select count(*) articleinfo where uid = #{uid};
     </select>
     <select id="getArticleDetails" resultType="com.kc.bitblog.model.domain.Articleinfo">
-        select *from articleinfo where id = #{id};
+        select *
+        from articleinfo
+        where id = #{id};
     </select>
 </mapper>

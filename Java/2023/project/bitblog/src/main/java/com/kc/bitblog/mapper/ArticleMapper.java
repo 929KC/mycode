@@ -14,4 +14,7 @@ public interface ArticleMapper {
     List<Articleinfo> mylist(@Param("uid") Integer uid);
     int deleteArticleById(@Param("id") Integer id,@Param("uid") Integer uid);
     Articleinfo getArticleDetails(@Param("id") Integer id);
+    int incrementRCount(@Param("id") Integer id);
+    int addArticle(Articleinfo articleinfo);
+    int updateArticle(Articleinfo articleinfo);
 }
