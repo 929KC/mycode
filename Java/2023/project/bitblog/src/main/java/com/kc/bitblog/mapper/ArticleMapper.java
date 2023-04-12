@@ -17,4 +17,6 @@ public interface ArticleMapper {
     int incrementRCount(@Param("id") Integer id);
     int addArticle(Articleinfo articleinfo);
     int updateArticle(Articleinfo articleinfo);
+    List<Articleinfo> getListByPage(Integer pageSize ,Integer pageIndex);
+    int getCount();
 }

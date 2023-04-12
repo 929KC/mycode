@@ -38,4 +38,11 @@
         from articleinfo
         where id = #{id};
     </select>
+    <select id="getListByPage" resultType="com.kc.bitblog.model.domain.Articleinfo">
+        select *from articleinfo limit #{pageSize} offset #{pageIndex};
+    </select>
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*)
+        from articleinfo;
+    </select>
 </mapper>

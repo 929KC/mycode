@@ -45,4 +45,14 @@ public class ArticleImpl implements ArticleService {
     public int updateArticle(Articleinfo articleinfo) {
         return articleMapper.updateArticle(articleinfo);
     }
+
+    @Override
+    public List<Articleinfo> getListByPage(Integer pageSize, Integer pageIndex) {
+        return articleMapper.getListByPage(pageSize, pageIndex);
+    }
+
+    @Override
+    public int getCount() {
+        return articleMapper.getCount();
+    }
 }

@@ -10,9 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/art")
@@ -86,5 +89,30 @@ public class ArticleController {
         articleinfo.setUid(userinfo.getId());
         articleinfo.setUpdatetime(LocalDateTime.now());
         return HttpResult.success(articleService.updateArticle(articleinfo));
+    }
+
+    /**
+     * @param pageSize  每页最大页数
+     * @param pageIndex 页码
+     * @return
+     */
+    @RequestMapping("/listbypage")
+    public HttpResult getListByPage(Integer pageSize, Integer pageIndex) {
+        if (pageSize == null || pageSize <= 1) {
+            pageSize = 2;
+        }
+        if (pageIndex == null || pageIndex <= 1) {
+            pageIndex = 1;
+        }
+        int offset = (pageIndex - 1) * pageSize;
+        //文章列表的总条数
+        int totalCount = articleService.getCount();
+        double pcountdb = totalCount / pageSize * 1.0;
+        int pcount = (int) Math.ceil(pcountdb);
+        List<Articleinfo> mylist = articleService.getListByPage(pageSize, offset);
+        Map<String, Object> hashMap = new HashMap<String, Object>();
+        hashMap.put("list", mylist);
+        hashMap.put("pcount", pcountdb);
+        return HttpResult.success(hashMap);
     }
 }

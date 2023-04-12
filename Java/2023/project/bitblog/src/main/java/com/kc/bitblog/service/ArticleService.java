@@ -18,4 +18,6 @@ public interface ArticleService {
     int addArticle(Articleinfo articleinfo);
 
     int updateArticle(Articleinfo articleinfo);
+    List<Articleinfo> getListByPage(Integer pageSize ,Integer pageIndex);
+    int getCount();
 }

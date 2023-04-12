@@ -1,4 +1,6 @@
 spring:
+  server:
+    port: 8888
   jackon:
     date-format: yyyy-MM-dd HH:mm:ss.ss
     time-zone: GTM+8
