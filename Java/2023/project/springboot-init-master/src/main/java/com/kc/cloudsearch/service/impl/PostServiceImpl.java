@@ -22,6 +22,7 @@ import com.kc.cloudsearch.model.vo.UserVO;
 import com.kc.cloudsearch.service.PostService;
 import com.kc.cloudsearch.service.UserService;
 import com.kc.cloudsearch.utils.SqlUtils;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,6 +31,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
@@ -307,6 +309,15 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         }).collect(Collectors.toList());
         postVOPage.setRecords(postVOList);
         return postVOPage;
+    }
+
+    @Override
+    public Page<PostVO> listPostVoByPage(PostQueryRequest postQueryRequest, HttpServletRequest request) {
+        long current = postQueryRequest.getCurrent();
+        long pageSize = postQueryRequest.getPageSize();
+        Page<Post> postPage = this.page(new Page<>(current, pageSize),
+        this.getQueryWrapper(postQueryRequest));
+        return this.getPostVOPage(postPage, request);
     }
 
 }

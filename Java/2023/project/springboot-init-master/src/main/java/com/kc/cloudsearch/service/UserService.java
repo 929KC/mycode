@@ -1,6 +1,7 @@
 package com.kc.cloudsearch.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.kc.cloudsearch.model.dto.user.UserQueryRequest;
 import com.kc.cloudsearch.model.entity.User;
@@ -118,4 +119,5 @@ public interface UserService extends IService<User> {
      */
     QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
 
+    Page<UserVO> listUserVoByPage(UserQueryRequest userQueryRequest);
 }

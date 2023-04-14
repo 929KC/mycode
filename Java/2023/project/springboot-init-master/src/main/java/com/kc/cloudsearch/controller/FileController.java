@@ -66,6 +66,7 @@ public class FileController {
         try {
             // 上传文件
             file = File.createTempFile(filepath, null);
+
             multipartFile.transferTo(file);
             cosManager.putObject(filepath, file);
             // 返回可访问地址

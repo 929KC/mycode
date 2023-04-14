@@ -4,10 +4,12 @@ import static com.kc.cloudsearch.constant.UserConstant.USER_LOGIN_STATE;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kc.cloudsearch.common.ErrorCode;
 import com.kc.cloudsearch.constant.CommonConstant;
 import com.kc.cloudsearch.exception.BusinessException;
+import com.kc.cloudsearch.exception.ThrowUtils;
 import com.kc.cloudsearch.mapper.UserMapper;
 import com.kc.cloudsearch.model.dto.user.UserQueryRequest;
 import com.kc.cloudsearch.model.entity.User;
@@ -268,5 +270,17 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         queryWrapper.orderBy(SqlUtils.validSortField(sortField), sortOrder.equals(CommonConstant.SORT_ORDER_ASC),
                 sortField);
         return queryWrapper;
+    }
+
+    @Override
+    public Page<UserVO> listUserVoByPage(UserQueryRequest userQueryRequest) {
+        long current = userQueryRequest.getCurrent();
+        long size = userQueryRequest.getPageSize();
+        Page<User> userPage = this.page(new Page<>(current, size),
+                this.getQueryWrapper(userQueryRequest));
+        Page<UserVO> userVOPage = new Page<>(current, size, userPage.getTotal());
+        List<UserVO> userVO = this.getUserVO(userPage.getRecords());
+        userVOPage.setRecords(userVO);
+        return userVOPage;
     }
 }
