@@ -54,8 +54,8 @@ public class PostEsDaoTest {
         postEsDTO.setTitle("test");
         postEsDTO.setContent("test");
         postEsDTO.setTags(Arrays.asList("java", "python"));
-        postEsDTO.setThumbNum(1);
-        postEsDTO.setFavourNum(1);
+//        postEsDTO.setThumbNum(1);
+//        postEsDTO.setFavourNum(1);
         postEsDTO.setUserId(1L);
         postEsDTO.setCreateTime(new Date());
         postEsDTO.setUpdateTime(new Date());
