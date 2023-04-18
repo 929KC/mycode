@@ -33,15 +33,15 @@ using namespace std;
 //	return 0;
 //}
 
-int main()
-{
-	int a;
-	int b;
-	//流提取 cin
-	cin >> a >> b;
-	//流插入,endl相当于"/n"
-	cout << a << endl;
-	cout << b << endl;
-	cout << "Hello Wolrd" << endl;
-	return 0;
-}
+//int main()
+//{
+//	int a;
+//	int b;
+//	//流提取 cin
+//	cin >> a >> b;
+//	//流插入,endl相当于"/n"
+//	cout << a << endl;
+//	cout << b << endl;
+//	cout << "Hello Wolrd" << endl;
+//	return 0;
+//}
