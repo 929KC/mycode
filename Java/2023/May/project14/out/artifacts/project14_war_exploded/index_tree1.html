@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title></title>
+<LINK href="css/css.css" type=text/css rel=stylesheet>
+<SCRIPT language=Javascript>
+
+function onChange(i){
+	childSort=document.all("child" + i);
+	//theTd=document.all("td" + i);
+	if(childSort.style.display=="none"){
+		//theTd.bgcolor="#ffffff";
+		childSort.style.display="";}
+	else{
+		//theTd.bgcolor="#000000";
+		childSort.style.display="none";}
+}
+
+function leafF(url){
+	window.parent.main1.location.href=url;
+}
+
+</SCRIPT>
+</HEAD>
+<body MS_POSITIONING="GridLayout" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#E8E8E8" class='body'>
+        <TABLE style="BORDER-COLLAPSE: collapse" cellSpacing=0 cellPadding=0 width="300" border='0'>
+        <TR>
+        <TD CLOSPAN='2' height='10' ></TD>
+        </Tr>
+      	<TR>
+        <TD width=5></TD>
+        <TD width=295>
+        
+	<IMG height=22 src="images/roottop.jpg" width=22 align=absMiddle border=0>
+		<A href="javascript:onChange(1)">
+			基础数据设置</A>
+		<BR>     
+        
+        
+        <IMG height=22 src="images/rootmiddle.jpg" width=22 align=absMiddle border=0>
+		<A href="javascript:onChange(2)">电子审批管理</A>
+		<BR>
+	<SPAN id=child2 style="DISPLAY: 0" valign='middle'>
+		<IMG height=22 src="images/line_tri.jpg" width=22 align=absMiddle border='0' ><IMG height=22 src="images/leaf.jpg" width=10 align=absMiddle border='0'>
+			<A href="error.html" target="main1">申报信息</A>
+	        <BR>
+        <SPAN id=child2 style="DISPLAY: 0" valign='middle'>
+		<IMG height=22 src="images/line_tri.jpg" width=22 align=absMiddle border='0' ><IMG height=22 src="images/leaf.jpg" width=10 align=absMiddle border='0'>
+			<A href="t_ministry_approveServlet?type=query" target="main1">审批信息</A>
+	        <BR>
+	<SPAN id=child2 style="DISPLAY: 0" valign='middle'>
+		<IMG height=22 src="images/line_tri.jpg" width=22 align=absMiddle border='0' ><IMG height=22 src="images/leaf.jpg" width=10 align=absMiddle border='0'>
+			<A href="error.html" target="main1">土地管理</A>
+	        <BR>	       
+      </SPAN>
+        
+        <IMG height=22 src="images/rootmiddle.jpg" width=22 align=absMiddle border=0>
+		<A href="javascript:onChange(3)">数据导入导出</A>
+		<BR>		
+       
+        <IMG height=22 src="images/rootmiddle.jpg" width=22 align=absMiddle border=0>
+		<A href="javascript:leafF('Login.html')">退出</A>
+		<BR>  
+
+		</TD></TR></TABLE>
+</body>
+</HTML>

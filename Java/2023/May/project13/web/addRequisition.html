@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题</title>
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body>
+<script language="javascript">
+function test(){ //验证要填
+	var Td_guid=document.getElementById("Td_guid").value;
+	var Bpl_guid=document.getElementById("Bpl_guid").value;
+	if(Td_guid==""||Bpl_guid==""){
+		alert("项目序号和补偿标准不能为空值");
+		return false;
+	}
+	return true;
+}
+</script>
+
+
+<table width="500" border="0">
+<tr><td width="371">
+<form id="form1" name="form1" method="post" action="RequisitonAddServlet" onsubmit="return test()">
+  <table width="346">
+    <tr>
+      <td  colspan="3"><table width="322" height="120" border="1" align="center" style="border-collapse:collapse">
+        <tr>
+          <td height="9" colspan="2"><span class="titletxt">补偿标准信息录入（以下带<span class="style1">*</span>为必填项）</span></td>
+          </tr>
+        <tr>
+          <td width="161" height="9"> <div align="right">项目序号</div></td>
+          <td width="220"><input name="Td_guid" type="text" id="Td_guid" size="20">
+            <span class="titletxt"><span class="style1">*</span></span></td>
+        </tr>
+        <tr>
+          <td width="161" height="4"> <div align="right">呈报说明书序号</div></td>
+          <td>
+            <input name="Bpl_guid" type="text" id="Bpl_guid" size="20" >
+            <span class="titletxt"></span></td>
+        </tr>
+        <tr>
+          <td width="161" height="20"><div align="right">地类名称</div></td>
+          <td>
+            <input name="Dl_name" type="text" id="Dl_name" size="20" >
+            <span class="titletxt"></span></td>
+        </tr>
+        <tr>
+          <td width="161" height="20"> <div align="right">面积</div></td>
+          <td>
+            <input name="Area" type="text" id="Area" size="20" >
+            <span class="titletxt"></span></td>
+        </tr>
+        <tr>
+          <td height="20"><div align="right">补偿标准</div></td>
+          <td>
+            <input name="Std" type="text" id="Std" size="20" required>
+            <span class="titletxt"><span class="style1">*</span></span></td>
+        </tr>
+        <tr>
+          <td width="161" height="20"> <div align="right"></div></td>
+          <td>
+            <input name="bt1" type="submit" id="bt1" value="确定" required></td>
+        </tr>
+      </table></td>
+    </tr>
+  </table>
+  </form></td>
+</tr>
+</table>
+</body>
+</html>

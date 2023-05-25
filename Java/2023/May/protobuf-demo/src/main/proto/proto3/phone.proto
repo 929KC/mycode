@@ -1,0 +1,12 @@
+//制定PB版本
+syntax = "proto3"; //必须首行
+package phone;//隔离
+//是否将生成的java代码按多文件划分
+option java_multiple_files = true;
+//生成的代码位置
+option java_package = "com.kc.proto3";
+//proto--->java 生成的包装类的类名
+option java_outer_classname = 'PhoneProtos';
+message Phone{
+  string number = 1;
+}

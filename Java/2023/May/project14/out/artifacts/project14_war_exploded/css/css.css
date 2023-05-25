@@ -1,0 +1,40 @@
+BODY {
+	BACKGROUND-POSITION: center 50%; FONT-SIZE: 12px; BACKGROUND-REPEAT: repeat-y; TEXT-DECORATION: none;
+	scrollbar-face-color:#ffffff;
+	scrollbar-shadow-color:#ffffFF;
+	scrollbar-highlight-color:#ffffFF;
+	scrollbar-3dlight-color:#4c7094;
+	scrollbar-darkshadow-color:#4c7094;
+	scrollbar-track-color:#ffffFF;
+	scrollbar-arrow-color:#4c7094;
+}
+TD {
+	FONT-SIZE: 12px
+}
+.small {
+	FONT-SIZE: 12px; LINE-HEIGHT: 16px
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #339900
+}
+.normal {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+.up {
+	BORDER-RIGHT: #999999 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #999999 1px solid; PADDING-LEFT: 1px; BACKGROUND: #10c610; PADDING-BOTTOM: 1px; BORDER-LEFT: #999999 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #999999 1px solid
+}
+.down {
+	BORDER-RIGHT: #dbdbdb 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #dbdbdb 1px solid; PADDING-LEFT: 1px; BACKGROUND: #ddeeff; PADDING-BOTTOM: 1px; BORDER-LEFT: #dbdbdb 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #dbdbdb 1px solid
+}
+.menuv {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FILTER: revealTrans(transition=23,duration=0.5); PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+.small1 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 20px
+}

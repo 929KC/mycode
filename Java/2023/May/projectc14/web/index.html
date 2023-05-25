@@ -1,0 +1,181 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title></title>
+<link href="css/style.css" rel=stylesheet type=text/css>
+<script language="VBScript">
+<!--
+  Sub GoForward()
+      history.go(1)
+  End Sub
+
+  Sub GoBack()
+      history.go(-1)
+  End Sub
+-->
+</script>
+
+<SCRIPT language=Javascript>
+
+function onChange(i){
+	childSort=document.all("child" + i);
+	//theTd=document.all("td" + i);
+	if(childSort.style.display=="none"){
+		//theTd.bgcolor="#ffffff";
+		childSort.style.display="";}
+	else{
+		//theTd.bgcolor="#000000";
+		childSort.style.display="none";}
+}
+
+function leafF(url){
+	window.parent.main1.location.href=url;
+}
+
+</SCRIPT>
+
+</head>
+<body topmargin='0' leftmargin='0' background='images/bodybackground.jpg'>
+<table border="0" cellpadding="0" cellspacing="0" background='images/header.jpg' align='center' valign='top' width="100%" height="77">
+ <tr>
+ <td style="background-image: url('images/headerleft.jpg'); background-repeat: no-repeat" width='35' height='24'>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </td>
+ <td align='left' width='100%'>
+ <font style='font-size:12pt;color:#000000;'>建设用地审批电子报盘管理软件 Ver1.0</font>
+ </td>
+ </tr>
+ <tr>
+ <td height='50' colspan='2' width='100%' >
+ <table border="0" cellspacing="0">
+        <tr>
+          <td width="16">&nbsp;</td>
+          <td width="50"><div align="center"><img src="images/back.gif" width="20" height="20" onClick="GoBack"></div></td>
+          <td width="50"><div align="center"><img src="images/next.gif" width="20" height="20" onClick="GoForward"></div></td>
+          <td width="50"><div align="center"><a href="../console/index.htm" target="_top"><img src="images/return.gif" width="20" height="20" border="0"></a></div></td>
+          <td width="16">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="140">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><div align="center"><font color="#3074A2" style="font-size:9pt;color:#000000;">向前</font></div></td>
+          <td><div align="center"><font color="#3074A2" style="font-size:9pt;color:#000000">向后</font></div></td>
+          <td><div align="center"><font color="#3074A2" style="font-size:9pt;color:#000000">返回</font></div></td>
+          <td>&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68"><div align="center"><font color="#3074A2" style="font-size:9pt;color:#000000">
+		  <SPAN id=child2 style="DISPLAY: 0" valign='middle'>
+			<A href="addstaff.htm" target="main1">
+			</A>
+	        <BR>		  
+		  </font></div></td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68">&nbsp;</td>
+          <td width="68"></td>
+          <td width="68"></td>
+          <td width="140"><div align="center"><div align="center"><font color="#3074A2" style="font-size:9pt;color:#000000">退出</font></div></td>
+        </tr>
+      </table>
+ </td>
+ </tr>
+ <tr>
+ <td  background='images/bodybackground.jpg' width='100%' nowrap colspan='2'>
+ <table width='100%' cellpadding="0" cellspacing="0" border='0'>
+ <tr>
+ <td    background='images/bodybackground.jpg' nowrap width='186'>
+ 	<font style='font-size:9pt'>导航区菜单</font>
+
+ </td>
+ <td width='100%' align='right' height='23'>
+ 	<iFRAME width='100%' height='100%'  scrolling='no' frameborder='0' NAME="CurSite" SRC="current_site.html"></iframe>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" height="500" align="center" topmargin='0' border='0'>
+  <tr>
+  	<td width="1" background='images/bodybackground.jpg' cellpadding="0" cellspacing="0">&nbsp;
+    	
+    </td>
+    <td valign='top' align='left' name="frmTitle1" id=frmTitle1 background="images/bodybackground.jpg" style="width:177">
+		<iFRAME width='100%' height='100%'  scrolling='auto' frameborder='0' NAME="index_tree" SRC="index_tree1.html" style="HEIGHT: 100%; VISIBILITY: inherit; WIDTH: 177px; Z-INDEX: 2"></iframe>
+    </td>
+    <TD background='images/bodybackground.jpg' width="0">
+      <TABLE border=0 cellPadding=0 cellSpacing=0>
+        <TBODY>
+        <TR>
+          <TD onclick=switchSysBar() style="HEIGHT: 100%;WIDTH: 100%">
+          	<SPAN class=navPoint id=switchPoint title=关闭/打开左栏></SPAN>
+          </TD>
+        </TR>
+      	</TBODY>
+      </TABLE>
+    </TD>
+    <TD width='1'>
+	  <TABLE border=0 cellPadding=0 cellSpacing=0 height='100%' width="16">
+        <TR>
+          <TD background='images/main_left_top.jpg' height='16' width='16'>
+          </TD>
+        </TR>
+        <TR>
+          <TD background='images/main_left_middle.jpg' height='100%' width='16'>
+          </TD>
+        </TR>
+        <TR>
+          <TD background='images/main_left_bottom.jpg' height='24' width='16'>
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+    <TD width="100%" height='100%' valign='bottom'>    <table border='0' cellpadding=0 cellspacing=0 height='100%' width='100%'>
+      <tr>
+        <td background='images/main_top_center.jpg' height='16' width='16' colspan='2'></td>
+      </tr>
+      <tr>
+        <td height='100%' width='100%' colspan='2'>
+		<iframe width='100%' height='100%' scrolling='no' frameborder='0' name="main1" ></iframe>
+        </td>
+      </tr>
+      <tr>
+        <td background='images/main_bottom_center.jpg' height='24' valign='bottom' width='100%'></td>
+        <td background='images/main_bottom_center_right.jpg' height='24' width='300' valign='bottom'></td>
+      </tr>
+    </table></TD>
+    <TD width="16" height='100%'>
+	  <TABLE border=0 cellPadding=0 cellSpacing=0 height='100%'>
+        <TR>
+          <TD background='images/main_right_top.jpg' height='16' width='16'>
+          </TD>
+        </TR>
+        <TR>
+          <TD background='images/main_right_middle.jpg' height='100%'>
+          </TD>
+        </TR>
+        <TR>
+          <TD background='images/main_right_bottom.jpg' height='30'>
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+
+  </tr>
+  <tr>
+      <td height="20" colspan="6" align='right' background='images/bodybackground.jpg'><font style='font-size:9pt'>　第一开发小组&nbsp;&nbsp;&nbsp;</font></td>
+  </tr>
+</table>
+</body>
+</html>
