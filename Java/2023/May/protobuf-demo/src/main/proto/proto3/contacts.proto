@@ -4,7 +4,7 @@ package proto3;//隔离
 //是否将生成的java代码按多文件划分
 option java_multiple_files = true;
 //生成的代码位置
-option java_package = "com.kc.proto3";
+option java_package = "com.kc.contact2";
 //proto--->java 生成的包装类的类名
 option java_outer_classname = 'ContactsProtos';
 import "proto3/phone.proto";
@@ -20,6 +20,9 @@ message PeopleInfo{
 //    string number = 1;
 //  }
   repeated phone.Phone phone = 3;
+}
+message Contacts {
+  repeated PeopleInfo contacts = 1;
 }
 
 
