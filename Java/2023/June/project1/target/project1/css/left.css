@@ -1,0 +1,30 @@
+body {
+	background-image: url(../images/image_all_02.jpg);
+	margin-left: 0px;
+	margin-top: 0px;
+	background-repeat: repeat-y;
+}
+.second_menu {
+	font-family: "华文仿宋";
+	font-size: 12px;
+	color: #000;
+}
+a {
+	font-family: "华文仿宋";
+	font-size: 12px;
+	color: #333;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #333;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+	color: #F30;
+}
