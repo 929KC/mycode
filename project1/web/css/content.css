@@ -1,0 +1,26 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+}
+.title {
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+	text-indent: 1ex;
+}
+
+.txt {
+	font-family: "宋体";
+	font-size: 14px;
+	color: #000;
+}
+.titletxt {
+	font-weight: bolder;
+	font-family: "宋体";
+	font-size: 14px;
+	color: #FFF;
+}
+.txtred {
+	color: #F00;
+}

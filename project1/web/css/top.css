@@ -1,0 +1,32 @@
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: #029AC5;
+}
+.menu {
+	font-family: "华文细黑";
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFF;
+}
+.menu red {
+	color: #F30;
+}
+.menured {
+	color: #F30;
+}
+a:link {
+	color: #FFF;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #FFF;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+	color: #F30;
+}
