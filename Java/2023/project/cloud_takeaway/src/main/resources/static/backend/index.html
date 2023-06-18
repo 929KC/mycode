@@ -107,7 +107,7 @@
     <!-- 引入axios -->
     <script src="plugins/axios/axios.min.js"></script>
     <script src="js/request.js"></script>
-    <script src="api/login.js"></script>
+    <script src="./api/login.js"></script>
     <script>
 
       new Vue({
@@ -182,7 +182,7 @@
             logoutApi().then((res)=>{
               if(res.code === 1){
                 localStorage.removeItem('userInfo')
-                window.location.href = 'page/login/login.html'
+                 window.location.href = '/static/backend/page/login/login.html'
               }
             })
           },

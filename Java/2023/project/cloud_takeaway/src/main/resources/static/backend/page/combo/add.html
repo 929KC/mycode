@@ -603,7 +603,7 @@
           handleAvatarSuccess (response, file, fileList) {
             // this.imageUrl = response.data
             if(response.code === 0 && response.msg === '未登录'){
-              window.top.location.href = '../login/login.html'
+              window.top.location.href = '/backend/page/login/login.html'
             }else{
               this.imageUrl = `/common/download?name=${response.data}`
               this.ruleForm.image = response.data
