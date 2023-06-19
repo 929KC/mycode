@@ -4,14 +4,18 @@ package com.kc.cloud_takeaway.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.kc.cloud_takeaway.common.BaseResponse;
 import com.kc.cloud_takeaway.common.ErrorCode;
+import com.kc.cloud_takeaway.common.ResultUtils;
 import com.kc.cloud_takeaway.exception.BusinessException;
 import com.kc.cloud_takeaway.model.entity.Employee;
 import com.kc.cloud_takeaway.service.EmployeeService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
+
 
 @Slf4j
 @RestController
@@ -46,5 +50,44 @@ public class EmployeeController {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
        return employeeService.employeeListPageQuery(page, pageSize, name);
+    }
+    @PostMapping("/add")
+    public BaseResponse<String> saveEmployee(HttpServletRequest request,@RequestBody Employee employe) {
+        if (employe==null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        employe.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
+        employe.setCreateTime(new Date());
+        employe.setUpdateTime(new Date());
+        Long id = (Long)request.getSession().getAttribute("employee");
+        employe.setCreateUser(id);
+        employe.setUpdateUser(id);
+        employeeService.save(employe);
+        return ResultUtils.success(null);
+    }
+
+
+    @PutMapping("/update")
+    public BaseResponse<String> updateEmployee(HttpServletRequest request,@RequestBody Employee employe) {
+        if (employe==null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        employe.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
+        employe.setCreateTime(new Date());
+        employe.setUpdateTime(new Date());
+        Long id = (Long)request.getSession().getAttribute("employee");
+        employe.setCreateUser(id);
+        employe.setUpdateUser(id);
+        employeeService.save(employe);
+        return ResultUtils.success(null);
+    }
+    ///query/${id}
+    @PutMapping("/query/{id}")
+    public BaseResponse<Employee> queryEmployeeById(@PathVariable("id") Long id) {
+        Employee employee = employeeService.getById(id);
+        if (employee!=null) {
+            return ResultUtils.success(employee);
+        }
+        return ResultUtils.error(ErrorCode.NOT_QUERY_USE_ERROE);
     }
 }

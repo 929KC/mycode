@@ -10,18 +10,22 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 import javax.annotation.Resource;
 import java.util.List;
 
 @Slf4j
 @Configuration
-public class WebConfig  implements WebMvcConfigurer {
+public class WebConfig implements WebMvcConfigurer {
     @Resource
     private LoginIntercept loginIntercept;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         WebMvcConfigurer.super.addInterceptors(registry);
-        registry.addInterceptor(loginIntercept).addPathPatterns("/**")
+        registry.addInterceptor(loginIntercept)
+                .addPathPatterns("static/backend/page/login/login.html")
+                .addPathPatterns("doc.html")
                 .excludePathPatterns("/employee/login")
                 .excludePathPatterns("/employee/page")
                 .excludePathPatterns("/employee/logout");
@@ -42,6 +46,6 @@ public class WebConfig  implements WebMvcConfigurer {
         //设置对象转换器，底层使用Jackson将Java对象转为json
         messageConverter.setObjectMapper(new JacksonObjectMapper());
         //将上面的消息转换器对象追加到mvc框架的转换器集合中
-        converters.add(0,messageConverter);
+        converters.add(0, messageConverter);
     }
 }

@@ -36,7 +36,7 @@ const editCategory = (params) => {
 // 新增接口
 const addCategory = (params) => {
   return $axios({
-    url: '/category',
+    url: '/category/add',
     method: 'post',
     data: { ...params }
   })

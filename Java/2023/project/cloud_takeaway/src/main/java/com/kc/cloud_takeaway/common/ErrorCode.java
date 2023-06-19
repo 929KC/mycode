@@ -4,6 +4,11 @@ package com.kc.cloud_takeaway.common;
  * 错误码
  */
 public enum ErrorCode {
+    //Setmeal
+    NOT_DELETE_SETMEAL_ERROR(50005,"该分类下关联套餐，无法删除"),
+    NOT_DELETE_DISH_ERROR(50004,"该分类下关联菜品，无法删除"),
+
+    NOT_QUERY_USE_ERROE(50003,"没有查询到对应的员工信息"),
     SUCCESS(0, "ok"),
     PARAMS_ERROR(40000, "请求参数错误"),
     NOT_LOGIN_ERROR(40100, "未登录"),
@@ -12,6 +17,7 @@ public enum ErrorCode {
     FORBIDDEN_ERROR(40300, "禁止访问"),
     SYSTEM_ERROR(50000, "系统内部异常"),
     OPERATION_ERROR(50001, "操作失败");
+
     private final int code;
     private final String message;
 
