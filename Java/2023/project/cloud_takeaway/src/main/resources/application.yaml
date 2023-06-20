@@ -12,6 +12,12 @@ spring:
     static-path-pattern: /static/**
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
+  main:
+    allow-circular-references: true
+  servlet:
+    multipart:
+      max-file-size: 10MB        # 设置单个文件最大大小为10MB
+      max-request-size: 100MB    # 设置多个文件大小为100MB
 mybatis-plus:
   configuration:
     #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
@@ -20,3 +26,5 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: ASSIGN_ID
+myimages:
+  path: C:\code\mycode\Java\2023\project\cloud_takeaway\src\main\resources\myimages\

@@ -19,7 +19,7 @@ const deleteDish = (ids) => {
 // 修改接口
 const editDish = (params) => {
   return $axios({
-    url: '/dish',
+    url: '/dish/update',
     method: 'put',
     data: { ...params }
   })
@@ -28,7 +28,7 @@ const editDish = (params) => {
 // 新增接口
 const addDish = (params) => {
   return $axios({
-    url: '/dish',
+    url: '/dish/add',
     method: 'post',
     data: { ...params }
   })
@@ -37,7 +37,7 @@ const addDish = (params) => {
 // 查询详情
 const queryDishById = (id) => {
   return $axios({
-    url: `/dish/${id}`,
+    url: `/dish/query/${id}`,
     method: 'get'
   })
 }

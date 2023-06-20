@@ -27,7 +27,7 @@ function addEmployee (params) {
 // 修改---添加员工
 function editEmployee (params) {
   return $axios({
-    url: '/employee',
+    url: '/employee/update',
     method: 'put',
     data: { ...params }
   })

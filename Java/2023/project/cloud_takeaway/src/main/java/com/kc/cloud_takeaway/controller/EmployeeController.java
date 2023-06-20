@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -72,18 +73,16 @@ public class EmployeeController {
         if (employe==null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
-        employe.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
-        employe.setCreateTime(new Date());
-        employe.setUpdateTime(new Date());
         Long id = (Long)request.getSession().getAttribute("employee");
-        employe.setCreateUser(id);
         employe.setUpdateUser(id);
-        employeeService.save(employe);
+        employe.setUpdateTime(new Date());
+        employeeService.updateById(employe);
         return ResultUtils.success(null);
     }
     ///query/${id}
-    @PutMapping("/query/{id}")
+    @GetMapping("/query/{id}")
     public BaseResponse<Employee> queryEmployeeById(@PathVariable("id") Long id) {
+        log.info("查询用户");
         Employee employee = employeeService.getById(id);
         if (employee!=null) {
             return ResultUtils.success(employee);

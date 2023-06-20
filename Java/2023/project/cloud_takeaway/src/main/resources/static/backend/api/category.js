@@ -27,7 +27,7 @@ const deleCategory = (ids) => {
 // 修改接口
 const editCategory = (params) => {
   return $axios({
-    url: '/category',
+    url: '/category/update',
     method: 'put',
     data: { ...params }
   })
