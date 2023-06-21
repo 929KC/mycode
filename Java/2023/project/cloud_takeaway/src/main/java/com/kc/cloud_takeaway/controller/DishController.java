@@ -1,11 +1,13 @@
 package com.kc.cloud_takeaway.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.kc.cloud_takeaway.common.BaseResponse;
 import com.kc.cloud_takeaway.common.ErrorCode;
 import com.kc.cloud_takeaway.common.ResultUtils;
 import com.kc.cloud_takeaway.exception.BusinessException;
 import com.kc.cloud_takeaway.model.dto.DishDto;
+import com.kc.cloud_takeaway.model.entity.Category;
 import com.kc.cloud_takeaway.model.entity.Dish;
 import com.kc.cloud_takeaway.model.entity.Employee;
 import com.kc.cloud_takeaway.service.CategoryService;
@@ -15,8 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
+import java.util.List;
+
 
 @Slf4j
 @RestController
@@ -63,5 +65,18 @@ public class DishController {
         }
         dishService.updateWithFlavor(dishDto);
         return ResultUtils.success(dishDto);
+    }
+
+    @GetMapping("/list")
+    public BaseResponse<List<Dish>> getDishList(Dish dish) {
+        if (dish==null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        LambdaQueryWrapper<Dish> lambdaQuery = new LambdaQueryWrapper<Dish>();
+        lambdaQuery.eq(dish.getCategoryId()!=null,Dish::getCategoryId,dish.getCategoryId());
+        lambdaQuery.eq(Dish::getStatus,1);
+        lambdaQuery.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+        List<Dish> list = dishService.list();
+        return ResultUtils.success(list);
     }
 }
