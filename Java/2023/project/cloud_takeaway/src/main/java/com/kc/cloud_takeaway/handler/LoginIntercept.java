@@ -18,6 +18,11 @@ public class LoginIntercept implements HandlerInterceptor {
             log.info("已经登陆");
             return true;
         }
+        if (session!=null&&session.getAttribute("user") != null) {
+            BaseContextUtils.setCurrentId((Long)session.getAttribute("user"));
+            log.info("已经登陆");
+            return true;
+        }
         response.sendRedirect("/static/backend/page/login/login.html");
         return false;
     }

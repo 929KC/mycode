@@ -15,11 +15,12 @@ import java.util.List;
 @Slf4j
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+    @Resource
+    private LoginIntercept loginIntercept;
     private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
             "classpath:/META-INF/resources/", "classpath:/resources/",
             "classpath:/static/", "classpath:/public/" };
-    @Resource
-    private LoginIntercept loginIntercept;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         WebMvcConfigurer.super.addInterceptors(registry);
@@ -27,7 +28,13 @@ public class WebConfig implements WebMvcConfigurer {
                 .addPathPatterns("static/backend/page/login/login.html")
                 .excludePathPatterns("/employee/login")
                 .excludePathPatterns("/employee/page")
-                .excludePathPatterns("/employee/logout");
+                .excludePathPatterns("/employee/logout")
+                .excludePathPatterns("/user/login")
+                .excludePathPatterns("/user/sendMsg")
+                .excludePathPatterns("/**/*.js")
+                .excludePathPatterns("/**/*.css")
+                .excludePathPatterns("/**/*.png")
+                .excludePathPatterns("/**/*.jpg");
     }
 
 

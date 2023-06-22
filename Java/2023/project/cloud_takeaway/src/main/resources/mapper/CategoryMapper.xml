@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kc.cloud_takeaway.mapper.CategoryMapper">
+<mapper namespace="generator.mapper.CategoryMapper">
 
-    <resultMap id="BaseResultMap" type="com.kc.cloud_takeaway.model.entity.Category">
+    <resultMap id="BaseResultMap" type="generator.domain.Category">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="type" column="type" jdbcType="INTEGER"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
