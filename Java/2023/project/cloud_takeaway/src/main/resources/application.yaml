@@ -6,7 +6,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: 2222
-    url: jdbc:mysql://localhost:3306/cloud_takeaway?characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    url: jdbc:mysql://120.78.166.85:3308/cloud_takeaway?characterEncoding=utf8&serverTimezone=UTC&useSSL=false
     username: root
   mvc:
     static-path-pattern: /static/**
