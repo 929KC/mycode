@@ -134,3 +134,139 @@ using namespace std;
 //	return 0;
 //}
 
+//正确示例
+//int x = 30;//全局变量
+//
+//void Print(int a, int b = 20, int c =x)
+//{
+//	cout << a << endl;
+//	cout << b << endl;
+//	cout << c << endl;
+//}
+//
+//
+//int main()
+//{
+//	Print(12);
+//	return 0;
+//}
+//函数重载
+//函数重载只和参数列表有关
+//int  Add(int a, int b)
+//{
+//	return a + b;
+//}
+//int Add(int a, int b, int c)
+//{
+//	
+//	return a + b + c;
+//}
+//double Add(double a,double b)
+//{
+//	return a + b;
+//}
+//
+//int main()
+//{
+//	int ret1 = Add(12, 12);
+//	int ret2 = Add(12, 12, 12);
+//	double ret3 = Add(12.3, 32.2);
+//	cout << ret1 << endl;
+//	cout << ret2 << endl;
+//	cout << ret3 << endl;
+//	return 0;
+//}
+
+//引用
+//引用仅仅变量的别名,并没有开辟新的空间,它和它引用的变量共享内存空间
+//int main()
+//{
+//	int a = 90;
+//	int& b = a;
+//	int& c = b;
+//	int& d = c;
+//	
+//	cout << "a=" << a << " &a= " << &a << endl;
+//	cout << "b=" << b << " &b= "<< &b << endl;
+//	cout << "c=" << c << " &c= " << &c << endl;
+//	cout << "d=" << d << " &d= " << &d << endl;
+//	return 0;
+//}
+
+//int main()
+//{	
+//	int a = 90;
+//	int c = 90;
+//	//引用必须初始化
+//	//int& b;
+//	int& b = a;
+//	//引用一旦引用了一个变量,便不能引用别的变量了
+//	//int b = c;
+//
+//	return 0;
+//}
+
+//常引用
+//int main()
+//{	
+//	//权限不能放大,可以缩小,以及权限平移,const修饰的变量只能被读,而不能被修改，而引用类型b可读可写
+//	const int a = 90;
+//	//int& b = a;权限不能放大
+//	//权限平移
+//	const int& c = a;
+//
+//	return 0;
+//}
+//引用使用场景
+
+//1.做参数
+//void Swap(int& a, int& b)
+//{
+//	int temp = a;
+//	 a = b;
+//	 b = temp;
+//	cout << "a=" << a << " b=" << b << endl;
+//}
+//void Swap(int *a, int  *b)
+//{
+//	int *temp = a;
+//	a = b;
+//	b = temp;
+//	/*cout << "a=" << a << " b=" << b << endl;*/
+//}
+//int main()
+//{
+//	int a = 90;
+//	int b = 99;
+//	Swap(&a,&b);
+//	/*int c = 90;
+//	int* d = &c;
+//	cout << "d=" << d << "&d=" << &d << endl;*/
+//	/*int c = 90;
+//	int* d = &c;*/
+//	cout << "a=" << a << "b=" << b << endl;
+//	return 0;
+//}
+//2.做返回值
+//int& Count()
+//{
+//	//n保存在静态区本身就只有一份,所以出了函数没有被销毁
+//	static int n = 0;
+//	n++;
+//	return n;
+//}
+//int& Add(int a, int b)
+//{
+//	int c = a + b;
+//	return c;//c出了函数c就没了，所以打印了一个随机值
+//}
+//int main()
+//{
+//	int& ret = Add(0, 12);
+//	int& ret2 = Count();
+//	cout << "ret= " << ret << endl;
+//	cout << "ret2= " << ret2 << endl;
+//	return 0;
+//}
+
+
