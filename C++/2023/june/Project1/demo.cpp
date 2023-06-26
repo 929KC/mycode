@@ -359,12 +359,32 @@ A a;
 //}
 
 
- inline int Add(int left, int right)
+// inline int Add(int left, int right)
+//{
+//	return left + right;
+//}
+//int main()
+//{
+//	int ret = Add(12, 23);
+//	return 0;
+//}
+
+
+int TestAuto()
 {
-	return left + right;
+	return 10;
 }
 int main()
 {
-	int ret = Add(12, 23);
+	int a = 10;
+	auto b = a;
+	auto c = 'a';
+	auto d = TestAuto();
+
+	cout << typeid(b).name() << endl;
+	cout << typeid(c).name() << endl;
+	cout << typeid(d).name() << endl;
+
+	//auto e; 无法通过编译，使用auto定义变量时必须对其进行初始化
 	return 0;
 }
