@@ -359,32 +359,94 @@ A a;
 //}
 
 
-// inline int Add(int left, int right)
+//  int Add(int left, int right)
 //{
 //	return left + right;
 //}
 //int main()
 //{
 //	int ret = Add(12, 23);
+//	cout << "h";
 //	return 0;
 //}
 
 
-int TestAuto()
+//int TestAuto()
+//{
+//	return 10;
+//}
+//int main()
+//{
+//	int a = 10;
+//	auto b = a;
+//	auto c = 'a';
+//	auto d = TestAuto();
+//
+//	cout << typeid(b).name() << endl;
+//	cout << typeid(c).name() << endl;
+//	cout << typeid(d).name() << endl;
+//
+//	//auto e; 无法通过编译，使用auto定义变量时必须对其进行初始化
+//	return 0;
+//}
+//auto
+//int Add(int a,int b) 
+//{
+//	return a + b;
+//}
+//int main()
+//{
+//
+//	auto a = 12;
+//	auto b = 12.0;
+//	auto c = 'c';
+//	auto d = Add(2, 2);
+//	cout << typeid(a).name() << endl;
+//	cout << typeid(d).name() << endl;
+//	cout << typeid(b).name() << endl;
+//	cout << typeid(c).name() << endl;
+//	cout << a << endl;
+//	cout << b << endl;
+//	cout << c << endl;
+//	int& e = a;
+//	int& f = e;
+//	int& g = f;
+//	int* h = &a;
+//	cout << typeid(e).name() << endl;
+//	cout << typeid(f).name() << endl;
+//	cout << typeid(g).name() << endl;
+//	cout << typeid(h).name() << endl;
+//	//不能推导
+//	//auto a = 90, d = 9090.909;
+//	//auto arr[] = {};
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	for (auto e:arr) 
+//	{
+//		cout << e << " " ;
+//	}
+//	return 0;
+//}
+
+//NULL是一个宏,字面常量为0,或者(void*)
+//
+void Fun(int n)
 {
-	return 10;
+	cout << "Fun(n)" << endl;
+}
+
+
+void Fun(int *n)
+{
+	cout << "Fun2(*n)" << endl;
 }
 int main()
 {
-	int a = 10;
-	auto b = a;
-	auto c = 'a';
-	auto d = TestAuto();
-
-	cout << typeid(b).name() << endl;
-	cout << typeid(c).name() << endl;
-	cout << typeid(d).name() << endl;
-
-	//auto e; 无法通过编译，使用auto定义变量时必须对其进行初始化
+	Fun(0);
+	Fun(NULL);
+	Fun((int *)NULL);
+	Fun(nullptr);
+	cout << sizeof(NULL) << endl;
+	cout << sizeof(void *) << endl;
+	cout << sizeof(nullptr) << endl;
 	return 0;
 }
