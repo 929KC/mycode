@@ -134,41 +134,110 @@ using namespace std;
 //	 return 0;
 //}
 
-
-class  Date
-{
-public:
-//	void Display()
+//class Time
+//{
+//public:
+//	~Time()
+//	 {
+//		cout << "~Time()" << endl;
+//	 }
+//private:
+//	int _hour;
+//	int _minute;
+//	int _second;
+//
+//};
+//class  Date
+//{
+//public:
+////	void Display()
+////	{
+////		cout << "year=" << _year << " month" << _month << " day" << _day;
+////	}
+////	void SetDate(int year, int month, int day)
+////	{
+////		_year = year;
+////		_month = month;
+////		_day = day;
+////	}
+//	//析构函数:作用销毁对象，不包含内置类型(int,double,long,指针)
+//	Date()
 //	{
-//		cout << "year=" << _year << " month" << _month << " day" << _day;
+//
 //	}
-//	void SetDate(int year, int month, int day)
+//	~Date()// 析构函数
+//	{
+//		cout << "我是傻逼,今天不开心,好烦啊!!!" << endl;
+//	}
+//	Date(int year, int month, int day)
 //	{
 //		_year = year;
 //		_month = month;
 //		_day = day;
 //	}
-	Date()
-	{
+//	/*Date(const Date & d)
+//	{
+//		_year = d._year;
+//		_month = d._month;
+//		_day = d._day;
+//	}
+//	Date(const Date  *d)
+//	{
+//		_year = d->_year;
+//		_month = d->_month;
+//		_day = d->_day;
+//	}*/
+//	/*Date( Date  d)
+//	{
+//		_year = d._year;
+//		_month = d.>_month;
+//		_day = d._day;
+//	}*/
+//private:
+//	int _year=0;
+//	int _month=0;
+//	int _day=0;
+//	Time _t;
+//};
 
-	}
-	Date(int year, int month, int day)
+//未定义拷贝构造函数,会生成默认的拷贝构造,内置类型按照字节直接拷贝,自定义类型还需要调用其拷贝构造
+//int main()
+//{
+//	//1.构造函数
+//	Date d1;
+//	Date d2(12, 12, 12);
+//	Date d3(d2);
+//	Date d4(d2);
+//	cout << "";
+//	return 0;
+//}
+
+class Stack
+{
+public:
+	Stack(int capacity = 4)
 	{
-		_year = year;
-		_month = month;
-		_day = day;
+		_ps = (int*)malloc(sizeof(int) * capacity);
+		_size = 0;
+		_capacity = capacity;
+	}
+	void Print()
+	{
+		cout << _ps << endl;// 打印栈空间地址
 	}
 private:
-	int _year=0;
-	int _month=0;
-	int _day=0;
+	int* _ps;
+	int _size;
+	int _capacity;
 };
-
 int main()
 {
-	//1.构造函数
-	Date d1;
-	Date d2(12, 12, 12);
+	Stack s1;
+	s1.Print();// 打印s1栈空间的地址
+	Stack s2(s1);// 用已存在的对象s1创建对象s2
+	s2.Print();// 打印s2栈空间的地址
 	cout << "";
+	cout << &s1 << endl;
+	cout << &s2 << endl;
 	return 0;
 }
