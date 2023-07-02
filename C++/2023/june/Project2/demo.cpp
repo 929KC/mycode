@@ -212,32 +212,71 @@ using namespace std;
 //	return 0;
 //}
 
-class Stack
+//class Stack
+//{
+//public:
+//	Stack(int capacity = 4)
+//	{
+//		_ps = (int*)malloc(sizeof(int) * capacity);
+//		_size = 0;
+//		_capacity = capacity;
+//	}
+//	Stack(const Stack & s)
+//	{
+//		cout << "拷贝构造" << endl;
+//	}
+//
+//	void Print()
+//	{
+//		cout << _ps << endl;// 打印栈空间地址
+//	}
+//private:
+//	int* _ps;
+//	int _size;
+//	int _capacity;
+//};
+//int main()
+//{
+//	Stack s1;
+//	s1.Print();// 打印s1栈空间的地址
+//	Stack s2(s1);// 用已存在的对象s1创建对象s2
+//	s2.Print();// 打印s2栈空间的地址
+//	cout << "";
+//	cout << &s1 << endl;
+//	cout << &s2 << endl;
+//
+//	return 0;
+//}
+class Date
 {
 public:
-	Stack(int capacity = 4)
+	Date(int year = 0, int month = 1, int day = 1)
 	{
-		_ps = (int*)malloc(sizeof(int) * capacity);
-		_size = 0;
-		_capacity = capacity;
+		_year = year;
+		_month = month;
+		_day = day;
 	}
 	void Print()
 	{
-		cout << _ps << endl;// 打印栈空间地址
+		cout << _year << "年" << _month << "月" << _day << "日" << endl;
 	}
+	bool operator==(const Date& d)
+	{
+		return _year == d._year
+			&& _month == d._month
+			&& _day == d._day;
+	}
+		 
 private:
-	int* _ps;
-	int _size;
-	int _capacity;
+	int _year;
+	int _month;
+	int _day;
 };
+
 int main()
 {
-	Stack s1;
-	s1.Print();// 打印s1栈空间的地址
-	Stack s2(s1);// 用已存在的对象s1创建对象s2
-	s2.Print();// 打印s2栈空间的地址
-	cout << "";
-	cout << &s1 << endl;
-	cout << &s2 << endl;
+	Date d1;
+	Date d2(d1);
+	cout << "Hello" << endl;
 	return 0;
 }
