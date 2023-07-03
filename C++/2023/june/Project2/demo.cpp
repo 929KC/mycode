@@ -246,37 +246,108 @@ using namespace std;
 //	cout << &s2 << endl;
 //
 //	return 0;
+////}
+//class Date
+//{
+//public:
+//	Date(int year = 0, int month = 1, int day = 1)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	void Print()
+//	{
+//		cout << _year << "年" << _month << "月" << _day << "日" << endl;
+//	}
+//	bool operator==(const Date& d)
+//	{
+//		return _year == d._year
+//			&& _month == d._month
+//			&& _day == d._day;
+//	}
+//		 
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//
+//int main()
+//{
+//	Date d1;
+//	Date d2(d1);
+//	cout << "Hello" << endl;
+//	return 0;
 //}
+
+//class Date
+//{
+//public:
+//	Date(int year = 0, int month = 1, int day = 1)// 构造函数
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	Date(const Date& d)// 拷贝构造函数
+//	{
+//		_year = d._year;
+//		_month = d._month;
+//		_day = d._day;
+//	}
+//	bool operator==(const Date& d1)
+//	{
+//		return
+//			_year = d1._year;
+//		   _month = d1._month;
+//		   _day = d1._day;
+//	}
+//	int operator-(const Date & d1)
+//	{
+//		return d1._day - _day;
+//	}
+//	Date& operator=(const Date& d1)
+//	{
+//		if (this != &d1)
+//		{
+//			_year = d1._year;
+//			_day = d1._day;
+//			_month = d1._month;
+//		}
+//		return *this;
+//	}
+//
+//
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d1(2021, 5, 31);
+//	Date d3(202, 5, 31);
+//	Date d2(d1); // 用已存在的对象d1创建对象d2
+//	cout << (d1==d2) << endl;
+//	Date d4 = (d3);
+//	cout << "" << "";
+//	return 0;
+//}
+//
+//   
 class Date
 {
-public:
-	Date(int year = 0, int month = 1, int day = 1)
-	{
-		_year = year;
-		_month = month;
-		_day = day;
-	}
-	void Print()
-	{
-		cout << _year << "年" << _month << "月" << _day << "日" << endl;
-	}
-	bool operator==(const Date& d)
-	{
-		return _year == d._year
-			&& _month == d._month
-			&& _day == d._day;
-	}
-		 
-private:
-	int _year;
-	int _month;
-	int _day;
-};
+	Date(int year = 1, int month = 1, int day = 1);
+	void Print() const;
+	Date& operator+=(int day);
+	Date operator+(int day) const;
+	Date& operator-(int day) const;
+	Date& operator-=(int day);
+	Date& operator++();
 
-int main()
-{
-	Date d1;
-	Date d2(d1);
-	cout << "Hello" << endl;
-	return 0;
-}
+private:
+	int _day;
+	int _month;
+	int _year;
+};
