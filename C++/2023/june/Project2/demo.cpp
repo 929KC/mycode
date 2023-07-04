@@ -336,18 +336,28 @@ using namespace std;
 //}
 //
 //   
-class Date
+//class Date
+//{
+//	Date(int year = 1, int month = 1, int day = 1);
+//	void Print() const;
+//	Date& operator+=(int day);
+//	Date operator+(int day) const;
+//	Date& operator-(int day) const;
+//	Date& operator-=(int day);
+//	Date& operator++();
+//
+//private:
+//	int _day;
+//	int _month;
+//	int _year;
+//};
+int main()
 {
-	Date(int year = 1, int month = 1, int day = 1);
-	void Print() const;
-	Date& operator+=(int day);
-	Date operator+(int day) const;
-	Date& operator-(int day) const;
-	Date& operator-=(int day);
-	Date& operator++();
-
-private:
-	int _day;
-	int _month;
-	int _year;
-};
+	int carrots;
+	cout << "How many carrots do you have" << endl;
+	cin >> carrots;
+	cout << "Here ar two more";
+	carrots = carrots + 2;
+	cout << "Now you have" << carrots << "carrots." << endl;
+	return 0;
+}
