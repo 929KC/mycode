@@ -1,9 +1,7 @@
 package org.example.list;
 
-import java.util.List;
-
 public class SingleLinkedList {
-List<Integer>
+
     class ListNode {
         private ListNode next;
         private int data;
@@ -155,5 +153,11 @@ List<Integer>
     public void clear() {
        this.head = null;
     }
-
+    public void display() {
+        ListNode cur = this.head;
+        while (cur != null) {
+            System.out.print(cur.data+" ");
+            cur = cur.next;
+        }
+    }
 }
