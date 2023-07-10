@@ -160,4 +160,9 @@ public class SingleLinkedList {
             cur = cur.next;
         }
     }
+
+
+    public static void main(String[] args) {
+
+    }
 }
