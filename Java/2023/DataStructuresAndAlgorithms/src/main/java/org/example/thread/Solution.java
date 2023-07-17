@@ -1,4 +1,4 @@
-package org.example;
+package org.example.thread;
 
 class Solution {
     public static int[][] matrixBlockSum(int[][] mat, int k) {
