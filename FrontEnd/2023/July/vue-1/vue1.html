@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo">
+        <h1 v-bind:title="message2">
+            {{message}},{{name}},{{address}},{{message2}}
+        </h1>
+
+    </div>
+    <!-- <script>
+        new Vue({
+            el: '#demo',
+            data: {
+                name: "叶秋寒",
+                address: "湖南郴州",
+                message: "Hello",
+                message2: '页面加载于 ' + new Date().toLocaleString()
+            }
+        })
+    </script> -->
+</body>
+
+</html>
