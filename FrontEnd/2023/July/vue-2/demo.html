@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+
+
+
+    <div id="demo">
+        <p v-if="seen">现在你能看到吗?
+        </p>
+    </div>
+    <script>
+        var app3 = new Vue({
+            el: "#demo",
+            data: {
+                seen: true
+            }
+        })
+    </script>
+</body>
+
+</html>

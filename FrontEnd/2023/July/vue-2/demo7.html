@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo">
+        <p>{{name}}</p>
+        <button @click="showInfo1">点我提示信息(不传参)</button>
+        <button @click="showInfo2($event,66)">点我提示信息(穿参)</button>
+    </div>
+    <script>
+        new Vue({
+            el: "#demo",
+            data: {
+                name: "黄茂荣"
+            },
+            methods: {
+                showInfo1(event) {
+                    console.log(event.target.innerText);
+                    alert("同学你好")
+                },
+                showInfo2(event, number) {
+                    console.log(event.target.innerText);
+                    console.log(number)
+                    alert("同学你好")
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
