@@ -1,17 +1,9 @@
 package org.example.thread.deadlock;
 
 public class Chopstick {
-    private boolean taken = false;
+    private String name;
 
-    public synchronized void take() throws InterruptedException {
-        while (taken) {
-            wait();
-        }
-        taken = true;
+    public Chopstick(String name) {
+        this.name = name;
     }
-
-    public synchronized void drop() {
-        taken = false;
-        notifyAll();
-    }
-} ///:~
+}
