@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kc.chatroom.mapper.FriendMapper">
+
+    <resultMap id="BaseResultMap" type="com.kc.chatroom.model.entity.Friend">
+            <result property="userid" column="userId" jdbcType="INTEGER"/>
+            <result property="friendid" column="friendId" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        userId,friendId
+    </sql>
+</mapper>

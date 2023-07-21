@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 2222
+    url: jdbc:mysql://120.78.166.85:3307/chatroom?characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    username: root
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/**Mapper.xml
+
+
+
+

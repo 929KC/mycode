@@ -1,0 +1,68 @@
+/* 放置登录页面的专属样式 */
+
+.login-container {
+    width: 100%;
+    height: calc(100% - 50px);
+
+    /* 为了能够让内部的 登录对话框 垂直水平居中, 使用弹性布局 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-dialog {
+    width: 400px;
+    height: 320px;
+    background-color: rgb(220, 220, 220);
+    border-radius: 15px;
+}
+
+.login-dialog h3 {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.login-dialog .row {
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-dialog .row span {
+    /* span 是行内元素, 直接设置 width 无效, 需要设置成块级元素 */
+    display: block;
+    width: 100px;
+
+    font-weight: 700;
+}
+
+#username, #password {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    text-indent: 10px;
+
+    border-radius: 10px;
+
+    border: none;
+    outline: none;
+}
+
+#submit {
+    width: 300px;
+    height: 40px;
+
+    background-color: rgb(0, 128, 0);
+    color: white;
+
+    border: none;
+    font-size: 20px;
+
+    border-radius: 10px;
+}
+
+#submit:active {
+    background-color: #666;
+}
