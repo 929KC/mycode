@@ -1,7 +1,7 @@
 package com.kc.chatroom.mapper;
 
-import com.kc.chatroom.model.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.kc.chatroom.model.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

@@ -8,16 +8,14 @@ import java.io.Serializable;
 import lombok.Data;
 
 /**
- * @TableName user
+ * @TableName message_session_user
  */
-@TableName(value ="user")
+@TableName(value ="message_session_user")
 @Data
-public class User implements Serializable {
+public class MessageSessionUser implements Serializable {
+    private Integer sessionId;
+
     private Integer userId;
-
-    private String username;
-
-    private String password;
 
     private static final long serialVersionUID = 1L;
 }

@@ -5,11 +5,28 @@
 <mapper namespace="com.kc.chatroom.mapper.FriendMapper">
 
     <resultMap id="BaseResultMap" type="com.kc.chatroom.model.entity.Friend">
-            <result property="userid" column="userId" jdbcType="INTEGER"/>
-            <result property="friendid" column="friendId" jdbcType="INTEGER"/>
+            <result property="userId" column="userId" jdbcType="INTEGER"/>
+            <result property="friendId" column="friendId" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         userId,friendId
     </sql>
+    <insert id="addFriendRequest">
+
+
+    </insert>
+    <insert id="addFriend">
+
+    </insert>
+    <delete id="deleteFriendRequest">
+
+    </delete>
+    <select id="findFriend" resultType="com.kc.chatroom.model.entity.Friend">
+
+
+    </select>
+    <select id="getFriendRequest" resultType="com.kc.chatroom.common.AddFriendRequest">
+
+    </select>
 </mapper>

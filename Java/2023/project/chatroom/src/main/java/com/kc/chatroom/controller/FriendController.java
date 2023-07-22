@@ -25,14 +25,31 @@ public class FriendController {
         try {
             HttpSession session = request.getSession(false);
             User user = (User) session.getAttribute("user");
-            QueryWrapper querapper = new QueryWrapper<>();
             QueryWrapper<Friend> queryWrapper = new QueryWrapper();
-            queryWrapper.eq("userId", user.getUserid());
+            queryWrapper.eq("userId", user.getUserId());
             List<Friend> list = friendService.list(queryWrapper);
             return list;
         } catch (NullPointerException e) {
             e.printStackTrace();
             return new ArrayList<Friend>();
         }
+    }
+
+    @GetMapping("/findFriend")
+    @ResponseBody
+    public Object findFriend(String name, HttpServletRequest req) {
+        return friendService.findFriend(name, req);
+    }
+
+    @GetMapping("/addFriend")
+    @ResponseBody
+    public Object addFriend(int friendId, String reason, HttpServletRequest req) {
+        return friendService.addFriend(friendId, reason, req);
+    }
+
+    @GetMapping("/getFriendRequest")
+    @ResponseBody
+    public Object getFriendRequest(HttpServletRequest req) {
+        return friendService.getFriendRequest(req);
     }
 }
