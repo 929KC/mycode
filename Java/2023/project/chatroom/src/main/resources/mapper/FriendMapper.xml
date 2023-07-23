@@ -13,20 +13,26 @@
         userId,friendId
     </sql>
     <insert id="addFriendRequest">
-
-
-    </insert>
+        insert into add_friend_request values (#{fromUserId}, #{toUserId}, #{reason}    </insert>
     <insert id="addFriend">
-
+        insert into friend values(#{userId}, #{friendId}), (#{friendId}, #{userId})
     </insert>
     <delete id="deleteFriendRequest">
-
+        delete
+        from add_friend_request
+        where fromUserId = #{fromUserId}
+          and toUserId
     </delete>
     <select id="findFriend" resultType="com.kc.chatroom.model.entity.Friend">
-
+        select userId as friendId, username as friendName from user
+            3 where userId != #{selfUserId} and username like '%${friendName}%' and userId
+            4 (select friendId from friend where userId = #{selfUserId})
 
     </select>
     <select id="getFriendRequest" resultType="com.kc.chatroom.common.AddFriendRequest">
-
+        select fromUserId, user.username as fromUserName, reason
+        from add_friend_req
+        where toUserId = #{toUserId}
+          and fromUserId = user.userId
     </select>
 </mapper>

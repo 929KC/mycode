@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.MessageSessionUserMapper">
+<mapper namespace="com.kc.chatroom.mapper.MessageSessionUserMapper">
 
     <resultMap id="BaseResultMap" type="com.kc.chatroom.model.entity.MessageSessionUser">
             <result property="sessionId" column="sessionId" jdbcType="INTEGER"/>

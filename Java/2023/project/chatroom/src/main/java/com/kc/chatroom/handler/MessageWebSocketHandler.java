@@ -7,6 +7,7 @@ import com.kc.chatroom.common.MessageResponse;
 import com.kc.chatroom.mapper.MessageMapper;
 import com.kc.chatroom.mapper.MessageSessionMapper;
 import com.kc.chatroom.model.entity.Friend;
+import com.kc.chatroom.model.entity.Message;
 import com.kc.chatroom.model.entity.User;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
@@ -38,7 +39,7 @@ public class MessageWebSocketHandler extends TextWebSocketHandler {
         System.out.println("websocket 连接成功!");
         try {
             User user = (User) session.getAttributes().get("user");
-            onlineUserManagerHandler.onLine(user.getUserid(), session);
+            onlineUserManagerHandler.onLine(user.getUserId(), session);
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
@@ -71,7 +72,7 @@ public class MessageWebSocketHandler extends TextWebSocketHandler {
         System.out.println("websocket 连接关闭!");
         try {
             User user = (User) session.getAttributes().get("user");
-            onlineUserManagerHandler.offLine(user.getUserid(), session);
+            onlineUserManagerHandler.offLine(user.getUserId(), session);
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
@@ -81,7 +82,7 @@ public class MessageWebSocketHandler extends TextWebSocketHandler {
         //1.构造响应
         MessageResponse resp = new MessageResponse();
         resp.setType("message");
-        resp.setFromId(user.getUserid());
+        resp.setFromId(user.getUserId());
         resp.setFromName(user.getUsername());
         resp.setSessionId(req.getSessionId());
         resp.setContent(req.getContent());
@@ -92,13 +93,13 @@ public class MessageWebSocketHandler extends TextWebSocketHandler {
         List<Friend> friends = messageSessionMapper.selectFriendsBySessionId(req.getSessionId());
         //要把自己也加入到列表中
         Friend friend = new Friend();
-        friend.setFriendid(user.getUserid());
+        friend.setFriendId(user.getUserId());
         friend.setFileName(user.getUsername());
         friends.add(friend);
         System.out.println("[handlerMessage] 要转发给那些人:" + friends);
         //根据每个userId，找到webSocketSession并转发消息
         for (Friend friend1 : friends) {
-            WebSocketSession webSocketSession = onlineUserManagerHandler.getSession(friend1.getUserid());
+            WebSocketSession webSocketSession = onlineUserManagerHandler.getSession(friend1.getUserId());
             if (webSocketSession == null) {
                 // 如果⽤⼾没在线就不管了.
                 continue;
@@ -107,10 +108,10 @@ public class MessageWebSocketHandler extends TextWebSocketHandler {
         }
         // 4. 把这个消息写⼊数据库
         Message message = new Message();
-        message.setFromid(resp.getFromId());
-        message.setSessionid(resp.getSessionId());
+        message.setFromId(resp.getFromId());
+        message.setSessionId(resp.getSessionId());
         message.setContent(resp.getContent());
-        message.setPosttime(resp.getPostTime());
+        message.setPostTime(resp.getPostTime());
         messageMapper.insert(message);
     }
 }

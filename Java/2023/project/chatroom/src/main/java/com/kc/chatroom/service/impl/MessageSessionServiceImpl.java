@@ -48,7 +48,7 @@ public class MessageSessionServiceImpl extends ServiceImpl<MessageSessionMapper,
             List<Friend> friends = messageSessionMapper.selectFriendsBySessionId(sessionId);
             messageSession.setFriends(friends);
             // 4. TODO 根据会话 id 找到历史消息记录, 需要设计好 消息表
-            messageSession.setLastMessage(messageMapper.getLastMessagesBySessionId(sessionId));
+            messageSession.setLastName(messageMapper.getLastMessagesBySessionId(sessionId));
             list.add(messageSession);
         }
         return list;
@@ -62,17 +62,17 @@ public class MessageSessionServiceImpl extends ServiceImpl<MessageSessionMapper,
         User user =(User) session.getAttribute("user");
         MessageSession messageSession = new MessageSession();
         messageSessionMapper.addMessageSession(messageSession);
-        log.info("生成新会话:"+messageSession.getSessionid());
+        log.info("生成新会话:"+messageSession.getSessionId());
         MessageSessionUser messageUser1 = new MessageSessionUser();
-        messageUser1.setSessionid(messageSession.getSessionid());
-        messageUser1.setUserid(user.getUserid());
+        messageUser1.setSessionId(messageSession.getSessionId());
+        messageUser1.setUserId(user.getUserId());
         messageSessionMapper.addMessageSessionUser(messageUser1);
 
         MessageSessionUser messageUser2 = new MessageSessionUser();
-        messageUser2.setSessionid(messageSession.getSessionid());
-        messageUser2.setUserid(toUserId);
+        messageUser2.setSessionId(messageSession.getSessionId());
+        messageUser2.setUserId(toUserId);
         messageSessionMapper.addMessageSessionUser(messageUser2);
-        resp.put("sessionId",messageSession.getSessionid());
+        resp.put("sessionId",messageSession.getSessionId());
         return resp;
     }
 }

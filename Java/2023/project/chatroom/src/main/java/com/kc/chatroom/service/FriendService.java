@@ -18,4 +18,8 @@ public interface FriendService extends IService<Friend> {
     Object addFriend(int friendId, String reason, HttpServletRequest req);
 
     Object getFriendRequest(HttpServletRequest req);
+
+    Object acceptFriend(int friendId, HttpServletRequest req);
+
+    Object rejectFriend(int friendId, HttpServletRequest req);
 }
