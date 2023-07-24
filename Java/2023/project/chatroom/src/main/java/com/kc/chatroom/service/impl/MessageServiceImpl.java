@@ -8,6 +8,8 @@ import com.kc.chatroom.service.MessageService;
 
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 /**
 * @author 929KC
 * @description 针对表【message】的数据库操作Service实现
@@ -16,11 +18,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageServiceImpl extends ServiceImpl<MessageMapper, Message>
     implements MessageService{
+    @Resource
+    private MessageMapper messageMapper;
 
     @Override
     public Object getMessage(int sessionId) {
-        return null;
+        return messageMapper.getMessagesBySessionId(sessionId);
     }
+
+
 }
 
 

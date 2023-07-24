@@ -74,7 +74,6 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend>
 
     @Override
     public Object getFriendRequest(HttpServletRequest req) {
-
         List<AddFriendRequest> addFriendRequestList = new ArrayList<>();
         try {
             HttpSession session = req.getSession(false);
@@ -124,6 +123,19 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend>
             e.printStackTrace();
         }
         return "";
+    }
+
+    @Override
+    public Object getFriendList(HttpServletRequest request) {
+        try {
+            HttpSession session = request.getSession(false);
+            User user = (User) session.getAttribute("user");
+            return friendMapper.selectFriendList(user.getUserId());
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            // 如果获取失败则返回空的好友列表
+            return new ArrayList<Friend>();
+        }
     }
 }
 

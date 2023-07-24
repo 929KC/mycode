@@ -90,11 +90,11 @@ public class MessageWebSocketHandler extends TextWebSocketHandler {
         String respJson = objectMapper.writeValueAsString(resp);
         System.out.println("[handlerMessage] resp:" + respJson);
         //2.根据请求中的sessionId,在数据库中找到所有的userId
-        List<Friend> friends = messageSessionMapper.selectFriendsBySessionId(req.getSessionId());
+        List<Friend> friends = messageSessionMapper.getFriendsBySessionId(req.getSessionId());
         //要把自己也加入到列表中
         Friend friend = new Friend();
         friend.setFriendId(user.getUserId());
-        friend.setFileName(user.getUsername());
+        friend.setFriendName(user.getUsername());
         friends.add(friend);
         System.out.println("[handlerMessage] 要转发给那些人:" + friends);
         //根据每个userId，找到webSocketSession并转发消息

@@ -1,5 +1,6 @@
 package com.kc.chatroom.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kc.chatroom.model.entity.User;
@@ -8,8 +9,10 @@ import com.kc.chatroom.mapper.UserMapper;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
 
 /**
  * @author 929KC
@@ -19,15 +22,14 @@ import javax.servlet.http.HttpSession;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         implements UserService {
-
+    @Resource
+    private UserMapper userMapper;
     @Override
     public Object userLogin(String username, String password, HttpServletRequest request) {
         if (StringUtils.isAnyBlank(username, password)) {
             return null;
         }
-        QueryWrapper<User> query = new QueryWrapper<>();
-        query.eq("username", username);
-        User user = this.baseMapper.selectOne(query);
+        User user = userMapper.selectByName(username);
         if (user == null || !user.getPassword().equals(password)) {
             return new User();
         }
@@ -47,6 +49,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         }
         return user;
     }
+
+
 }
 
 

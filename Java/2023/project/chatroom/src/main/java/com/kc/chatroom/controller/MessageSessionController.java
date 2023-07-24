@@ -2,7 +2,6 @@ package com.kc.chatroom.controller;
 
 
 import com.kc.chatroom.service.MessageSessionService;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

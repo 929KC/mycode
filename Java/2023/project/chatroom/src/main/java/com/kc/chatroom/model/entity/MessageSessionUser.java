@@ -13,6 +13,7 @@ import lombok.Data;
 @TableName(value ="message_session_user")
 @Data
 public class MessageSessionUser implements Serializable {
+    @TableId(type = IdType.AUTO)
     private Integer sessionId;
 
     private Integer userId;

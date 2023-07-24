@@ -17,13 +17,13 @@
         content,postTime
     </sql>
     <select id="getLastMessagesBySessionId" resultType="java.lang.String">
-        select content from message where sessionId = #{sessionId} order by post
+        select content from message where sessionId = #{sessionId} order by postTime
     </select>
     <select id="getMessagesBySessionId" resultType="com.kc.chatroom.model.entity.Message">
         select messageId, fromId, user.username as fromName,
-               3 sessionId, content, postTime
-            4 from message, user
-            5 where sessionId = #{sessionId} and message.fromId = user.userId
-            6 order by postTime desc limit 100;
+                sessionId, content, postTime
+            from message, user
+            where sessionId = #{sessionId} and message.fromId = user.userId
+             order by postTime desc limit 100;
     </select>
 </mapper>

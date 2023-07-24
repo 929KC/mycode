@@ -5,17 +5,21 @@
 <mapper namespace="com.kc.chatroom.mapper.FriendMapper">
 
     <resultMap id="BaseResultMap" type="com.kc.chatroom.model.entity.Friend">
-            <result property="userId" column="userId" jdbcType="INTEGER"/>
-            <result property="friendId" column="friendId" jdbcType="INTEGER"/>
+        <result property="userId" column="userId" jdbcType="INTEGER"/>
+        <result property="friendId" column="friendId" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        userId,friendId
+        userId
+        ,friendId
     </sql>
     <insert id="addFriendRequest">
-        insert into add_friend_request values (#{fromUserId}, #{toUserId}, #{reason}    </insert>
+        insert into add_friend_request
+        values (#{fromUserId}, #{toUserId}, #{reason})
+    </insert>
     <insert id="addFriend">
-        insert into friend values(#{userId}, #{friendId}), (#{friendId}, #{userId})
+        insert into friend
+        values (#{userId}, #{friendId})
     </insert>
     <delete id="deleteFriendRequest">
         delete
@@ -24,15 +28,22 @@
           and toUserId
     </delete>
     <select id="findFriend" resultType="com.kc.chatroom.model.entity.Friend">
-        select userId as friendId, username as friendName from user
-            3 where userId != #{selfUserId} and username like '%${friendName}%' and userId
-            4 (select friendId from friend where userId = #{selfUserId})
+        select userId as friendId, username as friendName
+        from user
+        where userId !=#{selfUserId}
+          and username like '%${friendName}%'
 
     </select>
     <select id="getFriendRequest" resultType="com.kc.chatroom.common.AddFriendRequest">
         select fromUserId, user.username as fromUserName, reason
-        from add_friend_req
+        from add_friend_request
         where toUserId = #{toUserId}
           and fromUserId = user.userId
+    </select>
+    <select id="selectFriendList" resultType="com.kc.chatroom.model.entity.Friend">
+        select userId as friendId, username as friendName
+        from user
+        where userId in
+              (select friendId from friend where userId = #{userId});
     </select>
 </mapper>

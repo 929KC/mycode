@@ -1,5 +1,7 @@
 package com.kc.chatroom.model.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -12,6 +14,7 @@ import lombok.Data;
 @TableName(value ="message")
 @Data
 public class Message implements Serializable {
+    @TableId(type = IdType.AUTO)
     private Integer messageId;
 
     private Integer fromId;

@@ -21,11 +21,11 @@ public interface MessageSessionMapper extends BaseMapper<MessageSession> {
     @Select("SELECT sessionId FROM message_session " +
             "WHERE sessionId IN (SELECT sessionId FROM message_session_user WHERE userId = #{userId}) " +
             "ORDER BY lastTime DESC")
-    List<Integer> selectSessionIdsByUserId(@Param("userId") Integer userId);
+    List<Integer> getSessionIdsByUserId(@Param("userId") Integer userId);
     @Select("SELECT userId as friendId, username as friendName " +
             "FROM user " +
             "WHERE userId IN (SELECT userId FROM message_session_user WHERE sessionId = #{sessionId})")
-    List<Friend> selectFriendsBySessionId(@Param("sessionId") Integer sessionId);
+    List<Friend> getFriendsBySessionId(@Param("sessionId") Integer sessionId);
 
     int addMessageSession(MessageSession messageSession);
     void addMessageSessionUser(MessageSessionUser messageSessionUser);

@@ -14,6 +14,7 @@ import java.util.List;
 */
 @Mapper
 public interface FriendMapper extends BaseMapper<Friend> {
+    List<Friend> selectFriendList(int userId);
     List<Friend> findFriend(int selfUserId, String friendName);
     void addFriendRequest(int fromUserId, int toUserId, String reason);
     List<AddFriendRequest> getFriendRequest(int toUserId);

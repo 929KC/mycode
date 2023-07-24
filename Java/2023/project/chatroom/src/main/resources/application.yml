@@ -9,7 +9,7 @@ spring:
       matching-strategy: ANT_PATH_MATCHER
 mybatis-plus:
   configuration:
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: false
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:mapper/**Mapper.xml
 

@@ -13,4 +13,9 @@
     <sql id="Base_Column_List">
         userId,username,password
     </sql>
+    <select id="selectByName" resultType="com.kc.chatroom.model.entity.User">
+        select *
+        from user
+        where username = #{username}
+    </select>
 </mapper>

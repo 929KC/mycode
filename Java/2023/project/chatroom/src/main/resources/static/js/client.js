@@ -15,7 +15,7 @@ function initSwitchTab() {
     //    同时把会话列表显示出来, 把好友列表隐藏
     //    如果是点击 好友标签按钮, 就把好友标签按钮的背景图片进行设置. 
     //    同时把好友列表显示出来, 把会话列表进行隐藏
-    tabSession.onclick = function() {
+    tabSession.onclick = function () {
         // a) 设置图标
         tabSession.style.backgroundImage = 'url(img/对话.png)';
         tabFriend.style.backgroundImage = 'url(img/用户2.png)';
@@ -24,7 +24,7 @@ function initSwitchTab() {
         lists[1].classList = 'list hide';
     }
 
-    tabFriend.onclick = function() {
+    tabFriend.onclick = function () {
         // a) 设置图标
         tabSession.style.backgroundImage = 'url(img/对话2.png)';
         tabFriend.style.backgroundImage = 'url(img/用户.png)'
@@ -44,28 +44,30 @@ initSwitchTab();
 // let websocket = new WebSocket("ws://127.0.0.1:8080/WebSocketMessage");
 let websocket = new WebSocket("ws://" + location.host + "/WebSocketMessage");
 
-websocket.onopen = function() {
+websocket.onopen = function () {
     console.log("websocket 连接成功!");
 }
 
-websocket.onmessage = function(e) {
-    console.log("websocket 收到消息! " + e.data);
-    // 此时收到的 e.data 是个 json 字符串, 需要转成 js 对象
-    let resp = JSON.parse(e.data);
+websocket.onmessage = function (event) {
+    console.log('[onmessage] ' + event.data);
+    let resp = JSON.parse(event.data);
     if (resp.type == 'message') {
         // 处理消息响应
         handleMessage(resp);
-    } else {
-        // resp 的 type 出错!
-        console.log("resp.type 不符合要求!");
+    } else if (resp.type == 'addFriendRequest') {
+        // 处理添加好友请求
+        handlerAddFriend(resp);
+    } else if (resp.type == 'acceptFriend') {
+        // 处理接受好友响应
+        handlerAcceptFriend(resp);
     }
 }
 
-websocket.onclose = function() {
+websocket.onclose = function () {
     console.log("websocket 连接关闭!");
 }
 
-websocket.onerror = function() {
+websocket.onerror = function () {
     console.log("websocket 连接异常!");
 }
 
@@ -81,10 +83,9 @@ function handleMessage(resp) {
         curSessionLi = document.createElement('li');
         curSessionLi.setAttribute('message-session-id', resp.sessionId);
         // 此处 p 标签内部应该放消息的预览内容. 一会后面统一完成, 这里先置空
-        curSessionLi.innerHTML = '<h3>' + resp.fromName + '</h3>'
-            + '<p></p>';
+        curSessionLi.innerHTML = '<h3>' + resp.fromName + '</h3>' + '<p></p>';
         // 给这个 li 标签也加上点击事件的处理
-        curSessionLi.onclick = function() {
+        curSessionLi.onclick = function () {
             clickSession(curSessionLi);
         }
     }
@@ -132,7 +133,7 @@ function initSendButton() {
     let sendButton = document.querySelector('.right .ctrl button');
     let messageInput = document.querySelector('.right .message-input');
     // 2. 给发送按钮注册一个点击事件
-    sendButton.onclick = function() {
+    sendButton.onclick = function () {
         // a) 先针对输入框的内容做个简单判定. 比如输入框内容为空, 则啥都不干
         if (!messageInput.value) {
             // value 的值是 null 或者 '' 都会触发这个条件
@@ -147,9 +148,7 @@ function initSendButton() {
         let sessionId = selectedLi.getAttribute('message-session-id');
         // c) 构造 json 数据
         let req = {
-            type: 'message',
-            sessionId: sessionId,
-            content: messageInput.value
+            type: 'message', sessionId: sessionId, content: messageInput.value
         };
         req = JSON.stringify(req);
         console.log("[websocket] send: " + req);
@@ -169,9 +168,7 @@ initSendButton();
 
 function getUserInfo() {
     $.ajax({
-        type: 'get',
-        url: 'userInfo',
-        success: function(body) {
+        type: 'get', url: 'userInfo', success: function (body) {
             // 从服务器获取到数据. 
             // 校验结果是否有效. 
             if (body.userId && body.userId > 0) {
@@ -193,9 +190,7 @@ getUserInfo();
 
 function getFriendList() {
     $.ajax({
-        type: 'get',
-        url: 'friendList',
-        success: function(body) {
+        type: 'get', url: 'friendList', success: function (body) {
             // 1. 先把之前的好友列表的内容, 给清空
             let friendListUL = document.querySelector('#friend-list');
             friendListUL.innerHTML = '';
@@ -209,13 +204,12 @@ function getFriendList() {
                 friendListUL.appendChild(li);
 
                 // 每个 li 标签, 就对应界面上的一个好友的选项. 给这个 li 加上点击事件的处理. 
-                li.onclick = function() {
+                li.onclick = function () {
                     // 参数表示区分了当前用户点击的是哪个好友. 
                     clickFriend(friend);
                 }
             }
-        },
-        error: function() {
+        }, error: function () {
             console.log('获取好友列表失败!');
         }
     });
@@ -225,9 +219,7 @@ getFriendList();
 
 function getSessionList() {
     $.ajax({
-        type: 'get',
-        url: 'sessionList',
-        success: function(body) {
+        type: 'get', url: 'sessionList', success: function (body) {
             // 1. 清空之前的会话列表
             let sessionListUL = document.querySelector('#session-list');
             sessionListUL.innerHTML = '';
@@ -241,12 +233,11 @@ function getSessionList() {
                 let li = document.createElement('li');
                 // 把会话 id 保存到 li 标签的自定义属性中. 
                 li.setAttribute('message-session-id', session.sessionId);
-                li.innerHTML = '<h3>' + session.friends[0].friendName + '</h3>' 
-                    + '<p>' + session.lastMessage + '</p>';
+                li.innerHTML = '<h3>' + session.friends[0].friendName + '</h3>' + '<p>' + session.lastMessage + '</p>';
                 sessionListUL.appendChild(li);
 
                 // 给 li 标签新增点击事件
-                li.onclick = function() {
+                li.onclick = function () {
                     // 这个写法, 就能保证, 点击哪个 li 标签
                     // 此处对应的 clickSession 函数的参数就能拿到哪个 li 标签. 
                     clickSession(li);
@@ -297,9 +288,7 @@ function getHistoryMessage(sessionId) {
     }
     // 3. 发送 ajax 请求给服务器, 获取到该会话的历史消息. 
     $.ajax({
-        type: 'get',
-        url: 'message?sessionId=' + sessionId,
-        success: function(body) {
+        type: 'get', url: 'message?sessionId=' + sessionId, success: function (body) {
             // 此处返回的 body 是个 js 对象数组, 里面的每个元素都是一条消息. 
             // 直接遍历即可. 
             for (let message of body) {
@@ -323,10 +312,7 @@ function addMessage(messageShowDiv, message) {
         // 消息是别人发的. 靠左
         messageDiv.className = 'message message-left';
     }
-    messageDiv.innerHTML = '<div class="box">' 
-        + '<h4>' + message.fromName + '</h4>'
-        + '<p>' + message.content + '</p>'
-        + '</div>';
+    messageDiv.innerHTML = '<div class="box">' + '<h4>' + message.fromName + '</h4>' + '<p>' + message.content + '</p>' + '</div>';
     messageShowDiv.appendChild(messageDiv);
 }
 
@@ -362,7 +348,7 @@ function clickFriend(friend) {
         sessionLi.innerHTML = '<h3>' + friend.friendName + '</h3>' + '<p></p>';
         //    把标签进行置顶
         sessionListUL.insertBefore(sessionLi, sessionListUL.children[0]);
-        sessionLi.onclick = function() {
+        sessionLi.onclick = function () {
             clickSession(sessionLi);
         }
         sessionLi.click();
@@ -392,14 +378,150 @@ function findSessionByName(username) {
 // friendId 是构造 HTTP 请求时必备的信息
 function createSession(friendId, sessionLi) {
     $.ajax({
-        type: 'post',
-        url: 'session?toUserId=' + friendId,
-        success: function(body) {
+        type: 'post', url: 'session?toUserId=' + friendId, success: function (body) {
             console.log("会话创建成功! sessionId = " + body.sessionId);
             sessionLi.setAttribute('message-session-id', body.sessionId);
-        }, 
-        error: function() {
+        }, error: function () {
             console.log('会话创建失败!');
         }
     });
+}
+
+function initFindFriend() {
+    let search = document.querySelector('.search');
+    let input = document.querySelector('.search>input');
+    let button = document.querySelector('.search>button');
+    button.onclick = function () {
+        // 给服务器发送请求, 获取匹配的好友.
+        $.ajax({
+            type: 'get', url: '/findFriend?name=' + encodeURIComponent(input.value.trim()), success: function (body) {
+                let titleDiv = document.querySelector('.title');
+                titleDiv.innerHTML = '查找结果';
+                let messageShowDiv = document.querySelector('.message-show');
+                messageShowDiv.innerHTML = '';
+                for (let friend of body) {
+                    let itemDiv = document.createElement('div');
+                    itemDiv.className = 'message';
+                    let span = document.createElement('span');
+                    span.innerHTML = friend.friendName;
+                    span.setAttribute('friend-id', friend.friendId);
+                    let input = document.createElement('input');
+                    input.type = 'text';
+                    input.placeholder = '添加好友理由';
+                    let button = document.createElement('button');
+                    button.innerHTML = '+';
+                    button.onclick = function () {
+                        sendAddFriend(friend.friendId, input.value);
+                    }
+                    itemDiv.appendChild(span);
+                    itemDiv.appendChild(input);
+                    itemDiv.appendChild(button);
+                    messageShowDiv.appendChild(itemDiv);
+                }
+            }, error: function () {
+                alert('查找好友失败! name=' + input.value.trim());
+            }
+        })
+    }
+}
+
+initFindFriend();
+
+function sendAddFriend(friendId, reason) {
+    $.ajax({
+        type: 'get',
+        url: 'addFriend?friendId=' + friendId + '&reason=' + encodeURIComponent(),
+        success:
+            function (body) {
+                // 啥都不⽤⼲
+                alert('添加好友请求已经发送!');
+            },
+        error: function () {
+            alert('添加好友失败!');
+        }
+    });
+}
+
+function getAddFriendRequest() {
+    $.ajax({
+        type: 'get',
+        url: 'getFriendRequest',
+        success: function (body) {
+            for (let item of body) {
+                addFriendRequest(item.fromUserId, item.fromUserName, item.reason)
+            }
+        },
+        error: function () {
+            alert('加载添加好友请求失败!');
+        }
+    });
+}
+
+getAddFriendRequest();
+
+
+function addFriendRequest(fromUserId, fromUserName, reason) {
+    let sessionList = document.querySelector('#session-list');
+    let li = document.createElement('li');
+    li.setAttribute('from-user-id', fromUserId);
+    li.style = 'height: 100px';
+    let h3 = document.createElement('h3');
+    h3.innerHTML = fromUserName;
+    let p = document.createElement('p');
+    p.innerHTML = reason;
+    let rowDiv = document.createElement('div');
+    rowDiv.className = 'row';
+    let buttonAccept = document.createElement('button');
+    buttonAccept.innerHTML = '接受';
+    buttonAccept.onclick = function () {
+        $.ajax({
+            type: 'get',
+            url: 'acceptFriend?friendId=' + fromUserId,
+            success: function () {
+                alert("通过 " + fromUserName + " 的好友申请 处理成功!");
+                // 刷新好友列表
+                getFriendList();
+                // 删除当前的好友请求项
+                sessionList.removeChild(li);
+            },
+            error: function () {
+                alert("通过 " + fromUserName + " 的好友申请 处理失败!");
+            }
+        });
+    }
+    let buttonReject = document.createElement('button');
+    buttonReject.innerHTML = '拒绝';
+    buttonReject.onclick = function () {
+        $.ajax({
+            type: 'get',
+            url: 'rejectFriend?friendId=' + fromUserId,
+            success: function () {
+                alert("拒绝 " + fromUserName + " 的好友申请 处理成功!");
+                // 删除当前的好友请求项
+                sessionList.removeChild(li);
+            },
+            error: function () {
+                alert("拒绝 " + fromUserName + " 的好友申请 处理失败!");
+            }
+        });
+    }
+    li.appendChild(h3);
+    li.appendChild(p);
+    rowDiv.appendChild(buttonAccept);
+    rowDiv.appendChild(buttonReject);
+    li.appendChild(rowDiv);
+    sessionList.insertBefore(li, sessionList.children[0]);
+}
+
+
+function handlerAddFriend(resp) {
+    // 在会话列表中新增⼀项, 表⽰添加好友请求.
+    addFriendRequest(resp.fromUserId, resp.fromUserName, resp.reason);
+}
+
+function handlerAcceptFriend(resp) {
+    // 1. 刷新好友列表
+    getFriendList();
+    // 2. 弹框提⽰
+    alert(resp.fromUserName + ' 已经通过你的好友申请!');
 }

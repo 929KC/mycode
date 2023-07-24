@@ -41,14 +41,19 @@ public class MessageSessionServiceImpl extends ServiceImpl<MessageSessionMapper,
         User user = (User) request.getSession(false).getAttribute("user");
         Integer userId = user.getUserId();
         // 2. 根据⽤⼾ id 查询到该 id 名下的会话 id.
-        List<Integer> sessionIds = messageSessionMapper.selectSessionIdsByUserId(userId);
+        List<Integer> sessionIds = messageSessionMapper.getSessionIdsByUserId(userId);
         for (Integer sessionId : sessionIds) {
             MessageSession messageSession = new MessageSession();
             // 3. 根据会话 id 找到对应的好友列表
-            List<Friend> friends = messageSessionMapper.selectFriendsBySessionId(sessionId);
+            List<Friend> friends = messageSessionMapper.getFriendsBySessionId(sessionId);
             messageSession.setFriends(friends);
             // 4. TODO 根据会话 id 找到历史消息记录, 需要设计好 消息表
-            messageSession.setLastName(messageMapper.getLastMessagesBySessionId(sessionId));
+            String lastMessage = messageMapper.getLastMessagesBySessionId(sessionId);
+            if (lastMessage == null) {
+                messageSession.setLastMessage("");
+            } else {
+                messageSession.setLastMessage(lastMessage);
+            }
             list.add(messageSession);
         }
         return list;
@@ -61,7 +66,8 @@ public class MessageSessionServiceImpl extends ServiceImpl<MessageSessionMapper,
         HttpSession session = request.getSession(false);
         User user =(User) session.getAttribute("user");
         MessageSession messageSession = new MessageSession();
-        messageSessionMapper.addMessageSession(messageSession);
+        int sessionId = messageSessionMapper.addMessageSession(messageSession);
+        System.out.println(sessionId);
         log.info("生成新会话:"+messageSession.getSessionId());
         MessageSessionUser messageUser1 = new MessageSessionUser();
         messageUser1.setSessionId(messageSession.getSessionId());

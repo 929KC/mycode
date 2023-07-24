@@ -22,4 +22,6 @@ public interface FriendService extends IService<Friend> {
     Object acceptFriend(int friendId, HttpServletRequest req);
 
     Object rejectFriend(int friendId, HttpServletRequest req);
+
+    Object getFriendList(HttpServletRequest request);
 }
