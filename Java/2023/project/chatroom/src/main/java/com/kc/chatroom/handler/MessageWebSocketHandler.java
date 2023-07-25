@@ -51,6 +51,7 @@ public class MessageWebSocketHandler extends TextWebSocketHandler {
         System.out.println("websocket 收到消息!");
         try {
             User user = (User) session.getAttributes().get("user");
+            System.out.println("我是"+user);
             MessageRequest req = objectMapper.readValue(message.getPayload(), MessageRequest.class);
             if ("message".equals(req.getType())) {
                 // 处理消息请求
@@ -79,6 +80,7 @@ public class MessageWebSocketHandler extends TextWebSocketHandler {
     }
 
     private void handlerMessage(User user, MessageRequest req) throws IOException {
+        System.out.println(user);
         //1.构造响应
         MessageResponse resp = new MessageResponse();
         resp.setType("message");

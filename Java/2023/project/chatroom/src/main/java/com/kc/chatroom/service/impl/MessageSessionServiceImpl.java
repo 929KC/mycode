@@ -66,8 +66,7 @@ public class MessageSessionServiceImpl extends ServiceImpl<MessageSessionMapper,
         HttpSession session = request.getSession(false);
         User user =(User) session.getAttribute("user");
         MessageSession messageSession = new MessageSession();
-        int sessionId = messageSessionMapper.addMessageSession(messageSession);
-        System.out.println(sessionId);
+         messageSessionMapper.addMessageSession(messageSession);
         log.info("生成新会话:"+messageSession.getSessionId());
         MessageSessionUser messageUser1 = new MessageSessionUser();
         messageUser1.setSessionId(messageSession.getSessionId());

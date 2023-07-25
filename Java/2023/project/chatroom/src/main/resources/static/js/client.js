@@ -146,6 +146,7 @@ function initSendButton() {
             return;
         }
         let sessionId = selectedLi.getAttribute('message-session-id');
+        console.log(sessionId);
         // c) 构造 json 数据
         let req = {
             type: 'message', sessionId: sessionId, content: messageInput.value
@@ -177,6 +178,7 @@ function getUserInfo() {
                 let userDiv = document.querySelector('.main .left .user');
                 userDiv.innerHTML = body.username;
                 userDiv.setAttribute("user-id", body.userId);
+                console.log(body.userId);
             } else {
                 // 如果结果无效, 当前未登录! 则跳转到登录页面. 
                 alert("当前用户未登录!");
@@ -191,6 +193,8 @@ getUserInfo();
 function getFriendList() {
     $.ajax({
         type: 'get', url: 'friendList', success: function (body) {
+            console.log("----------------")
+            console.log("获取:" + body);
             // 1. 先把之前的好友列表的内容, 给清空
             let friendListUL = document.querySelector('#friend-list');
             friendListUL.innerHTML = '';
@@ -214,7 +218,6 @@ function getFriendList() {
         }
     });
 }
-
 getFriendList();
 
 function getSessionList() {
@@ -255,6 +258,7 @@ function clickSession(currentLi) {
     activeSession(allLis, currentLi);
     // 2. 获取指定会话的历史消息 TODO
     let sessionId = currentLi.getAttribute("message-session-id");
+    console.log(sessionId);
     getHistoryMessage(sessionId);
 }
 

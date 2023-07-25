@@ -16,9 +16,13 @@ import lombok.Data;
 public class Message implements Serializable {
     @TableId(type = IdType.AUTO)
     private Integer messageId;
-
+    /**
+     * 谁发的
+     */
     private Integer fromId;
-
+    /**
+     * 发给那个会话
+     */
     private Integer sessionId;
 
     private String content;

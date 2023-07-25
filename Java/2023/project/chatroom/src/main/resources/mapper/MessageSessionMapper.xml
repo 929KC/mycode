@@ -13,7 +13,7 @@
         sessionId
         ,lastTime
     </sql>
-    <insert id="addMessageSession">
+    <insert id="addMessageSession" useGeneratedKeys="true" keyProperty="sessionId">
         insert into message_session
         values (null, now());
     </insert>
