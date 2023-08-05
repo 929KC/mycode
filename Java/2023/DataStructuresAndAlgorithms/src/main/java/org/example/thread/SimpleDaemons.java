@@ -24,6 +24,6 @@ public class SimpleDaemons implements  Runnable{
             th.start();
         }
         System.out.println("All daemons started");
-        Thread.sleep(10000);
+        Thread.sleep(100);
     }
 }

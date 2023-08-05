@@ -12,6 +12,7 @@ public class SlepingTask extends LiftOff {
            System.out.println(status());
            try {
                TimeUnit.MILLISECONDS.sleep(100);
+               //Thread.sleep(100);
            } catch (InterruptedException e) {
                e.printStackTrace();
              //System.err.println("eroror: " + e.getMessage());
@@ -20,10 +21,14 @@ public class SlepingTask extends LiftOff {
     }
 
     public static void main(String[] args) {
-        ExecutorService executorService = Executors.newCachedThreadPool();
+     /*   ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i=0;i<3;i++) {
             executorService.execute(new SlepingTask() );
         }
-        executorService.shutdownNow();
+        executorService.shutdownNow();*/
+       for (int i=0;i<3;i++) {
+           SlepingTask s = new SlepingTask();
+           s.run();
+       }
     }
 }
