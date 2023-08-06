@@ -11,6 +11,7 @@ public class FixedDiningPhilosophers {
             sticks[i] = new Chopstick(i + "号筷子");
         }
         for (int i = 0; i < sticks.length; i++) {
+            //前四个哲学家
             if (i < (size - 1)) {
                 exec.execute(new Philosopher(sticks[i], sticks[(i + 1)], i + "哲学家"));
             } else {

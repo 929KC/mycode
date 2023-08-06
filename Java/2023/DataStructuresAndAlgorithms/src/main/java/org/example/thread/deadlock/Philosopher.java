@@ -1,13 +1,21 @@
 package org.example.thread.deadlock;
 
 
-import jdk.internal.org.objectweb.asm.tree.TableSwitchInsnNode;
+
 
 public class Philosopher implements Runnable {
+    /**
+     * 左手筷子
+     */
     private Chopstick left;
+    /**
+     * 右手筷子
+     */
     private Chopstick right;
+    /**
+     * 名字
+     */
     private String name;
-    private int count;
 
     public Philosopher(Chopstick left, Chopstick right, String name) {
         this.left = left;
@@ -28,11 +36,11 @@ public class Philosopher implements Runnable {
     public void run() {
         while (!Thread.interrupted()) {
             thinking();
-            synchronized (this.left) {
-                synchronized (this.right) {
+            synchronized (this.right) {
+                synchronized (this.left) {
                     eating();
                 }
             }
         }
     }
-} ///:~
+}

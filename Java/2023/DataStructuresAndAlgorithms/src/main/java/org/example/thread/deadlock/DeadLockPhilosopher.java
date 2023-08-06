@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 
 public class DeadLockPhilosopher {
     public static void main(String[] args) throws InterruptedException, IOException {
-        int ponder = 5;
         int size = 5;
         ExecutorService exec = Executors.newCachedThreadPool();
         Chopstick []  sticks = new Chopstick[size];
@@ -16,7 +15,7 @@ public class DeadLockPhilosopher {
             sticks[i] = new Chopstick(i+"号筷子");
         }
         for (int i = 0; i < size;i++) {
-            exec.execute(new Philosopher(sticks[i], sticks[(i+1) % size],i+"哲学家"));
+            exec.execute(new Philosopher(sticks[i], sticks[(i+1) % size],i+"号哲学家"));
         }
         TimeUnit.SECONDS.sleep(10);
         exec.shutdownNow();
