@@ -31,7 +31,6 @@ public class HttpRequest {
         //2.解析url中的参数
         int pos = request.url.indexOf("?");
         if (pos != -1) {
-            //获得url中?之后的字符,有字符则解析,没有就不处理
             String parameters = request.url.substring(pos + 1);
             //切分的结果,key a,value 10
             parseKV(parameters, request.parameters);
@@ -49,18 +48,13 @@ public class HttpRequest {
         }
         //5.解析body
         if ("POST".equalsIgnoreCase(request.method) || "PUT".equalsIgnoreCase(request.method)) {
-            // 需要把 body 读取出来.
-            // 需要先知道 body 的长度. Content-Length 就是干这个的.
-            // 此处的长度单位是 "字节"
+
             int contentLength = Integer.parseInt(request.headers.get("Content-Length"));
-            // 注意体会此处的含义~~
             // 例如 contentLength 为 100 , body 中有 100 个字节.
             // 下面创建的缓冲区长度是 100 个 char (相当于是 200 个字节)
-            // 缓冲区不怕长. 就怕不够用. 这样创建的缓冲区才能保证长度管够~~
             char[] buffer = new char[contentLength];
             int len = reader.read(buffer);
             request.body = new String(buffer, 0, len);
-            // body 中的格式形如: username=tanglaoshi&password=123
             parseKV(request.body, request.parameters);
         }
         return request;
