@@ -39,8 +39,7 @@ public class HttpServer {
         try {
             // 1. 读取请求并解析
             HttpRequest request = HttpRequest.build(clientSocket.getInputStream());
-            HttpResponse response =
-                    HttpResponse.build(clientSocket.getOutputStream());
+            HttpResponse response = HttpResponse.build(clientSocket.getOutputStream());
             // 2. 根据请求计算响应
             // 此处按照不同的 HTTP 方法, 拆分成多个不同的逻辑
             if ("GET".equalsIgnoreCase(request.getMethod())) {
@@ -59,7 +58,6 @@ public class HttpServer {
         } catch (IOException | NullPointerException e) {
             e.printStackTrace();
         }
-
 
     }
 
@@ -80,8 +78,9 @@ public class HttpServer {
                 User user = new User();
                 user.userName = "zhangsan";
                 user.age = 20;
-                user.school = "陕科大";
+                user.school = "B站大学";
                 sessions.put(sessionId, user);
+                System.out.println(sessionId);
                 response.setHeader("Set-Cookie", "sessionId=" + sessionId);
                 response.writeBody("<html>");
                 response.writeBody("<div>欢迎您! " + userName + "</div>");
@@ -107,10 +106,8 @@ public class HttpServer {
                 response.setStatus(200);
                 response.setMessage("OK");
                 response.setHeader("Content-Type", "text/html; charset=utf-8");
-                InputStream inputStream =
-                        org.example.net.http.version2.HttpServer.class.getClassLoader().getResourceAsStream("index.html");
-                BufferedReader bufferedReader = new BufferedReader(new
-                        InputStreamReader(inputStream));
+                InputStream inputStream = HttpServer.class.getClassLoader().getResourceAsStream("index.html");
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 // 按行读取内容, 把数据写入到 response 中
                 String line = null;
                 while ((line = bufferedReader.readLine()) != null) {
@@ -119,6 +116,15 @@ public class HttpServer {
                 bufferedReader.close();
             } else {
                 // 用户已经登陆, 无需再登陆了.
+                response.setStatus(200);
+                response.setMessage("OK");
+                response.setHeader("Content-Type", "text/html; charset=utf-8");
+                response.writeBody("<html>");
+                response.writeBody("<div>" + "您已经登陆了! 无需再次登陆! 用户名: " +
+                        user.userName + "</div>");
+                response.writeBody(+user.age + "</div>");
+                response.writeBody("<div>" + user.school + "</div>");
+                response.writeBody("</html>");
             }
         }
     }

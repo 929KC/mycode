@@ -43,17 +43,16 @@ public class HttpRequest {
             request.headers.put(headerTokens[0], headerTokens[1]);
         }
         //4.解析cooike
-        String cooike = request.headers.get("cooike");
-        if (cooike != null) {
-            paseCookie(cooike, request.cookies);
+        String cookie = request.headers.get("Cookie");
+        if (cookie != null) {
+            paseCookie(cookie, request.cookies);
         }
         //5.解析body
         if ("POST".equalsIgnoreCase(request.method) || "PUT".equalsIgnoreCase(request.method)) {
-            // 这两个方法需要处理 body, 其他方法暂时不考虑
             // 需要把 body 读取出来.
             // 需要先知道 body 的长度. Content-Length 就是干这个的.
             // 此处的长度单位是 "字节"
-            int contentLength = Integer.parseInt(request.headers.get("ContentLength"));
+            int contentLength = Integer.parseInt(request.headers.get("Content-Length"));
             // 注意体会此处的含义~~
             // 例如 contentLength 为 100 , body 中有 100 个字节.
             // 下面创建的缓冲区长度是 100 个 char (相当于是 200 个字节)
@@ -70,10 +69,14 @@ public class HttpRequest {
 
     private static void paseCookie(String cookie, Map<String, String> cookies) {
         // 1. 按照 分号空格 拆分成多个键值对
+        //[0]b-user-id=120
+        //[1]sessionId=120
         String[] kvTokens = cookie.split("; ");
         // 2. 按照 = 拆分每个键和值
         for (String kv : kvTokens) {
             String[] result = kv.split("=");
+            System.out.println(result[0]);
+            System.out.println(result[1]);
             cookies.put(result[0], result[1]);
         }
     }
@@ -88,6 +91,7 @@ public class HttpRequest {
     private static void parseKV(String parameters, Map<String, String> output) throws IOException {
         //按&切分成若干组键值对
         String[] kvTokens = parameters.split("&");
+        //b-user-id=120;sessionId=120
         //针对上述切分结果在按照=进行切分
         for (String kvToken : kvTokens) {
             String[] result = kvToken.split("=");
