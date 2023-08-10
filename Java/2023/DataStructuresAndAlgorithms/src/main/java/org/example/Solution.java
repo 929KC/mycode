@@ -1,6 +1,7 @@
 package org.example;
 
 class Solution {
+
     public static String countAndSay(int n) {
         String ret = "1";
         for (int i = 1; i < n; i++) // 解释 n - 1 次 ret 即可

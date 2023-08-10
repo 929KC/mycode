@@ -5,15 +5,177 @@ import org.example.Functional.model.Book;
 
 import java.util.*;
 
+import java.util.function.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Demo6 {
     public static void main(String[] args) {
         List<Author> authors = getAuthors();
-        Stream<Book> bookStream = authors.stream()
-                .flatMap(author -> author.getBooks().stream());
+        authors.stream().distinct().forEach(Author-> System.out.println(Author.getName()));
+    }
+    public static void main25(String[] args) {
+        List<Author> authors = getAuthors();
+        Stream<Author> stream = authors.stream();
+        stream.filter(new Predicate<Author>() {
+            @Override
+            public boolean test(Author author) {
+                return author.getAge()>17;
+            }
+        }.negate()).forEach(author-> System.out.println(author));
+    }
+    public static void main24(String[] args) {
+        List<Author> authors = getAuthors();
+        authors.parallelStream()
+                .map(author -> author.getAge())
+                .map(age -> age + 10)
+                .filter(age->age>18)
+                .map(age->age+2)
+                .forEach(age -> System.out.println(age));
+    }
+    public static void main23(String[] args) {
+        Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Integer sum = stream.parallel()
+                .peek(num -> System.out.println(num+Thread.currentThread().getName()))
+                .filter(num -> num > 5)
+                .reduce((result, ele) -> result + ele)
+                        .orElse(0);
+        System.out.println(sum);
+    }
+    public static void main22(String[] args) {
+        Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Integer sum = stream.parallel()
+                .peek(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer num) {
+                        System.out.println(num+Thread.currentThread().getName());
+                    }
+                })
+                .filter(num -> num > 5)
+                .reduce((result, ele) -> result + ele)
+                .get();
+        System.out.println(sum);
+    }
+    public static void main21(String[] args) {
+        List<Author> authors = getAuthors();
+        long start1 =System.currentTimeMillis();
+        authors.stream()
+                .map(author -> author.getAge())
+                .map(age -> age + 10)
+                .filter(age->age>18)
+                .map(age->age+2)
+                .forEach(System.out::println);
+        long end1 =System.currentTimeMillis();
+        System.out.println("转换前:"+(end1-start1));
+        long start2 =System.currentTimeMillis();
+        authors.stream()
+                .mapToInt(author -> author.getAge())
+                .map(age -> age + 10)
+                .filter(age->age>18)
+                .map(age->age+2)
+                .forEach(System.out::println);
+        long end2 =System.currentTimeMillis();
+        System.out.println("转换后:"+(end2-start2));
+    }
+    public static void main20(String[] args) {
+        List<Author> authors = getAuthors();
+        Integer min = authors.stream()
+                .map(author -> author.getAge())
+                .reduce(Integer.MAX_VALUE, new BinaryOperator<Integer>() {
+                    @Override
+                    public Integer apply(Integer result, Integer element) {
+                        return result > element ? element : result;
+                    }
+                });
+        System.out.println(min);
+    }
 
+    public static void main19(String[] args) {
+        List<Author> authors = getAuthors();
+        Integer reduce = authors.stream()
+                .distinct()
+                .map(author -> author.getAge())
+                .reduce(0, new BinaryOperator<Integer>() {
+                    @Override
+                    public Integer apply(Integer integer, Integer integer2) {
+                        return integer+integer2;
+                    }
+                });
+        System.out.println(reduce);
+    }
+    public static void main18(String[] args) {
+        List<Author> authors = getAuthors();
+        Optional<Author> first = authors.stream().sorted((o1, o2) -> o1.getAge() - o2.getAge())
+                .findFirst();
+        first.ifPresent(author -> System.out.println(author.getName()));
+    }
+    public static void main17(String[] args) {
+        List<Author> authors = getAuthors();
+        boolean b = authors.stream().noneMatch(author -> author.getAge() > 100);
+        System.out.println(b);//true
+    }
+    public static void main16(String[] args) {
+        List<Author> authors = getAuthors();
+        boolean b = authors.stream().allMatch(author -> author.getAge() >=18);
+        System.out.println(b);
+    }
+    public static void main15(String[] args) {
+        List<Author> authors = getAuthors();
+        boolean b = authors.stream().anyMatch(author -> author.getAge() > 30);
+        System.out.println(b);
+    }
+    public static void main14(String[] args) {
+        List<Author> authors = getAuthors();
+        Map<String, List<Book>> map = authors.stream().distinct().
+                collect(Collectors.toMap(author -> author.getName(), author -> author.getBooks()));
+        System.out.println(map);
+    }
+    public static void main13(String[] args) {
+        List<Author> authors = getAuthors();
+        Set<Book> collect = authors.stream().flatMap(author -> author.getBooks().stream())
+                .collect(Collectors.toSet());
+        System.out.println(collect);
+    }
+    public static void main12(String[] args) {
+        List<Author> authors = getAuthors();
+        List<String> collect = authors.stream().map(author -> author.getName())
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println(collect);
+    }
+    public static void main11(String[] args) {
+        List<Author> authors = getAuthors();
+        Optional<Integer> max = authors.stream().flatMap(author -> author.getBooks().stream())
+                .map(book -> book.getScore())
+                .max((score1, score2) -> score1 - score2);
+
+        Optional<Integer> min = authors.stream().flatMap(author -> author.getBooks().stream())
+                .map(book -> book.getScore())
+                .min((score1, score2) -> score1 - score2);
+        System.out.println("max:"+max.get());
+        System.out.println("min:"+min.get());
+
+    }
+    public static void main10(String[] args) {
+        List<Author> authors = getAuthors();
+        long count = authors.stream().flatMap(author -> author.getBooks().stream()).distinct().count();
+        System.out.println(count);
+    }
+    public static void main9(String[] args) {
+        List<Author> authors = getAuthors();
+        authors.stream().map(author->author.getName()).distinct().forEach(name -> System.out.println(name));
+    }
+    public static void main8(String[] args) {
+        Stream<Integer> stream1 = Stream.of(1, 2, 3);
+        Stream<Integer> stream2 = Stream.of(4, 5, 6);
+        Stream<Integer> combinedStream = Stream.concat(stream1, stream2);
+        combinedStream.forEach(System.out::println);  // 输出 1, 2, 3, 4, 5, 6
+    }
+    public static void main7(String[] args) {
+        List<Author> authors = getAuthors();
+        //将每个作者的作品提取出来转换成新的流
+        authors.stream().flatMap(author->author.getBooks().stream())
+                .distinct().forEach(book-> System.out.println(book.getName()));
 
     }
     public static void main6(String[] args) {
