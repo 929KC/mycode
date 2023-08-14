@@ -1,18 +1,18 @@
 package org.example.Functional.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
+
 public class User {
     private String username;
     private String password;
+    public int age ;
 
-    public void pr(){
-        System.out.println("Hello Wrorld");
-    }
-    public static void pr(String username){
-        System.out.println("Hello World:"+username);
+
+    public  String pr(String username){
+      return username;
     }
 }
