@@ -1,7 +1,12 @@
 package org.example.bit;
 
+
+
+@MyTest2(value = "大小姐",name ="林黛玉",str={"java","C++"})
 public class Demo {
-    public static void main(String[] args) {
-        CoolType black = CoolType.BLACK;
+    @MyTest2(value = "小小姐",name ="薛宝钗",str={"java","Python"})
+    public void test() {
+
     }
+
 }
