@@ -8,6 +8,7 @@ class DemoDockerApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("dsf s");
     }
 
 }
