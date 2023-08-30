@@ -1,5 +1,6 @@
 package com.example.demodocker;
 
+import com.example.demodocker.model.User;
 import com.github.dockerjava.api.DockerClient;
 import com.github.dockerjava.api.command.*;
 import com.github.dockerjava.api.model.*;
@@ -118,5 +119,7 @@ class DemoDockerApplicationTests {
             dockerClient.removeImageCmd(image.getId()).exec();
         }
     }
+
+
 
 }
