@@ -8,5 +8,10 @@ public class Demo {
     void builderTest() {
         User user = User.builder().username("叶秋涵").age(17).build();
         System.out.println(user);
+        System.out.println("ds");
+        System.out.println("ds"); System.out.println("ds");
+        System.out.println("ds");
+
+
     }
 }
