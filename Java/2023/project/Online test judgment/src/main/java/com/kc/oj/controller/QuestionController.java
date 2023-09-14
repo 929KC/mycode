@@ -1,5 +1,6 @@
 package com.kc.oj.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.gson.Gson;
 import com.kc.oj.annotation.AuthCheck;
 import com.kc.oj.common.BaseResponse;

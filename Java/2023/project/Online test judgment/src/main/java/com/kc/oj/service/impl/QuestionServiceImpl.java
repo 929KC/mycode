@@ -9,6 +9,7 @@ import com.kc.oj.exception.BusinessException;
 import com.kc.oj.exception.ThrowUtils;
 import com.kc.oj.model.dto.question.QuestionQueryRequest;
 import com.kc.oj.model.entity.Question;
+import com.kc.oj.model.entity.User;
 import com.kc.oj.model.vo.QuestionVO;
 import com.kc.oj.model.vo.UserVO;
 import com.kc.oj.service.QuestionService;
@@ -17,10 +18,10 @@ import com.kc.oj.service.UserService;
 import com.kc.oj.utils.SqlUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -93,7 +94,6 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question>
         Long userId = questionQueryRequest.getUserId();
         String sortField = questionQueryRequest.getSortField();
         String sortOrder = questionQueryRequest.getSortOrder();
-
         // 拼接查询条件
         queryWrapper.like(StringUtils.isNotBlank(title), "title", title);
         queryWrapper.like(StringUtils.isNotBlank(content), "content", content);

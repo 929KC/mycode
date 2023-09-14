@@ -1,9 +1,9 @@
 package com.kc.oj.model.vo;
 
 import cn.hutool.json.JSONUtil;
-import com.google.gson.reflect.TypeToken;
-import com.yupi.yuoj.model.dto.question.JudgeConfig;
-import com.yupi.yuoj.model.entity.Question;
+
+import com.kc.oj.model.dto.question.JudgeConfig;
+import com.kc.oj.model.entity.Question;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 

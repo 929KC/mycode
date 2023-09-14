@@ -7,22 +7,22 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 搜索类型枚举
+ * 题目提交枚举
  *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
  */
-public enum SearchTypeEnum {
+public enum QuestionSubmitStatusEnum {
 
-    POST("帖子", "post"),
-    USER("用户", "user"),
-    PICTURE("图片", "picture");
+    // 0 - 待判题、1 - 判题中、2 - 成功、3 - 失败
+    WAITING("等待中", 0),
+    RUNNING("判题中", 1),
+    SUCCEED("成功", 2),
+    FAILED("失败", 3);
 
     private final String text;
 
-    private final String value;
+    private final Integer value;
 
-    SearchTypeEnum(String text, String value) {
+    QuestionSubmitStatusEnum(String text, Integer value) {
         this.text = text;
         this.value = value;
     }
@@ -32,7 +32,7 @@ public enum SearchTypeEnum {
      *
      * @return
      */
-    public static List<String> getValues() {
+    public static List<Integer> getValues() {
         return Arrays.stream(values()).map(item -> item.value).collect(Collectors.toList());
     }
 
@@ -42,11 +42,11 @@ public enum SearchTypeEnum {
      * @param value
      * @return
      */
-    public static SearchTypeEnum getEnumByValue(String value) {
+    public static QuestionSubmitStatusEnum getEnumByValue(Integer value) {
         if (ObjectUtils.isEmpty(value)) {
             return null;
         }
-        for (SearchTypeEnum anEnum : SearchTypeEnum.values()) {
+        for (QuestionSubmitStatusEnum anEnum : QuestionSubmitStatusEnum.values()) {
             if (anEnum.value.equals(value)) {
                 return anEnum;
             }
@@ -54,7 +54,7 @@ public enum SearchTypeEnum {
         return null;
     }
 
-    public String getValue() {
+    public Integer getValue() {
         return value;
     }
 

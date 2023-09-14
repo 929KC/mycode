@@ -1,11 +1,33 @@
 package com.kc.oj.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.kc.oj.common.ErrorCode;
+import com.kc.oj.constant.CommonConstant;
+import com.kc.oj.exception.BusinessException;
+import com.kc.oj.model.dto.questionsubmit.QuestionSubmitAddRequest;
+import com.kc.oj.model.dto.questionsubmit.QuestionSubmitQueryRequest;
+import com.kc.oj.model.entity.Question;
 import com.kc.oj.model.entity.QuestionSubmit;
+import com.kc.oj.model.entity.User;
+import com.kc.oj.model.enums.QuestionSubmitLanguageEnum;
+import com.kc.oj.model.enums.QuestionSubmitStatusEnum;
 import com.kc.oj.model.vo.QuestionSubmitVO;
+import com.kc.oj.service.QuestionService;
 import com.kc.oj.service.QuestionSubmitService;
 import com.kc.oj.mapper.QuestionSubmitMapper;
+import com.kc.oj.service.UserService;
+import com.kc.oj.utils.SqlUtils;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 /**
 * @author 929KC
