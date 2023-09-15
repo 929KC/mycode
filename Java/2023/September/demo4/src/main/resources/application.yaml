@@ -1,0 +1,6 @@
+profile:
+   name: Spring Boot Profile
+   desc: Spring Boot Profile Desc.
+spring:
+   profiles:
+      active: dev
