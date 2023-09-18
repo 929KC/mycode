@@ -51,4 +51,13 @@ class Demo4ApplicationTests {
         System.out.println(name);
         System.out.println(desc);
     }
+
+    @Test
+    void getProfileByResourceBundle2() {
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
+        String name = resourceBundle.getString("profile.name");
+        String desc = resourceBundle.getString("profile.desc");
+        System.out.println(name);
+        System.out.println(desc);
+    }
 }
