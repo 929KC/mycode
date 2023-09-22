@@ -1,17 +1,18 @@
-money = 10
-bottle_caps = 0 #啤酒盖
-empty_bottles = 0 #空瓶数
-total_beers = 0#可以喝的啤酒数
-while money >= 2:
-    beers_purchased = money // 2
-    total_beers += beers_purchased
-    money -= beers_purchased * 2
-    bottle_caps += beers_purchased
-    empty_bottles += beers_purchased
-    beers_from_caps = bottle_caps // 4
-    total_beers += beers_from_caps
-    bottle_caps -= beers_from_caps * 4
-    beers_from_empty_bottles = empty_bottles // 2
-    total_beers += beers_from_empty_bottles
-    empty_bottles -= beers_from_empty_bottles * 2
-print("总共可以喝到的啤酒瓶数:", total_beers)
+# 初始化变量
+money = 10  # 初始金额
+bottles = money // 2  # 初始可以购买的啤酒瓶数
+caps = bottles  # 初始瓶盖数
+empty_bottles = bottles  # 初始空瓶子数
+
+while caps >= 4 or empty_bottles >= 2:
+    # 使用瓶盖兑换啤酒
+    exchanged_beers_caps = caps // 4
+    bottles += exchanged_beers_caps
+    caps -= exchanged_beers_caps * 4
+
+    # 使用空瓶子兑换啤酒
+    exchanged_beers_bottles = empty_bottles // 2
+    bottles += exchanged_beers_bottles
+    empty_bottles -= exchanged_beers_bottles * 2
+
+print("总共可以喝", bottles, "瓶啤酒")
