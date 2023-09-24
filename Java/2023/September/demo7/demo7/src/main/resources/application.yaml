@@ -1,0 +1,13 @@
+spring:
+  redis:
+    host: 120.78.166.85
+    port: 6379
+    password: 2222
+  thymeleaf:
+      cache: false
+      encoding: UTF-8
+      mode: HTML5
+      prefix: classpath:/templates/
+      suffix: .html
+  messages:
+    basename: i18n.login
