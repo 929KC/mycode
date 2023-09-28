@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5f99fc9a-d0da-4137-9b42-8cbce5e6146c" name="Changes" comment="学校作业">
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/July/untitled/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/July/untitled1/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/July/untitled1/src/main/java/org/example/D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/July/webSocket-demo/src/main/java/com/example/websocketdemo/config/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/java/com/example/demo3/config/Enviments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/java/com/example/demo3/controller/Demo6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/java/com/example/demo3/model/Demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/java/com/example/demo3/model/Demo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/java/com/example/demo3/model/DevEnviments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/java/com/example/demo3/model/ProdEnviments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/java/com/example/demo3/model/TestEnviments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/resources/application-dev.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/resources/application-prod.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/resources/application-test.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo3/src/test/java/com/example/demo3/Demo1ApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/demo6/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/CodeSendBoxProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/codesendbox/JudgeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/codesendbox/JudgeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/constant/CommonConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/constant/ErrorCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/constant/PageRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/exception/ThrowUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/dto/question/JudgeCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/dto/question/PageRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/dto/question/QuestionEditRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/dto/question/QuestionQueryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/dto/question/QuestionUpdateRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/dto/questionsumbit/QuestionSubmitAddRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/dto/questionsumbit/QuestionSubmitQueryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/emus/JudgeInfoMessageEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/entiy/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/entiy/QuestionSubmit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/entiy/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/vo/QuestionSubmitVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/vo/QuestionVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/vo/UserVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/service/QuestionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/service/impl/QuestionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/utils/SqlUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2022/DataStructuresAndAlgorithms2/src/test/java/java/com/bit/list/MyLinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2022/DataStructuresAndAlgorithms2/src/test/java/java/com/bit/list/MyLinkedListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2022/project/kcBlog/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2022/project/kcBlog/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/July/demo1/src/main/java/com/example/demo/controller/Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/July/filename/src/test/java/com/example/demodocker/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/July/filename/src/test/java/com/example/demodocker/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/September/address-book/src/main/java/org/example/model/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/September/address-book/src/main/java/org/example/model/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/impl/ExampleCodeSendBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/impl/ExampleCodeSendBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/JudgeInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/main/java/org/kc/judge/model/JudgeInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/test/java/org/kc/judge/codesendbox/CodeSendTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/September/judge/judge/src/test/java/org/kc/judge/codesendbox/CodeSendTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/GobangApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/GobangApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/config/SwaggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/config/SwaggerConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/config/WebSocketConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/config/WebSocketConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/GameReadyResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/GameReadyResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/GameRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/GameRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/GameResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/GameResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/MatchRequset.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/MatchRequset.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/MatchResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/MatchResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/Matcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/Matcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/OnlineUserManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/OnlineUserManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/RoomManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/game/RoomManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/handler/GameHandle.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/handler/GameHandle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/handler/MatchHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/handler/MatchHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/model/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Java/2023/project/gobang/target/classes/com/kc/gobang/model/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo18.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo18.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo20.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo20.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2VePq0iGo9knOsDwyTNNuxST6JU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python.demo23">
+    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="demo2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="demo20" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="demo2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo20.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="demo21" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="demo2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo21.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="demo22" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="demo2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo22.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="demo23" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="demo2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo23.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="demo2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.demo23" />
+        <item itemvalue="Python.demo22" />
+        <item itemvalue="Python.demo21" />
+        <item itemvalue="Python.demo" />
+        <item itemvalue="Python.demo20" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f99fc9a-d0da-4137-9b42-8cbce5e6146c" name="Changes" comment="" />
+      <created>1695193760027</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695193760027</updated>
+      <workItem from="1695193770201" duration="4297000" />
+      <workItem from="1695222481095" duration="1105000" />
+      <workItem from="1695223624344" duration="335000" />
+      <workItem from="1695277917693" duration="25094000" />
+      <workItem from="1695376242740" duration="642000" />
+      <workItem from="1695796090328" duration="7205000" />
+      <workItem from="1695888154888" duration="2607000" />
+    </task>
+    <task id="LOCAL-00001" summary="学校作业">
+      <option name="closed" value="true" />
+      <created>1695223925579</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695223925579</updated>
+    </task>
+    <task id="LOCAL-00002" summary="学校作业">
+      <option name="closed" value="true" />
+      <created>1695285670975</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695285670975</updated>
+    </task>
+    <task id="LOCAL-00003" summary="学校作业">
+      <option name="closed" value="true" />
+      <created>1695373014711</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695373014712</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="学校作业" />
+    <option name="LAST_COMMIT_MESSAGE" value="学校作业" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/demo2$demo22.coverage" NAME="demo22 Coverage Results" MODIFIED="1695890083755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo19.coverage" NAME="demo19 Coverage Results" MODIFIED="1695375525754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo4.coverage" NAME="demo4 Coverage Results" MODIFIED="1695223389484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo13.coverage" NAME="demo13 Coverage Results" MODIFIED="1695287161405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo15.coverage" NAME="demo15 Coverage Results" MODIFIED="1695367896267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo2.coverage" NAME="demo2 Coverage Results" MODIFIED="1695223351322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo12.coverage" NAME="demo12 Coverage Results" MODIFIED="1695361000152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo7.coverage" NAME="demo7 Coverage Results" MODIFIED="1695279875284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo16.coverage" NAME="demo16 Coverage Results" MODIFIED="1695375344531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo3.coverage" NAME="demo3 Coverage Results" MODIFIED="1695196559628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo14.coverage" NAME="demo14 Coverage Results" MODIFIED="1695365930964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo6.coverage" NAME="demo6 Coverage Results" MODIFIED="1695223553804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo9.coverage" NAME="demo9 Coverage Results" MODIFIED="1695287866367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo.coverage" NAME="demo Coverage Results" MODIFIED="1695805615904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo21.coverage" NAME="demo21 Coverage Results" MODIFIED="1695807975506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo17.coverage" NAME="demo17 Coverage Results" MODIFIED="1695375461143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo5.coverage" NAME="demo5 Coverage Results" MODIFIED="1695223418466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo20.coverage" NAME="demo20 Coverage Results" MODIFIED="1695376417462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo10.coverage" NAME="demo10 Coverage Results" MODIFIED="1695287913567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo8.coverage" NAME="demo8 Coverage Results" MODIFIED="1695280142737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo23.coverage" NAME="demo23 Coverage Results" MODIFIED="1695890137375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo1.coverage" NAME="demo1 Coverage Results" MODIFIED="1695371974969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/demo2$demo18.coverage" NAME="demo18 Coverage Results" MODIFIED="1695375499595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
