@@ -1,0 +1,21 @@
+spring:
+  session:
+    store-type: redis
+    timeout: 2592000
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springbootdata
+    username: root
+    password: 2222
+    # todo ????????????
+    redis:
+      database: 1
+      host: 120.0.0.1
+      port: 6379
+      timeout: 500000
+      username: root
+      password:
+  jpa:
+    show-sql: true
+
+
