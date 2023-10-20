@@ -1,0 +1,1 @@
+print(我叫{}，今年我#岁了.format(name,age))
