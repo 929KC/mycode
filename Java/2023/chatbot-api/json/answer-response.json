@@ -1,0 +1,61 @@
+{
+  "succeeded": true,
+  "resp_data": {
+    "topic": {
+      "topic_id": 588452458854284,
+      "group": {
+        "group_id": 15552882441842,
+        "name": "AI\u4ea4\u6d41",
+        "type": "pay",
+        "background_url": "builtin:\/\/8"
+      },
+      "type": "q&a",
+      "question": {
+        "owner": {
+          "user_id": 585152548814414,
+          "name": "\u964c\u4e0a\u82b1\u5f00",
+          "avatar_url": "https:\/\/images.zsxq.com\/FoxsgiHsKh4ORbiJuBp97GzS5YV2?e=1706716799&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:5VxIhFYj1GHtEj5pbTmJQnw0JoY=",
+          "location": "\u6e56\u5357"
+        },
+        "questionee": {
+          "user_id": 581228121218214,
+          "name": "\u79cb\u6db5",
+          "avatar_url": "https:\/\/images.zsxq.com\/FhK9O0xRNB7HnxIfIroZe6CKqr5o?e=1706716799&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:CGprEa7yaTQC72Eiy0VYsBRB4Kw=",
+          "location": "\u6e56\u5357"
+        },
+        "text": "\u65e9\u4e0a\u597d",
+        "expired": false,
+        "anonymous": false,
+        "owner_detail": {
+          "questions_count": 6,
+          "join_time": "2023-12-29T17:28:01.184+0800",
+          "status": "joined"
+        },
+        "owner_location": "\u6e56\u5357"
+      },
+      "answer": {
+        "owner": {
+          "user_id": 581228121218214,
+          "name": "\u79cb\u6db5",
+          "avatar_url": "https:\/\/images.zsxq.com\/FhK9O0xRNB7HnxIfIroZe6CKqr5o?e=1706716799&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:CGprEa7yaTQC72Eiy0VYsBRB4Kw=",
+          "location": "\u6e56\u5357"
+        },
+        "text": "\u65e9\u4e0a\u597d"
+      },
+      "answered": true,
+      "silenced": false,
+      "likes_count": 0,
+      "rewards_count": 0,
+      "comments_count": 0,
+      "reading_count": 1,
+      "readers_count": 2,
+      "digested": false,
+      "sticky": false,
+      "create_time": "2023-12-30T11:33:58.279+0800",
+      "user_specific": {
+        "liked": false,
+        "subscribed": false
+      }
+    }
+  }
+}
